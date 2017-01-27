@@ -1062,13 +1062,13 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
-                            The optotypes fields allow you to select both the letters to be displayed, and the order of letters on each line. You cannot change the array nor order of the lines displayed here. Custom Optotypes and Alphabets can be installed.
+                            The OPTOTYPES fields allow you to select both the letters to be displayed (Optotype), and the preset arrays of letters on each line (Alphabet). Custom OPTOTYPES can be installed (future versions).
                             <ul>
                                 <li>
-                                    <strong>Optotype</strong>: Select from the standard optotypes and those you have installed yourself.
+                                    <strong>Optotype</strong>: Snellen and Sloan are two types of latin sans serif characters in common use. The Snellen letters are 5 high by 4 wide, while the 5x5 grid of the Sloan letters is said to perform better in astigmatism. Landolt C and Tumbling E are used for non-verbal and non-English literate subjects. Landolt C is also useful for cross-cylinder techniques.
                                 </li>
                                 <li>
-                                    <strong>Alphabet</strong>: The available options are dependent on the OPTOTYPE selected above. SnellenU and SloanU use a wider selection of letters, but letters may not be of equal readability. BS4724.3 and ETDRS are standard alphabets using fewer letters, but with equal readability. Letters can be shuffled to prevent learning - see below
+                                    <strong>Alphabet</strong>: The available options are dependent on the OPTOTYPE selected above. SnellenU and SloanU use a wider selection of letters, but letters may not be of equal readability. BS4724.3 and ETDRS are standard alphabets using fewer letters, but with equal readability. Letters can be shuffled to prevent learning - see below.
                                 </li>
                             </ul>
                         </div>
@@ -1086,10 +1086,10 @@
                         <div class="panel-body">
                             <ul>
                                 <li>
-                                    <strong>Notation</strong>: Sets the notation type on the VA label on each chart line. Each notation type has a fixed array of chart lines. "Metres" is standard Snellen notation eg. 6/6; "Feet" is the US equivalent eg. 20/20; DecimalV is a decimal equivalent of Snellen notation eg. 6/60 = 0.1, 6/12 = 0.5; logMAR is explained here <a href="https://en.wikipedia.org/wiki/LogMAR_chart" target="_blank">https://en.wikipedia.org/wiki/LogMAR_chart.</a>
+                                    <strong>Notation</strong>: Sets the notation type on the VA label on each chart line. Each notation type has a preset array of chart lines. "Metres" is standard Snellen notation eg. 6/6; "Feet" is the US equivalent eg. 20/20; DecimalV is a decimal equivalent of Snellen notation eg. 6/60 = 0.1, 6/12 = 0.5; logMAR is explained here <a href="https://en.wikipedia.org/wiki/LogMAR_chart" target="_blank">https://en.wikipedia.org/wiki/LogMAR_chart.</a>
                                 </li>
                                 <li>
-                                    <strong>Numerator</strong>: Sets the numerator of only the fraction notation types, in which the numerator nominally describes the test distance. "Actual" is the value entered in Distance rounded to the nearest 0.1, and VA labels will show the proportionally adjusted denominator. Eg if you set the Distance to 3160mm, the VA labels will be 3.2/3.2, 3.2/9.6 etc. "Standard" is either 6 or 20 depending on the value you set in Notation above. VA labels will display as either 6/ or 20/ regardless of the value in Distance (see below). Please note that it is not advisable to use Standard if the Distance varies a large amount from 6000mm, say outside 5000-7000mm.
+                                    <strong>Numerator</strong>: Sets the numerator of only the fraction notation types, in which the numerator nominally describes the test distance. "Actual" is the value entered in Distance rounded to the nearest 0.1, and VA labels will show the proportionally adjusted denominator. Eg if you set the Distance to 3160mm, the VA labels will be 3.2/3.2, 3.2/9.6 etc. "Standard" is either 6 or 20 depending on “Metres” or “Feet” in Notation above. VA labels will display as either 6/ or 20/ regardless of the value in Distance (see below). Please note that it is not advisable to use “Standard” Notation if the Distance (see below) varies a large amount from 6000mm, say outside 5000-7000mm.
 
                                 </li>
                             </ul>
@@ -1106,11 +1106,11 @@
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>  The two CALIBRATION values are the ONLY values that influence the display size of the chart lines. The RECORDING values above only change the VA labels on the chart lines, and have no bearing on the chart lines themselves.</p>
+                            <p>  The two CALIBRATION values are the ONLY values that influence the height of the chart lines. The RECORDING values above only change the VA labels on the chart lines, and have no bearing on the chart lines themselves. Please note there are no default calibration values; the chart cannot be used uncalibrated, for obvious reasons.</p>
                             <ul>
-                                <li><strong>Distance</strong>: Enter the distance from the patient's eye to the letter chart in mm. Eg 6m is 6000mm. If using a mirror to double the test distance, measure BOTH from the patient's eye to the mirror AND from the mirror to the chart and ADD the two distances (and don't forget to check the Mirrored/Direct setting - see below). If you are using Notation value of "Feet", Distance will be converted to feet to the nearest 0.1, or to 20 depending on the value in Numerator.</li>
+                                <li><strong>Distance</strong>: Enter the distance from the patient's eye to the letter chart in mm. Eg 6m is 6000mm. If using a mirror to double the test distance, measure BOTH from the patient's eye to the mirror AND from the mirror to the chart and ADD the two distances (and don't forget to check the Mirrored/Direct setting - see below). If you are using Notation value of "Feet", the VA labels will convert Distance to feet to the nearest 0.1, or to 20 depending on the value in Numerator.</li>
                                 <li>
-                                    <strong>Length of the line below</strong>: Calibrates the chart for the pixel density of the display being used. Measure the ruler line as accurately as possible. Measure two more times, and if the values vary, enter an average. You will need to re-check this value if you change display hardware, graphics adapter settings, or if you turn your display from landscape to portrait or vice versa. Take particular care here if you are using extended display from a laptop as pixel density may be different between the laptop screen and the external display.
+                                    <strong>Length of the line below</strong>: Calibrates the chart for the pixel density of the display being used. Measure the line as accurately as possible with a mm ruler: decimal places are allowed. Measure two more times, and if the values vary, enter an average. You will need to review this value if you change display hardware, graphics adapter settings, or if you turn your display between landscape and portrait. Take particular care here if you are using extended display from a laptop, as pixel density may be different between the laptop screen and the external display.
                                 </li>
                             </ul>
                         </div>
@@ -1143,10 +1143,10 @@
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul>
-                                <!-- <li><strong>Sort</strong>: Lines of the chart are always displayed with the smallest at the bottom. Unless the display is very large (about 1m wide by about 1.5m tall), the chart will display in pages - see SHORTCUTS below. Here you can select whether to display the page of the smallest or largest lines first on refresh or reconfigure. By default, the smallest subtense is 0.5arcmin, the largest 10 arcmin.</li> -->
+                                <li><strong>Sort</strong>: Sets the order of display on first launch and grouping of chart lines on the display. Selecting “Smallest-to-Largest” will usually work better in a primary care setting in a highly developed country because it packs more of the small lines onto the display. In other settings, where average VAs may be lower, “Largest to Smallest” may arrange the lines more conveniently. In either case the only difference is the number of scroll operations the user needs to make. If your display is large enough (about 1m wide by about 1.5m tall at 6m), all 14 lines will display and this setting will be moot.</li>
                                 <li><strong>Mirrored/Direct</strong>: Select "Direct" if the chart is to be viewed directly, otherwise select "Mirrored" and the letters and lines will be reversed, but the labels not. If changing this setting, don't forget to set the Distance (see above) accordingly.</li>
                                 <li>
-                                    <strong>Text colour</strong>: This field accepts any rgba colour value. Eg. 0,0,0,1 is black; 0,0,0,0.1 is 10% black; 255,0,0,1 is pure red.
+                                    <strong>Text colour</strong>: This field accepts any rgba colour value. The first three values are 0-255, representing levels of red, green and blue, where 0 is no colour and 255 is full colour. The fourth value is 0-1, representing opacity where 0 is fully transparent and 1 is fully opaque. Eg. 0,0,0,1 is black; 0,0,0,0.1 is 10% black; 255,0,0,1 is pure red.
                                 </li>
                             </ul>
                         </div>
@@ -1165,11 +1165,13 @@
                             <p> Use these fields to specify keyboard shortcuts for operating the chart.</p>
                             <ul>
                                 <li>
-                                    <strong>Page Up/Page Dn</strong>: The chart displays upwards from the smallest chart line by default. If your display is large enough (about 1m wide by about 1.5m tall), all 10-14 lines will display, otherwise the chart will divide itself into pages and you will need to use Page Up or Dn to page through them.<br />
-                                    Paging can also be done with a mouse - the whitespaces above and below the chartlines are page up and down buttons.
+                                    <strong>Page Up/Page Dn</strong>: If your display is large enough (about 1m wide by about 1.5m tall at 6m), all 14 lines will display, otherwise the chart will divide itself into pages and you will need to scroll through them. Your keyboard up and down arrows will scroll, and here you can also set a Shift + key shortcut eg "u" for up.<br />
+Mouse clicking or tapping on a touch screen can also do paging. Click or tap any whitespace in the top half of the display for page up, the bottom half for page down.<br />
+					Please note that clicking or tapping on a <i>letter masks</i> that letter. Clicking or tapping the masked letter again removes the mask.
+
                                 </li>
                                 <li>
-                                    <strong>Shuffle/Unshuffle:</strong>: Shuffle randomises the letters normally shown on a chart line into a different order. You can shuffle as many times as you like. Unshuffle returns the letter order to the default.
+                                    <strong>Shuffle/Unshuffle:</strong>: Shuffle semi-randomises the letters normally shown on a chart line into a different order. You can shuffle as many times as you like. Unshuffle returns the letter order to the default. You can also use Shuffle to display more letters on the lines that are too long to fit all 5 letters on your display. Shuffle/Unshuffle won't work if you don't assign a shortcut.
                                 </li>
                             </ul>
                         </div>
