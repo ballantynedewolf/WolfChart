@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <!--[if lt IE 10]>
@@ -7,7 +7,7 @@
 
 <html lang=en>
 <head>
-    <title>Chart</title>
+    <title>WolfChart v1.2</title>
     <meta charset="utf-8" />
     <style type="text/css">
        
@@ -1050,6 +1050,9 @@
                 </g>
             </svg>
         </a>
+        <div class="panel-body">
+        Very quick guide: Calibrate and configure your chart using this help guide. Click or tap on white space to scroll the chart up and down, or use the up and down arrows on your keyboard. Click or tap on any letter to mask it. Click it again to unmask.<br />
+        </div>
         <div class="accordion">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
@@ -1062,13 +1065,13 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
-                            The OPTOTYPES fields allow you to select both the letters to be displayed (Optotype), and the preset arrays of letters on each line (Alphabet). Custom OPTOTYPES can be installed (future versions).
+                            The optotypes fields allow you to select both the letters to be displayed, and the order of letters on each line. You cannot change the array nor order of the lines displayed here. Custom Optotypes and Alphabets can be installed.
                             <ul>
                                 <li>
-                                    <strong>Optotype</strong>: Snellen and Sloan are two types of latin sans serif characters in common use. The Snellen letters are 5 high by 4 wide, while the 5x5 grid of the Sloan letters is said to perform better in astigmatism. Landolt C and Tumbling E are used for non-verbal and non-English literate subjects. Landolt C is also useful for cross-cylinder techniques.
+                                    <strong>Optotype</strong>: Select from the standard optotypes and those you have installed yourself.
                                 </li>
                                 <li>
-                                    <strong>Alphabet</strong>: The available options are dependent on the OPTOTYPE selected above. SnellenU and SloanU use a wider selection of letters, but letters may not be of equal readability. BS4724.3 and ETDRS are standard alphabets using fewer letters, but with equal readability. Letters can be shuffled to prevent learning - see below.
+                                    <strong>Alphabet</strong>: The available options are dependent on the OPTOTYPE selected above. SnellenU and SloanU use a wider selection of letters, but letters may not be of equal readability. BS4724.3 and ETDRS are standard alphabets using fewer letters, but with equal readability. Letters can be shuffled to prevent learning - see below
                                 </li>
                             </ul>
                         </div>
@@ -1086,10 +1089,10 @@
                         <div class="panel-body">
                             <ul>
                                 <li>
-                                    <strong>Notation</strong>: Sets the notation type on the VA label on each chart line. Each notation type has a preset array of chart lines. "Metres" is standard Snellen notation eg. 6/6; "Feet" is the US equivalent eg. 20/20; DecimalV is a decimal equivalent of Snellen notation eg. 6/60 = 0.1, 6/12 = 0.5; logMAR is explained here <a href="https://en.wikipedia.org/wiki/LogMAR_chart" target="_blank">https://en.wikipedia.org/wiki/LogMAR_chart.</a>
+                                    <strong>Notation</strong>: Sets the notation type on the VA label on each chart line. Each notation type has a fixed array of chart lines. "Metres" is standard Snellen notation eg. 6/6; "Feet" is the US equivalent eg. 20/20; DecimalV is a decimal equivalent of Snellen notation eg. 6/60 = 0.1, 6/12 = 0.5; logMAR is explained here <a href="https://en.wikipedia.org/wiki/LogMAR_chart" target="_blank">https://en.wikipedia.org/wiki/LogMAR_chart.</a>
                                 </li>
                                 <li>
-                                    <strong>Numerator</strong>: Sets the numerator of only the fraction notation types, in which the numerator nominally describes the test distance. "Actual" is the value entered in Distance rounded to the nearest 0.1, and VA labels will show the proportionally adjusted denominator. Eg if you set the Distance to 3160mm, the VA labels will be 3.2/3.2, 3.2/9.6 etc. "Standard" is either 6 or 20 depending on “Metres” or “Feet” in Notation above. VA labels will display as either 6/ or 20/ regardless of the value in Distance (see below). Please note that it is not advisable to use “Standard” Notation if the Distance (see below) varies a large amount from 6000mm, say outside 5000-7000mm.
+                                    <strong>Numerator</strong>: Sets the numerator of only the fraction notation types, in which the numerator nominally describes the test distance. "Actual" is the value entered in Distance rounded to the nearest 0.1, and VA labels will show the proportionally adjusted denominator. Eg if you set the Distance to 3160mm, the VA labels will be 3.2/3.2, 3.2/9.6 etc. "Standard" is either 6 or 20 depending on the value you set in Notation above. VA labels will display as either 6/ or 20/ regardless of the value in Distance (see below). Please note that it is not advisable to use Standard if the Distance varies a large amount from 6000mm, say outside 5000-7000mm.
 
                                 </li>
                             </ul>
@@ -1106,11 +1109,11 @@
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>  The two CALIBRATION values are the ONLY values that influence the height of the chart lines. The RECORDING values above only change the VA labels on the chart lines, and have no bearing on the chart lines themselves. Please note there are no default calibration values; the chart cannot be used uncalibrated, for obvious reasons.</p>
+                            <p>  The two CALIBRATION values are the ONLY values that influence the display size of the chart lines. The RECORDING values above only change the VA labels on the chart lines, and have no bearing on the chart lines themselves.</p>
                             <ul>
-                                <li><strong>Distance</strong>: Enter the distance from the patient's eye to the letter chart in mm. Eg 6m is 6000mm. If using a mirror to double the test distance, measure BOTH from the patient's eye to the mirror AND from the mirror to the chart and ADD the two distances (and don't forget to check the Mirrored/Direct setting - see below). If you are using Notation value of "Feet", the VA labels will convert Distance to feet to the nearest 0.1, or to 20 depending on the value in Numerator.</li>
+                                <li><strong>Distance</strong>: Enter the distance from the patient's eye to the letter chart in mm. Eg 6m is 6000mm. If using a mirror to double the test distance, measure BOTH from the patient's eye to the mirror AND from the mirror to the chart and ADD the two distances (and don't forget to check the Mirrored/Direct setting - see below). If you are using Notation value of "Feet", Distance will be converted to feet to the nearest 0.1, or to 20 depending on the value in Numerator.</li>
                                 <li>
-                                    <strong>Length of the line below</strong>: Calibrates the chart for the pixel density of the display being used. Measure the line as accurately as possible with a mm ruler: decimal places are allowed. Measure two more times, and if the values vary, enter an average. You will need to review this value if you change display hardware, graphics adapter settings, or if you turn your display between landscape and portrait. Take particular care here if you are using extended display from a laptop, as pixel density may be different between the laptop screen and the external display.
+                                    <strong>Length of the line below</strong>: Calibrates the chart for the pixel density of the display being used. Measure the ruler line as accurately as possible. Measure two more times, and if the values vary, enter an average. You will need to re-check this value if you change display hardware, graphics adapter settings, or if you turn your display from landscape to portrait or vice versa. Take particular care here if you are using extended display from a laptop as pixel density may be different between the laptop screen and the external display.
                                 </li>
                             </ul>
                         </div>
@@ -1143,10 +1146,10 @@
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul>
-                                <li><strong>Sort</strong>: Sets the order of display on first launch and grouping of chart lines on the display. Selecting “Smallest-to-Largest” will usually work better in a primary care setting in a highly developed country because it packs more of the small lines onto the display. In other settings, where average VAs may be lower, “Largest to Smallest” may arrange the lines more conveniently. In either case the only difference is the number of scroll operations the user needs to make. If your display is large enough (about 1m wide by about 1.5m tall at 6m), all 14 lines will display and this setting will be moot.</li>
+                                <!-- <li><strong>Sort</strong>: Lines of the chart are always displayed with the smallest at the bottom. Unless the display is very large (about 1m wide by about 1.5m tall), the chart will display in pages - see SHORTCUTS below. Here you can select whether to display the page of the smallest or largest lines first on refresh or reconfigure. By default, the smallest subtense is 0.5arcmin, the largest 10 arcmin.</li> -->
                                 <li><strong>Mirrored/Direct</strong>: Select "Direct" if the chart is to be viewed directly, otherwise select "Mirrored" and the letters and lines will be reversed, but the labels not. If changing this setting, don't forget to set the Distance (see above) accordingly.</li>
                                 <li>
-                                    <strong>Text colour</strong>: This field accepts any rgba colour value. The first three values are 0-255, representing levels of red, green and blue, where 0 is no colour and 255 is full colour. The fourth value is 0-1, representing opacity where 0 is fully transparent and 1 is fully opaque. Eg. 0,0,0,1 is black; 0,0,0,0.1 is 10% black; 255,0,0,1 is pure red.
+                                    <strong>Text colour</strong>: This field accepts any rgba colour value. Eg. 0,0,0,1 is black; 0,0,0,0.1 is 10% black; 255,0,0,1 is pure red.
                                 </li>
                             </ul>
                         </div>
@@ -1165,13 +1168,11 @@
                             <p> Use these fields to specify keyboard shortcuts for operating the chart.</p>
                             <ul>
                                 <li>
-                                    <strong>Page Up/Page Dn</strong>: If your display is large enough (about 1m wide by about 1.5m tall at 6m), all 14 lines will display, otherwise the chart will divide itself into pages and you will need to scroll through them. Your keyboard up and down arrows will scroll, and here you can also set a Shift + key shortcut eg "u" for up.<br />
-Mouse clicking or tapping on a touch screen can also do paging. Click or tap any whitespace in the top half of the display for page up, the bottom half for page down.<br />
-					Please note that clicking or tapping on a <i>letter masks</i> that letter. Clicking or tapping the masked letter again removes the mask.
-
+                                    <strong>Page Up/Page Dn</strong>: The chart displays upwards from the smallest chart line by default. If your display is large enough (about 1m wide by about 1.5m tall), all 10-14 lines will display, otherwise the chart will divide itself into pages and you will need to use Page Up or Dn to page through them.<br />
+                                    Paging can also be done with a mouse - the whitespaces above and below the chartlines are page up and down buttons.
                                 </li>
                                 <li>
-                                    <strong>Shuffle/Unshuffle:</strong>: Shuffle semi-randomises the letters normally shown on a chart line into a different order. You can shuffle as many times as you like. Unshuffle returns the letter order to the default. You can also use Shuffle to display more letters on the lines that are too long to fit all 5 letters on your display. Shuffle/Unshuffle won't work if you don't assign a shortcut.
+                                    <strong>Shuffle/Unshuffle:</strong>: Shuffle randomises the letters normally shown on a chart line into a different order. You can shuffle as many times as you like. Unshuffle returns the letter order to the default.
                                 </li>
                             </ul>
                         </div>
@@ -1226,7 +1227,12 @@ Mouse clicking or tapping on a touch screen can also do paging. Click or tap any
         </div>
     </div>
     <div style="display:none;" id="list-character">
-        <!--new Snelen-->
+        <!--new Snellen-->
+        <svg id="Snellen_A" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+                <polygon points="0,5 1.5,0 2.5,0 1,5" fill="#000000" />
+                <polygon points="4,5 2.5,0 1.5,0 3,5" fill="#000000" />
+                <polygon points="1,3 3,3 3,4 1,4" fill="#000000" />
+        </svg>
         <svg id="Snellen_D" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M 0.5 5 V 0.5 H 1.5 M 1.5 0.5 C 4 0.5 4 4.5 1.5 4.5 H 0.5"
                   stroke="black" fill="none" stroke-width="1">
@@ -1241,6 +1247,9 @@ Mouse clicking or tapping on a touch screen can also do paging. Click or tap any
         <svg id="Snellen_H" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 1,0 1,2 3,2 3,0 4,0 4,5 3,5 3,3 1,3 1,5 0,5" fill="black" />
         </svg>
+        <svg id="Snellen_L" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <polygon points="0,0 1,0 1,4 4,4 4,5 0,5" fill="#000000" />
+        </svg>
         <svg id="Snellen_N" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 1,0 3,3.1 3,0 4,0 4,5 3,5 1,1.9 1,5 0,5" fill="black" />
         </svg>
@@ -1249,22 +1258,29 @@ Mouse clicking or tapping on a touch screen can also do paging. Click or tap any
                   stroke="black" fill="none" stroke-width="1">
             </path>
         </svg>
-        <svg id="Snellen_R" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="98.73mm" style="margin: 3.49mm;">
+        <svg id="Snellen_R" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M 0.5 5 V 0.5 H 2 M 2 0.5 C 3.5 0.5 3.5 2.5 2 2.5 H 0.5"
                   stroke="black" fill="none" stroke-width="1">
             </path>
-            <polygon points="1.4,3 2.1,3 2.2,2.99 2.3,2.98 2.35,2.97 2.4,2.96 2.45,2.95 2.5,2.94 4,5 2.8,5" fill="black" />
+            <polygon points="1.4,2.995 2.1,2.99 2.2,2.985 2.3,2.97 2.35,2.96 2.4,2.955 2.45,2.945 2.5,2.935 4,5 2.8,5" fill="black" />
         </svg>
         <svg id="Snellen_T" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 4,0 4,1 2.5,1 2.5,5 1.5,5 1.5,1 0,1" fill="black" />
         </svg>
-        <svg id="Snellen_U" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="28.73mm" style="margin: 3.49mm;">
+        <svg id="Snellen_U" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M 0.5 0 V 3 M 0.5 3 C 0.5 5 3.5 5 3.5 3 V 0"
                   stroke="black" fill="none" stroke-width="1">
             </path>
         </svg>
         <svg id="Snellen_V" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 1.1,0 2,3.5 2.9,0 4,0 2.6,5 1.4,5" fill="black" />
+        </svg>
+        <svg id="Snellen_X" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <polygon points="0,0 2.8,5 4,5 1.2,0" fill="#000000" />
+            <polygon points="0,5 2.8,0 4,0 1.2,5" fill="#000000" />
+        </svg>
+        <svg id="Snellen_Y"xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <polygon points="0,0 1.1,0 2,1.5 2.9,0 4,0 2.5,2.5 2.5,5 1.5,5 1.5,2.5" fill="#000000" />
         </svg>
         <svg id="Snellen_Z" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 4,0 4,1 1.4,4 4,4 4,5 0,5 0,4 2.6,1 0,1" fill="black" />
@@ -1289,6 +1305,9 @@ Mouse clicking or tapping on a touch screen can also do paging. Click or tap any
         <svg id="Sloan_K" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 1,0 1,1.9 3.4,0 5,0 2.7,1.8 5,5 3.7,5 1.9,2.5 1,3.2 1,5 0,5" fill="black" />
         </svg>
+        <svg id="Sloan_L" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <polygon points="0,0 1,0 1,4 5,4 5,5 0,5" fill="black" />
+        </svg>
         <svg id="Sloan_N" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,5 0,0 1,0 4,3.5 4,0 5,0 5,5 4,5 1,1.6 1,5" fill="black" />
         </svg>
@@ -1296,19 +1315,31 @@ Mouse clicking or tapping on a touch screen can also do paging. Click or tap any
             <circle class="js-color-fill" cx="2.5" cy="2.5" r="2.5" fill="black" />
             <circle cx="2.5" cy="2.5" r="1.5" fill="rgba(255,255,255,1.0)" />
         </svg>
-        <svg id="Sloan_R" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="68.73mm" style="margin: 3.49mm;">
+        <svg id="Sloan_P" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M 0.5 5 V 0.5 H 3.5 M 3.5 0.5 A 1 1 0 0 1 4.5 1.5 M 4.5 1.5 A 1 1 0 0 1 3.5 2.5 H 0.5"
                   stroke="black" fill="none" stroke-width="1">
             </path>
-            <polygon points="2.2,3 3.7,5 5,5 3.5,3" fill="black" />
+        </svg>
+        <svg id="Sloan_R" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0.5 5 V 0.5 H 3.5 M 3.5 0.5 A 1 1 0 0 1 4.5 1.5 M 4.5 1.5 A 1 1 0 0 1 3.5 2.5 H 0.5"
+                  stroke="black" fill="none" stroke-width="1">
+            </path>
+            <polygon points="2.2,2.995 3.7,5 5,5 3.5,2.995" fill="black" />
         </svg>
         <svg id="Sloan_S" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M 4.5 1.5 A 1 1 0 0 0 3.5 0.5 H 1.5 A 1 1 0 0 0 1.5 2.5 H 3.5 A 1 1 0 0 1 3.5 4.5 H 1.5 A 1 1 0 0 1 0.5 3.5"
                   stroke="black" fill="none" stroke-width="1">
             </path>
         </svg>
+        <svg id="Sloan_T" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <polygon points="0,0 5,0 5,1 3,1 3,5 2,5 2,1 0,1" fill="black" />
+        </svg>
         <svg id="Sloan_V" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 1.1,0 2.5,3.5 3.9,0 5,0 3,5 2,5" fill="black" />
+        </svg>
+        <svg id="Sloan_X" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <polygon points="0,0 3.7,5 5,5 1.3,0" fill="#000000" />
+            <polygon points="0,5 3.7,0 5,0 1.3,5" fill="#000000" />
         </svg>
         <svg id="Sloan_Z" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 5,0 5,1 1.6,4 5,4 5,5 0,5 0,4 3.4,1 0,1" fill="black" />
@@ -1493,7 +1524,7 @@ Mouse clicking or tapping on a touch screen can also do paging. Click or tap any
                 var setHeightFunction = this;
                 var dist = $('#iDistance').val();
                 switch (notation) {
-                    case "1"://metter
+                    case "1"://metres
                         var ar = [0.5, 0.63, 0.79, 1, 1.26, 1.58, 2, 2.51, 3.16, 3.98, 5.01, 6.31, 7.94, 10];
                         //always input mm
                         if (numeratorType == "2") {
@@ -1555,17 +1586,17 @@ Mouse clicking or tapping on a touch screen can also do paging. Click or tap any
                     convertFunction = this;
                 switch (alphabetType) {
                     //set character for each type
-                    case '1':
-                        arrayCharacter = ['Snellen_E,Snellen_H,Snellen_V,Snellen_D,Snellen_F', 'Snellen_U,Snellen_R,Snellen_Z,Snellen_V,Snellen_H', 'Snellen_D,Snellen_P,Snellen_N,Snellen_F,Snellen_R', 'Snellen_V,Snellen_U,Snellen_F,Snellen_R,Snellen_D', 'Snellen_E,Snellen_Z,Snellen_H,Snellen_P,Snellen_V', 'Snellen_H,Snellen_N,Snellen_D,Snellen_R,Snellen_U', 'Snellen_V,Snellen_P,Snellen_H,Snellen_D,Snellen_E', 'Snellen_P,Snellen_V,Snellen_E,Snellen_H,Snellen_R', 'Snellen_N,Snellen_U,Snellen_Z,Snellen_F,Snellen_E', 'Snellen_E,Snellen_H,Snellen_V,Snellen_D,Snellen_F', 'Snellen_U,Snellen_R,Snellen_Z,Snellen_V,Snellen_H', 'Snellen_D,Snellen_P,Snellen_N,Snellen_F,Snellen_R', 'Snellen_V,Snellen_U,Snellen_F,Snellen_R,Snellen_D', 'Snellen_E,Snellen_Z,Snellen_H,Snellen_P,Snellen_V']
+                    case '1'://SnellenU
+                        arrayCharacter = ['Snellen_N,Snellen_L,Snellen_A,Snellen_Y,Snellen_Z', 'Snellen_E,Snellen_F,Snellen_R,Snellen_D,Snellen_U', 'Snellen_T,Snellen_P,Snellen_V,Snellen_H,Snellen_X', 'Snellen_Y,Snellen_E,Snellen_L,Snellen_R,Snellen_T', 'Snellen_F,Snellen_X,Snellen_U,Snellen_D,Snellen_H', 'Snellen_A,Snellen_N,Snellen_P,Snellen_V,Snellen_Z', 'Snellen_H,Snellen_Z,Snellen_T,Snellen_Y,Snellen_D', 'Snellen_V,Snellen_F,Snellen_X,Snellen_N,Snellen_R', 'Snellen_A,Snellen_L,Snellen_P,Snellen_U,Snellen_E', 'Snellen_P,Snellen_U,Snellen_V,Snellen_F,Snellen_Y', 'Snellen_T,Snellen_A,Snellen_H,Snellen_E,Snellen_D', 'Snellen_L,Snellen_R,Snellen_N,Snellen_Z,Snellen_X', 'Snellen_D,Snellen_Y,Snellen_P,Snellen_L,Snellen_N', 'Snellen_Z,Snellen_A,Snellen_T,Snellen_F,Snellen_R']
                         break;
-                    case '2':
-                        arrayCharacter = ['Snellen_E,Snellen_H,Snellen_V,Snellen_D,Snellen_F', 'Snellen_U,Snellen_R,Snellen_Z,Snellen_V,Snellen_H', 'Snellen_D,Snellen_P,Snellen_N,Snellen_F,Snellen_R', 'Snellen_V,Snellen_U,Snellen_F,Snellen_R,Snellen_D', 'Snellen_E,Snellen_Z,Snellen_H,Snellen_P,Snellen_V', 'Snellen_H,Snellen_N,Snellen_D,Snellen_R,Snellen_U', 'Snellen_V,Snellen_P,Snellen_H,Snellen_D,Snellen_E', 'Snellen_P,Snellen_V,Snellen_E,Snellen_H,Snellen_R', 'Snellen_N,Snellen_U,Snellen_Z,Snellen_F,Snellen_E', 'Snellen_E,Snellen_H,Snellen_V,Snellen_D,Snellen_F', 'Snellen_U,Snellen_R,Snellen_Z,Snellen_V,Snellen_H', 'Snellen_D,Snellen_P,Snellen_N,Snellen_F,Snellen_R', 'Snellen_V,Snellen_U,Snellen_F,Snellen_R,Snellen_D', 'Snellen_E,Snellen_Z,Snellen_H,Snellen_P,Snellen_V']
+                    case '2'://BS4274.3
+                        arrayCharacter = ['Snellen_N,Snellen_R,Snellen_P,Snellen_D,Snellen_Z', 'Snellen_U,Snellen_V,Snellen_E,Snellen_H,Snellen_F', 'Snellen_V,Snellen_R,Snellen_H,Snellen_N,Snellen_D', 'Snellen_F,Snellen_P,Snellen_U,Snellen_Z,Snellen_E', 'Snellen_P,Snellen_E,Snellen_F,Snellen_H,Snellen_N', 'Snellen_U,Snellen_Z,Snellen_V,Snellen_R,Snellen_D', 'Snellen_H,Snellen_N,Snellen_R,Snellen_U,Snellen_Z', 'Snellen_E,Snellen_D,Snellen_F,Snellen_P,Snellen_V', 'Snellen_D,Snellen_Z,Snellen_E,Snellen_N,Snellen_R', 'Snellen_H,Snellen_F,Snellen_P,Snellen_V,Snellen_U', 'Snellen_P,Snellen_E,Snellen_H,Snellen_U,Snellen_D', 'Snellen_R,Snellen_Z,Snellen_F,Snellen_N,Snellen_V', 'Snellen_V,Snellen_F,Snellen_E,Snellen_N,Snellen_H', 'Snellen_U,Snellen_D,Snellen_P,Snellen_R,Snellen_Z']
                         break;
                     case '3':
-                        arrayCharacter = ['Sloan_H,Sloan_C,Sloan_Z,Sloan_S,Sloan_V', 'Sloan_C,Sloan_N,Sloan_D,Sloan_Z,Sloan_K', 'Sloan_V,Sloan_O,Sloan_K,Sloan_R,Sloan_N', 'Sloan_R,Sloan_H,Sloan_K,Sloan_N,Sloan_S', 'Sloan_D,Sloan_V,Sloan_O,Sloan_Z,Sloan_C', 'Sloan_H,Sloan_V,Sloan_C,Sloan_R,Sloan_K', 'Sloan_R,Sloan_O,Sloan_D,Sloan_S,Sloan_N', 'Sloan_H,Sloan_D,Sloan_V,Sloan_K,Sloan_C', 'Sloan_V,Sloan_R,Sloan_S,Sloan_O,Sloan_Z', 'Sloan_H,Sloan_C,Sloan_Z,Sloan_S,Sloan_V', 'Sloan_C,Sloan_N,Sloan_D,Sloan_Z,Sloan_K', 'Sloan_V,Sloan_O,Sloan_K,Sloan_R,Sloan_N', 'Sloan_R,Sloan_H,Sloan_K,Sloan_N,Sloan_S', 'Sloan_D,Sloan_V,Sloan_O,Sloan_Z,Sloan_C']
+                        arrayCharacter = ['Sloan_Z,Sloan_V,Sloan_K,Sloan_E,Sloan_S', 'Sloan_H,Sloan_N,Sloan_D,Sloan_C,Sloan_O', 'Sloan_V,Sloan_C,Sloan_Z,Sloan_R,Sloan_H', 'Sloan_E,Sloan_S,Sloan_K,Sloan_O,Sloan_N', 'Sloan_D,Sloan_V,Sloan_R,Sloan_O,Sloan_C', 'Sloan_S,Sloan_Z,Sloan_H,Sloan_K,Sloan_E', 'Sloan_K,Sloan_E,Sloan_H,Sloan_R,Sloan_V', 'Sloan_D,Sloan_C,Sloan_N,Sloan_Z,Sloan_O', 'Sloan_C,Sloan_N,Sloan_O,Sloan_S,Sloan_Z', 'Sloan_V,Sloan_R,Sloan_D,Sloan_H,Sloan_K', 'Sloan_R,Sloan_O,Sloan_D,Sloan_K,Sloan_H', 'Sloan_S,Sloan_V,Sloan_C,Sloan_E,Sloan_Z', 'Sloan_Z,Sloan_S,Sloan_N,Sloan_E,Sloan_D', 'Sloan_R,Sloan_H,Sloan_K,Sloan_O,Sloan_V']
                         break;
                     case '4':
-                        arrayCharacter = ['Sloan_H,Sloan_C,Sloan_Z,Sloan_S,Sloan_V', 'Sloan_C,Sloan_N,Sloan_D,Sloan_Z,Sloan_K', 'Sloan_V,Sloan_O,Sloan_K,Sloan_R,Sloan_N', 'Sloan_R,Sloan_H,Sloan_K,Sloan_N,Sloan_S', 'Sloan_D,Sloan_V,Sloan_O,Sloan_Z,Sloan_C', 'Sloan_H,Sloan_V,Sloan_C,Sloan_R,Sloan_K', 'Sloan_R,Sloan_O,Sloan_D,Sloan_S,Sloan_N', 'Sloan_H,Sloan_D,Sloan_V,Sloan_K,Sloan_C', 'Sloan_V,Sloan_R,Sloan_S,Sloan_O,Sloan_Z', 'Sloan_H,Sloan_C,Sloan_Z,Sloan_S,Sloan_V', 'Sloan_C,Sloan_N,Sloan_D,Sloan_Z,Sloan_K', 'Sloan_V,Sloan_O,Sloan_K,Sloan_R,Sloan_N', 'Sloan_R,Sloan_H,Sloan_K,Sloan_N,Sloan_S', 'Sloan_D,Sloan_V,Sloan_O,Sloan_Z,Sloan_C']
+                        arrayCharacter = ['Sloan_V,Sloan_N,Sloan_T,Sloan_C,Sloan_E', 'Sloan_P,Sloan_X,Sloan_R,Sloan_Z,Sloan_S', 'Sloan_D,Sloan_H,Sloan_O,Sloan_L,Sloan_K', 'Sloan_E,Sloan_T,Sloan_K,Sloan_O,Sloan_D', 'Sloan_C,Sloan_S,Sloan_N,Sloan_R,Sloan_H', 'Sloan_P,Sloan_L,Sloan_X,Sloan_Z,Sloan_V', 'Sloan_N,Sloan_K,Sloan_Z,Sloan_P,Sloan_O', 'Sloan_E,Sloan_V,Sloan_R,Sloan_X,Sloan_D', 'Sloan_T,Sloan_C,Sloan_S,Sloan_L,Sloan_H', 'Sloan_V,Sloan_H,Sloan_D,Sloan_X,Sloan_S', 'Sloan_R,Sloan_K,Sloan_O,Sloan_L,Sloan_E', 'Sloan_Z,Sloan_P,Sloan_C,Sloan_N,Sloan_T', 'Sloan_T,Sloan_E,Sloan_C,Sloan_V,Sloan_R', 'Sloan_H,Sloan_L,Sloan_D,Sloan_P,Sloan_N']
                         break;
                     case '5':
                         arrayCharacter = ['LandoltC_N,LandoltC_S,LandoltC_E,LandoltC_N,LandoltC_W', 'LandoltC_E,LandoltC_E,LandoltC_N,LandoltC_W,LandoltC_S', 'LandoltC_E,LandoltC_S,LandoltC_S,LandoltC_W,LandoltC_N', 'LandoltC_N,LandoltC_W,LandoltC_N,LandoltC_S,LandoltC_E', 'LandoltC_S,LandoltC_W,LandoltC_N,LandoltC_W,LandoltC_E', 'LandoltC_W,LandoltC_E,LandoltC_S,LandoltC_N,LandoltC_S', 'LandoltC_W,LandoltC_N,LandoltC_E,LandoltC_S,LandoltC_W', 'LandoltC_S,LandoltC_N,LandoltC_N,LandoltC_W,LandoltC_E', 'LandoltC_N,LandoltC_E,LandoltC_S,LandoltC_W,LandoltC_W', 'LandoltC_N,LandoltC_S,LandoltC_E,LandoltC_N,LandoltC_W', 'LandoltC_E,LandoltC_E,LandoltC_N,LandoltC_W,LandoltC_S', 'LandoltC_E,LandoltC_S,LandoltC_S,LandoltC_W,LandoltC_N', 'LandoltC_N,LandoltC_W,LandoltC_N,LandoltC_S,LandoltC_E', 'LandoltC_S,LandoltC_W,LandoltC_N,LandoltC_W,LandoltC_E']
@@ -1864,7 +1895,7 @@ Mouse clicking or tapping on a touch screen can also do paging. Click or tap any
                 }
                 else if (distance != parseInt(distance, 10)) {
                     result = true;
-                    message = "Distance must be interged.";
+                    message = "Distance must be interger.";
                 }
                 else if (distance < 3000) {
                     result = true;
