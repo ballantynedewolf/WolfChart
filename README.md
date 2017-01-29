@@ -13,15 +13,20 @@ Now that's out of the way, the objectives are:
     
     
 Ver1.2
+
 Help text updated
+
 Expanded Sloan and Snellen optotypes.
+
 New alphabets for 
   - BS4724.3
   - SnellenU
   - ETDRS
   - SloanU
+
 Improved letter R in both Sloan and Snellen
   - ISSUE need to apply opacity to svg, not elements of svg, so that characters can have overlapping elements
+
 Added text under HELP in guide-section:  "Very quick guide: Calibrate and configure your chart using this help guide. Click or tap on white space to scroll the chart up and down, or use the up and down arrows on your keyboard. Click or tap on any letter to mask it. Click it again to unmask."
 
 Ver1.1
