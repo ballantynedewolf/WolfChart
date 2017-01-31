@@ -445,17 +445,25 @@
             #displaySetting .character-line {
                 position: relative;
                 line-height: 0;
-                font-size: 0;
+                font-size: 0;    
             }
-
+            
+            #displaySetting .duo {
+                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB9AAAAABCAIAAAAJn6IqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RUM0RUZGMDRERUNGMTFFNjg4QUZEQ0MwRDg2MzY5M0MiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUM0RUZGMDVERUNGMTFFNjg4QUZEQ0MwRDg2MzY5M0MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFQzRFRkYwMkRFQ0YxMUU2ODhBRkRDQzBEODYzNjkzQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFQzRFRkYwM0RFQ0YxMUU2ODhBRkRDQzBEODYzNjkzQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsIzWMAAAAAmSURBVHja7NAxAQAACAMg17+anbTGDohAbgAAgHZZBwAA0O4FGADq3gHOIgDUAwAAAABJRU5ErkJggg==");/*red and green stripe*/
+                background-size: 100% 100%;
+                background-repeat:  no-repeat;
+            }
+            
             #displaySetting .char-line {
                 display: inline-block;
+                
             }
 
-            #displaySetting .scroll-div {
+                #displaySetting .scroll-div {
                 height: 100vh;
             }
-
+            
+            
         .clear-both {
             height: 0;
             clear: both;
@@ -1022,6 +1030,14 @@
                         <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm" id="unShuffle" maxlength="1">
                     </div>
                 </div>
+                
+                <div class="form-group">
+                    <label class="col-2">Duochrome</label>
+                    <div class="col-8 ">
+                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm" id="duoBG" maxlength="1">
+                    </div>
+                </div>
+                
             </fieldset>
             <fieldset class="footer-fieldset">
                 <div class="action-button">
@@ -1174,6 +1190,9 @@
                                 <li>
                                     <strong>Shuffle/Unshuffle:</strong>: Shuffle randomises the letters normally shown on a chart line into a different order. You can shuffle as many times as you like. Unshuffle returns the letter order to the default.
                                 </li>
+                                <li>
+                                    <strong>Duochrome:</strong>: Toggles a red/green background on any version of the chart.
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1223,8 +1242,9 @@
             <div class="char-line" id="line-13"></div>
         </div>
         <div data-line="14" class="character-line">
-            <div class="char-line" id="line-14"></div>
+            <div class="char-line" id="line-14"></div>   
         </div>
+        
     </div>
     <div style="display:none;" id="list-character">
         <!--new Snellen-->
@@ -1649,25 +1669,25 @@
                         $('#line-' + (i + 1)).find('svg').show();
                     }
                     else if (convertViewWidth >= svgWidth * 4) {
-                        console.log('4');
+                        //console.log('4');
                         $('#line-' + (i + 1)).find('svg').show();
                         firstChartRemove.hide();                        
                     }
                     else if (convertViewWidth >= svgWidth * 3) {
-                        console.log('3');
+                        //console.log('3');
                         $('#line-' + (i + 1)).find('svg').show();
                         firstChartRemove.hide();
                         fifthChartRemove.hide();
                     }
                      else if (convertViewWidth >= svgWidth * 2) {
-                        console.log('2');
+                        //console.log('2');
                         $('#line-' + (i + 1)).find('svg').show();
                         firstChartRemove.hide();
                         secondChartRemove.hide();
                         fifthChartRemove.hide();
                     }
                     else if (convertViewWidth >= svgWidth) {
-                        console.log('1');
+                        //console.log('1');
                         $('#line-' + (i + 1)).find('svg').show();
                         firstChartRemove.hide();
                         secondChartRemove.hide();
@@ -1675,7 +1695,7 @@
                         fifthChartRemove.hide();
                     }
                     else {
-                        console.log('0');						
+                        //console.log('0');						
                         $('#line-' + (i + 1)).find('svg').hide();
                         $('#line-' + (i + 1)).parent().find('.scoreBox').hide();
 						$('#line-' + (i + 1)).parent().addClass('display-none');
@@ -1699,15 +1719,17 @@
                 //    }
                 //});
             };
-            /*this.ShuffleFunction = function (selector) {
-                $(selector).parent().each(function () {
-                    $(this).children(selector).sort(function () {
-                        return Math.random() - 0.5;
-                    }).detach().appendTo(this);
-                });
-                return this;
-            };*/
-
+            
+            this.YatesShuffle = function (array) {
+				 for (var i = array.length - 1; i > 0; i--) {
+					var j = Math.floor(Math.random() * i); // no +1 here!
+					var temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}   
+				return array;
+            };
+            
             this.UnShuffleFunction = function (oldCharacter) {
                 //$('#displaySetting').html(oldCharacter);
                 for (i = 0; i < oldCharacter.length; i++) {
@@ -1717,22 +1739,9 @@
                 };
             };
 
-            this.YatesShuffle = function (array) {
-                //var m = array.length, t, i;              
-                //while (m) {
-                //    i = Math.floor(Math.random() * m--);
-                //    t = array[m];
-                //    array[m] = array[i];
-                //    array[i] = t;
-                //}
-                //return array;
-				 for (var i = array.length - 1; i > 0; i--) {
-					var j = Math.floor(Math.random() * i); // no +1 here!
-					var temp = array[i];
-					array[i] = array[j];
-					array[j] = temp;
-				}   
-				return array;
+            this.duoBGFunction = function () {
+                //alert("duochrome function");
+                $('.character-line').toggleClass('duo');
             };
 
             this.SortCharacterOption = function () {
@@ -1755,7 +1764,7 @@
                     }
                 };
             };
-            this.ShortCutKey = function (pageUp, padeDown, shuffle, unShuffle) {
+            this.ShortCutKey = function (pageUp, padeDown, shuffle, unShuffle, duoBG) {
                 var callBack = this;
                 document.body.onkeydown = function (e) {
                     if (e.keyCode == 38) {
@@ -1810,29 +1819,29 @@
                                     fifthChartRemove = $(this).find('svg:nth-child(5)');
                                 var convertViewWidth = callBack.ConvertMMToPixel(viewWidth);
                                 if (convertViewWidth >= svgWidth * 5) {
-                                    console.log('show all');
+                                    //console.log('show all');
                                     $(this).find('svg').show();
                                 }
                                 else if (convertViewWidth >= svgWidth * 4) {
-                                    console.log('4');
+                                    //console.log('4');
                                     $(this).find('svg').show();
                                     firstChartRemove.hide();                        
                                 }
                                 else if (convertViewWidth >= svgWidth * 3) {
-                                    console.log('3');
+                                    //console.log('3');
                                     $(this).find('svg').show();
                                     firstChartRemove.hide();
                                     fifthChartRemove.hide();
                                 }
                                  else if (convertViewWidth >= svgWidth * 2) {
-                                    console.log('2');
+                                    //console.log('2');
                                     $(this).find('svg').show();
                                     firstChartRemove.hide();
                                     secondChartRemove.hide();
                                     fifthChartRemove.hide();
                                 }
                                 else if (convertViewWidth >= svgWidth) {
-                                    console.log('1');
+                                    //console.log('1');
                                     $(this).find('svg').show();
                                     firstChartRemove.hide();
                                     secondChartRemove.hide();
@@ -1840,7 +1849,7 @@
                                     fifthChartRemove.hide();
                                 }
                                 else {
-                                    console.log('0');
+                                    //console.log('0');
                                     $(this).find('svg').hide();
                                     $(this).parent().find('.scoreBox').hide();
 									$(this).parent().addClass('display-none');
@@ -1858,6 +1867,13 @@
                             callBack.SetPositionScore(true);
                             //callBack.DivideScrollPage();
                             //$("html, body").animate({ scrollTop: 0 }, "fast");
+                            e.preventDefault();
+                        };
+                    };
+                    
+                    if (duoBG != "") {
+                        if ((e.shiftKey && e.keyCode == duoBG)) {
+                            callBack.duoBGFunction();
                             e.preventDefault();
                         };
                     };
@@ -1899,7 +1915,7 @@
                 }
                 else if (distance < 3000) {
                     result = true;
-                    message = "Distance must be larger or equal to 3000.";
+                    message = "Distance must be greater than or equal to 3000.";
                 }
                 if (result) {
                     $('#iDistance').parent().append('<span class="errorMsg errorDistance">' + message + '</span>');
@@ -1985,6 +2001,7 @@
                 localStorage.setItem("PageDown", localPageDown);
                 localStorage.setItem("Shuffle", localShuffle);
                 localStorage.setItem("Unshuffle", localUnShuffle);
+                localStorage.setItem("duoBG", localduoBG);
             };
             this.SetPositionScore = function (isSmall) {
                 //set margin for score text
@@ -2026,7 +2043,7 @@
                 var setConfigDefault = this;
                 $('#reset').on('click', function () {
                     setConfigDefault.SetConfingDefault();
-                    //set varible for local storage
+                    //set variable for local storage
                     notation = $('#sNotation').val(),
                     localOptotype = $('#sOptotype').val(),
                     localsMirrored = $('#sMirrored').val(),
@@ -2034,6 +2051,7 @@
                     localPageDown = $('#pageDown').val(),
                     localShuffle = $('#shuffle').val(),
                     localUnShuffle = $('#unShuffle').val(),
+                    localduoBG = $('#duoBG').val(),
                     localDistance = $('#iDistance').val().trim(),
                     viewWidth = $('#iViewWidth').val().trim(),
                     viewHight = $('#iViewHeight').val().trim(),
@@ -2043,9 +2061,11 @@
                     sPageUp = $('#pageUp').val().trim().toUpperCase().charCodeAt(0),
                     sPageDown = $('#pageDown').val().trim().toUpperCase().charCodeAt(0),
                     sShuffle = $('#shuffle').val().trim().toUpperCase().charCodeAt(0),
+                    sduoBG = $('#duoBG').val().trim().toUpperCase().charCodeAt(0);
                     lenghOfline = $('#iLengOfLine').val().trim(),
                     displayOrder = $('#display').val(),
                     sUnShuffle = $('#unShuffle').val().trim().toUpperCase().charCodeAt(0);
+                    sduoBG = $('#duoBG').val().trim().toUpperCase().charCodeAt(0);
                     setConfigDefault.SetLocalStorage();
                     $('#displaySetting > div').find('.char-line').html('');
                     $('#displaySetting > div').find('.scoreBox').remove();
@@ -2074,7 +2094,8 @@
                     gPageUp = localStorage.getItem("PageUp"),
                     gPageDown = localStorage.getItem("PageDown"),
                     gShuffle = localStorage.getItem("Shuffle"),
-                    gUnshuffle = localStorage.getItem("Unshuffle");
+                    gUnshuffle = localStorage.getItem("Unshuffle"),
+                    gduoBG = localStorage.getItem("duoBG");
                 //set value for input
                 $('#sOptotype').val(gOptotype).change();
                 $('#sAlphabet').val(gAlphabet);
@@ -2092,6 +2113,7 @@
                 $('#pageDown').val(gPageDown);
                 $('#shuffle').val(gShuffle);
                 $('#unShuffle').val(gUnshuffle);
+                $('#duoBG').val(gduoBG);
             };
             this.SetConfingDefault = function () {
                 var functionColorPicker = this;
@@ -2112,6 +2134,7 @@
                 $('#pageDown').val('');
                 $('#shuffle').val('');
                 $('#unShuffle').val('');
+                $('#duoBG').val('');
             };
             this.SetColorPicker = function (color) {
                 $('#cp3').colorpicker({
@@ -2270,7 +2293,7 @@
                     }
                 });
             };
-            this.charaterCLick = function () {
+            this.characterClick = function () {
                 $(document).on('click', '.char-line svg', function () {
                     if ($(this).hasClass('active')) {
                         $(this).removeClass('active');
@@ -2281,6 +2304,7 @@
                     }
                 })
             };
+            
             this.UpdateSetting = function () {
                 var callBackFunction = this;
                 $('#updateSetting').on('click', function () {
@@ -2292,6 +2316,7 @@
                     localPageDown = $('#pageDown').val(),
                     localShuffle = $('#shuffle').val(),
                     localUnShuffle = $('#unShuffle').val(),
+                    localduoBG = $('#duoBG').val(),
                     localDistance = $('#iDistance').val().trim(),
                     viewWidth = $('#iViewWidth').val().trim(),
                     viewHight = $('#iViewHeight').val().trim(),
@@ -2304,6 +2329,7 @@
                     lenghOfline = $('#iLengOfLine').val().trim(),
                     displayOrder = $('#display').val(),
                     sUnShuffle = $('#unShuffle').val().trim().toUpperCase().charCodeAt(0);
+                    sduoBG = $('#duoBG').val().trim().toUpperCase().charCodeAt(0);
                     //reset div
                     $('#displaySetting').html('<div data-line="1" class="character-line"><div class="char-line" id="line-1"></div></div><div data-line="2" class="character-line"><div class="char-line" id="line-2"></div></div>'
                                             + '<div data-line="3" class="character-line"><div class="char-line" id="line-3"></div></div><div data-line="4" class="character-line"><div class="char-line" id="line-4"></div></div>'
@@ -2339,7 +2365,7 @@
                         callBackFunction.GenerateCharacter(alphabetType);
                         //set shorcut
 
-                        callBackFunction.ShortCutKey(sPageUp, sPageDown, sShuffle, sUnShuffle);
+                        callBackFunction.ShortCutKey(sPageUp, sPageDown, sShuffle, sUnShuffle, sduoBG);
                         //close setting bar
                         $('.setting-bar').removeClass('active');
                         $('.guide-section').removeClass('active');
@@ -2500,7 +2526,7 @@
                     //console.log(e.color.toString('rgba'));
                 });
                 this.ScrollOnClick();
-                this.charaterCLick();
+                this.characterClick();
                 // this.ValidateFunction();
             };
         };
