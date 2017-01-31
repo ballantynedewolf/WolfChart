@@ -1,4 +1,4 @@
-# WolfChart v1.2
+# WolfChart v1.3
 by Ballantyne de Wolf and Offspring Digital
 
 This is professional optometrist/optician/ophthalmologist tool for measuring visual acuity. I cannot be used safely by the general public.
@@ -12,8 +12,11 @@ Now that's out of the way, the objectives are:
      a high street level web designer can achieve it. The task is to write valid svg and xml and change one line in the index.htm
     
     
-Ver1.2
+Ver1.3
+Added duochrome function with a shortcut key to be assigned in config form.
+Help and very quick guide updated
 
+Ver1.2
 Help text updated
 
 Expanded Sloan and Snellen optotypes.
