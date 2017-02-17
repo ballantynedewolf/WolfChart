@@ -1,4 +1,4 @@
-# WolfChart v1.3
+# WolfChart v1.4
 by Ballantyne de Wolf and Offspring Digital
 
 This is professional optometrist/optician/ophthalmologist tool for measuring visual acuity. I cannot be used safely by the general public.
@@ -16,7 +16,7 @@ Ver1.4
  - improved consistency of svg elements to use only filled paths and polygons, no strokes.
  - improved implementation of rgba to permit overlapping elements - opacity is now applied to the whole svg element, not its child elements
  - larger, more readable VA labels
- - Shapes optotype (this is a prototype optotype while we work out the IP of more well-known preschool tests)
+
 
 Ver1.3
 Added duochrome function with a shortcut key to be assigned in config form.
