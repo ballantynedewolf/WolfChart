@@ -406,15 +406,30 @@
             border-radius: 5px;
             color: #000;
             padding: 4px 10px;
-            transition: all 0.3s linear;
+            transition: all 0.1s linear;
             border: 1px solid transparent;
             left: -50px !important;
+            cursor: pointer;
+            -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
         }
 
             .scoreBox:hover {
                 box-shadow: 0 0 3px rgba(0,0,0,0.3);
                 border-color: red;
-                color: red;
+                user-select: none;
+                z-index: 9;
+            }
+            .scoreBox.active {
+                box-shadow: 0 0 3px rgba(0,0,0,0.3);
+                background-color: red;
+                color: white;
                 z-index: 9;
             }
 
@@ -442,6 +457,7 @@
             text-align: center;
             margin: 0 auto;
         }
+
 
             #displaySetting .character-line {
                 position: relative;
@@ -826,6 +842,24 @@
             top: 0;
             background: rgba(0,0,0,0.3);
         }
+        .setting-button {
+             border: 2px solid #666666;
+            border-radius: 5px;
+            display: block;
+            padding: 2px 5px;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 42px;
+            z-index: 9;
+        }
+        .setting-button span {
+            height: 2px;
+            display: block;
+            background: #666666;
+            border-radius: 3px;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -833,34 +867,9 @@
     <div id="dpi"></div>
     <!--setting bar-->
     <a class="setting-button" href="#setting-bar">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="1 1 16 16" enable-background="new 1 1 16 16" xml:space="preserve" style="width:50px;height: 50px">
-        <g id="Layer_7" display="none">
-        <rect x="1" y="1" display="inline" width="16" height="16" />
-        </g>
-        <g id="Layer_33">
-        <g id="Symbols_4_">
-        <g id="Side-Nav_2_" transform="translate(-16.000000, -212.000000)">
-        <g id="Group-2_2_">
-        <g transform="translate(0.000000, 205.000000)">
-        <g id="Fill-93" transform="translate(16.000000, 7.000000)">
-        <path fill="#68707D" d="M14.5,9.3c0,0.2-0.1,0.3-0.3,0.3h-1v1c0,0.2-0.1,0.3-0.3,0.3s-0.3-0.1-0.3-0.3v-1h-1
-                                    c-0.2,0-0.3-0.1-0.3-0.3V8c0-0.2,0.1-0.3,0.3-0.3h1V3.5c0-0.2,0.1-0.3,0.3-0.3s0.3,0.1,0.3,0.3v4.2h1c0.2,0,0.3,0.1,0.3,0.3
-                                    V9.3z M12.9,14.9c-0.7,0-1.3-0.6-1.3-1.3s0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3S13.6,14.9,12.9,14.9L12.9,14.9z M10.6,6.1
-                                    c0,0.2-0.1,0.3-0.3,0.3h-1v4.2C9.3,10.8,9.2,11,9,11c-0.2,0-0.3-0.1-0.3-0.3V6.4h-1c-0.2,0-0.3-0.1-0.3-0.3V4.8
-                                    c0-0.2,0.1-0.3,0.3-0.3h1v-1c0-0.2,0.1-0.3,0.3-0.3c0.2,0,0.3,0.1,0.3,0.3v1h1c0.2,0,0.3,0.1,0.3,0.3V6.1z M9,14.9
-                                    c-0.7,0-1.3-0.6-1.3-1.3s0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3S9.7,14.9,9,14.9L9,14.9z M6.7,8c0,0.2-0.1,0.3-0.3,0.3h-1v2.3
-                                    c0,0.2-0.1,0.3-0.3,0.3c-0.2,0-0.3-0.1-0.3-0.3V8.4h-1C3.6,8.4,3.5,8.2,3.5,8V6.7c0-0.2,0.1-0.3,0.3-0.3h1V3.5
-                                    c0-0.2,0.1-0.3,0.3-0.3c0.2,0,0.3,0.1,0.3,0.3v2.9h1c0.2,0,0.3,0.1,0.3,0.3V8z M5.1,14.9c-0.7,0-1.3-0.6-1.3-1.3
-                                    s0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3S5.8,14.9,5.1,14.9L5.1,14.9z M16.1,1.2H1.9c-0.2,0-0.3,0.1-0.3,0.3v14.9
-                                    c0,0.2,0.1,0.3,0.3,0.3h14.3c0.2,0,0.3-0.1,0.3-0.3V1.5C16.5,1.3,16.3,1.2,16.1,1.2L16.1,1.2z" />
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </svg>
+        <span></span>
+        <span></span>
+        <span></span>
     </a>
     <div class="setting-bar" id="setting-bar">
         <a class="close" href="#">
@@ -2273,16 +2282,36 @@
             };
             this.characterClick = function () {
                 $(document).on('click', '.char-line svg', function () {
+                    var charaterSVG = $('.char-line svg');
                     if ($(this).hasClass('active')) {
                         $(this).removeClass('active');
-                        $('.char-line svg').removeClass('disable')
+                        charaterSVG.removeClass('disable')
                     } else {
                         $(this).addClass('active');
-                        $('.char-line svg').addClass('disable')
+                        charaterSVG.addClass('disable')
                     }
                 })
             };
-            
+            this.scoreBoxClick = function () {
+                 $(document).on('click', '.character-line .scoreBox', function () {
+                    var lineSVG = $(this).prev();
+                    var charaterLine = $('.character-line .char-line');
+                    var charaterSVG = $('.char-line svg');
+                    if($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                        charaterLine.css('visibility','visible')
+                        charaterSVG.removeClass('disable active');
+
+                    } else {
+                    $('.character-line .scoreBox').removeClass('active');
+                        $(this).addClass('active');
+                        charaterLine.css('visibility','hidden')
+                        lineSVG.css('visibility','visible');
+                        charaterSVG.removeClass('disable active')
+                    }
+                   
+                })
+            };
             this.UpdateSetting = function () {
                 var callBackFunction = this;
                 $('#updateSetting').on('click', function () {
@@ -2505,6 +2534,7 @@
                 });
                 this.ScrollOnClick();
                 this.characterClick();
+                this.scoreBoxClick();
                 // this.ValidateFunction();
             };
         };
