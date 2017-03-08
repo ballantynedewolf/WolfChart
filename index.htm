@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <!--[if lt IE 10]>
@@ -1019,35 +1019,34 @@
                 <div class="form-group">
                     <label class="col-2">Page Up</label>
                     <div class="col-8 ">
-                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm" id="pageUp" maxlength="1">
+                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm js-shortkey" id="pageUp" maxlength="1">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-2">Page Down</label>
                     <div class="col-8 ">
-                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm" id="pageDown" maxlength="1">
+                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm js-shortkey" id="pageDown" maxlength="1">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-2">Shuffle</label>
                     <div class="col-8 ">
-                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm" id="shuffle" maxlength="1">
+                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm js-shortkey" id="shuffle" maxlength="1">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-2">Unshuffle</label>
                     <div class="col-8 ">
-                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm" id="unShuffle" maxlength="1">
+                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm js-shortkey" id="unShuffle" maxlength="1">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="col-2">Duochrome</label>
                     <div class="col-8 ">
-                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm" id="duoBG" maxlength="1">
+                        <span class="keyboard">Shift + </span><input type="text" class="form-control input-sm js-shortkey" id="duoBG" maxlength="1">
                     </div>
                 </div>
-                
             </fieldset>
             <fieldset class="footer-fieldset">
                 <div class="action-button">
@@ -1971,7 +1970,30 @@
                 }
                 return result;
             };
-
+            this.ValidateDuplicateKey = function (element) {
+                $('.errorShortKey').remove();
+                var arr = $('.js-shortkey').map(function () {
+                    return this.value; // $(this).val()
+                }).get();
+                function countInArray(array, what) {
+                    return array.filter(item => item == what).length;
+                }
+                var result = false;
+                var currentVal = $(element).val();
+                if (currentVal.trim() != "") {
+                    if (countInArray(arr, currentVal) > 1) {
+                        result = true;
+                    }
+                }
+                if (result) {
+                    $(element).parent().append('<span class="errorMsg errorShortKey">ShortKey ' + currentVal + ' is duplicate. Please try again.</span>');
+                    $(element).val("");
+                }
+                else {
+                    $(element).parent().find('.errorShortKey').remove();
+                }
+                return result;
+            };
             this.SetLocalStorage = function () {
                 localStorage.setItem("Optotype", localOptotype);
                 localStorage.setItem("Alphabet", alphabetType);
@@ -2508,6 +2530,9 @@
                     else {
                         $('#updateSetting').removeClass('disabled-btn');
                     }
+                });
+                $('.js-shortkey').on('blur', function () {
+                    validateElement.ValidateDuplicateKey(this);
                 });
                 this.SelectOptotype();
                 this.ColorPicker();
