@@ -16,6 +16,8 @@ Ver1.4
  - improved consistency of svg elements to use only filled paths and polygons, no strokes.
  - improved implementation of rgba to permit overlapping elements - opacity is now applied to the whole svg element, not its child elements
  - larger, more readable VA labels
+ - shortcut keys validated as unique
+ - scoreBox label element click/tap masks that line
 
 
 Ver1.3
