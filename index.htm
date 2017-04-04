@@ -1976,7 +1976,7 @@
                     return this.value; // $(this).val()
                 }).get();
                 function countInArray(array, what) {
-                    return array.filter(item => item == what).length;
+                   return array.filter(function(item) { return item == what;}).length;
                 }
                 var result = false;
                 var currentVal = $(element).val();
