@@ -1,6 +1,10 @@
 # WolfChart v1.4
 by Ballantyne de Wolf and Offspring Digital
 
+Supported by
+
+<img src="https://github.com/ballantynedewolf/WolfChart/blob/master/Browserstack-logo%402x.png" height="50px" align="baseline">
+
 This is a professional optometrist/optician/ophthalmologist tool for measuring visual acuity. It cannot be used safely by the general public.
 If you have any concerns about your vision or eyes, consult a qualified professional.
 
