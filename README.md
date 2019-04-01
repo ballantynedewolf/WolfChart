@@ -1,28 +1,26 @@
 # WolfChart v1.4
 by Ballantyne de Wolf and Offspring Digital
 
-Supported by
-
-<img src="https://github.com/ballantynedewolf/WolfChart/blob/master/Browserstack-logo%402x.png" height="50px" align="baseline">
-
-This is a professional optometrist/optician/ophthalmologist tool for measuring visual acuity. It cannot be used safely by the general public.
+This is professional optometrist/optician/ophthalmologist tool for measuring visual acuity. I cannot be used safely by the general public.
 If you have any concerns about your vision or eyes, consult a qualified professional.
 
 Now that's out of the way, the objectives are:
   1. Clinically relevant, scientifically supported visual acuity measurement in the widest possible range of clinical settings
   2. Open source with GNU licence
   3. Can be used on a wide variety of screen hardware
-  3. Customisable optotypes and alphabets to come in version 2
+  3. Customisable optotypes and alphabets to come eg Hebrew, Chinese, Thai, Cyrillic etc
+    
+    
+Ver1.6
+ - subtense array now to 3 decimal places, enabling
+ - improved scoring for Actual numerators - rounding previously made the numerator too complex and denominator different if using Actual vs Standard numerator
+ - cleaned up some superfluous code lines in this area.
+ - changed the Snellen R to try and make it more readable - in the field it was proving less readable than the other Snellens. Made the oblique stem more vertical.
 
-# How to use WolfChart without an internet connection
-As WolfChart is 100% Javascript, once it is open in your browser, no internet connection is needed. You will need to turn off any script blocking for WolfChart and do not prevent it from using Local Storage.
- - Extract this archive to a location on your computer or network where it is unlikely to get moved in a hurry.
- - Drag the **index.htm** file from this archive into your browser or paste its path into the browser address bar or use the browser's File>Open File menu option to search for it.
- - Use the menu button top right to configure and calibrate your chart as normal
- - Might be a good idea to bookmark it so that you can return quickly to WolfChart. Your configuration and calibration settings are kept even when you close the browser.
- - Check periodically for updates when you have an internet connection. The version you are using is in the page title.
+Ver1.5
+ - PWA version
+ - new alphabet for Snellen BS4274.3 - less random
 
-# Version notes    
 Ver1.4
  - various bug fixes
  - improved consistency of svg elements to use only filled paths and polygons, no strokes.
