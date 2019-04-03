@@ -12,7 +12,7 @@ var version = 'v1::';
    then the service worker won't be installed either.
 */
 var offlineFundamentals = [
-    'test_index.htm',
+    'index.htm',
     'manifest.json'
 ];
 
