@@ -1093,13 +1093,13 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
-                            The optotypes fields allow you to select both the letters to be displayed, and the order of letters on each line. You cannot change the array nor order of the lines displayed here. Custom Optotypes and Alphabets can be installed.
+                            The optotypes fields allow you to select both the letters to be displayed, and the order of letters on each line. You cannot change the array nor order of the lines displayed here.
                             <ul>
                                 <li>
                                     <strong>Optotype</strong>: Select from the standard optotypes and those you have installed yourself.
                                 </li>
                                 <li>
-                                    <strong>Alphabet</strong>: The available options are dependent on the OPTOTYPE selected above. SnellenU and SloanU use a wider selection of letters, but letters may not be of equal readability. BS4724.3 and ETDRS are standard alphabets using fewer letters, but with equal readability. Letters can be shuffled to prevent learning - see below
+                                    <strong>Alphabet</strong>: The available options are dependent on the OPTOTYPE selected above. SnellenU and SloanU use a wider selection of letters, but letters may not be of equal readability. BS4724.3 and ETDRS are standard alphabets using fewer letters, but with equal readability. Letters can be shuffled to prevent learning and increase repeatability - see below
                                 </li>
                             </ul>
                         </div>
@@ -1117,10 +1117,10 @@
                         <div class="panel-body">
                             <ul>
                                 <li>
-                                    <strong>Notation</strong>: Sets the notation type on the VA label on each chart line. Each notation type has a fixed array of chart lines. "Metres" is standard Snellen notation eg. 6/6; "Feet" is the US equivalent eg. 20/20; DecimalV is a decimal equivalent of Snellen notation eg. 6/60 = 0.1, 6/12 = 0.5; logMAR is explained here <a href="https://en.wikipedia.org/wiki/LogMAR_chart" target="_blank">https://en.wikipedia.org/wiki/LogMAR_chart.</a>
+                                    <strong>Notation</strong>: Sets the notation type on the VA label on each chart line. Regardless of notation or optotype, WolfChart uses the standard logMAR array of subtenses; from -0.3(6/3 or 2/10) to 1 (6/60 or 20/200), with each 3 lines doubling the subtense. "Metres" is standard Snellen notation eg. 6/6; "Feet" is the imperialist equivalent eg. 20/20; DecimalV is a the European standard (EN ISO 8596) eg. 6/60 = 0.1, 6/12 = 0.5; logMAR is explained here <a href="https://en.wikipedia.org/wiki/LogMAR_chart" target="_blank">https://en.wikipedia.org/wiki/LogMAR_chart.</a>
                                 </li>
                                 <li>
-                                    <strong>Numerator</strong>: Sets the numerator of only the fraction notation types. If Notation is set to logMar or DecimalV, this setting makes no difference. "Actual" is the value entered in Distance (see below) rounded to the nearest 0.1m or 1ft, and VA labels will show this rounded numerator and a proportionally adjusted denominator. "Standard" is either 6 or 20 depending whether Notation is set to Metres or Feet above. VA labels will display as either 6/ or 20/ regardless of the value in Distance. Please note that it is not advisable to use Standard if the Distance varies a large amount from 6000mm(20ft), say outside 5000-7000mm(16-23ft). The numerator should be the tested distance or near to it.
+                                    <strong>Numerator</strong>: Sets the numerator of the fraction notation types only. If Notation is set to logMar or DecimalV, this setting makes no difference. "Actual" is the value entered in Distance (see below) rounded to the nearest 0.1m or 0.5ft, and VA labels will show this rounded numerator, a ! instead of a /, and a proportionally adjusted denominator. "Standard" is either 6 or 20 depending whether Notation is set to Metres or Feet above. VA labels will display as either 6/ or 20/ regardless of the value in Distance. Please note that it is not advisable to use Standard if the Distance varies a large amount from 6000mm, say outside 5500-6500mm. The numerator should be the tested distance or near to it.
 
                                 </li>
                             </ul>
@@ -1552,7 +1552,7 @@
                                 } else {
                                 var score = Math.round(ar[a] * numerator);    
                                 }
-                                var str = numerator + "/" + score;
+                                var str = numerator + "!" + score;
                                 chartArray[a] = [ar[a], str];
                             }
                         }
@@ -1566,10 +1566,10 @@
                             }
                         }
                         else {
-                            var numerator = Math.round(dist * 3.28084 / 1000);
+                            var numerator = Math.round(dist * 3.28084 / 500)/2;
                             for (a = 0; a < ar.length; a++) {
                                 var score = Math.round(ar[a] * numerator);
-                                var str = numerator + "/" + score;
+                                var str = numerator + "!" + score;
                                 chartArray[a] = [ar[a], str];
                             }
                         }

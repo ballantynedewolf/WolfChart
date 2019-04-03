@@ -1,11 +1,11 @@
 # WolfChart v1.6
 by Ballantyne de Wolf and Offspring Digital
 
-This is professional optometrist/optician/ophthalmologist tool for measuring visual acuity. I cannot be used safely by the general public.
+This is professional optometrist/optician/ophthalmologist tool for measuring visual acuity. It cannot be used safely by the general public.
 If you have any concerns about your vision or eyes, consult a qualified professional.
 
 Now that's out of the way, the objectives are:
-  1. Clinically relevant, scientifically supported visual acuity measurement in the widest possible range of clinical settings
+  1. Clinically relevant, scientifically supported visual acuity measurement in the widest possible range of clinical and research settings
   2. Open source with GNU licence
   3. Can be used on a wide variety of screen hardware
   3. Customisable optotypes and alphabets to come eg Hebrew, Chinese, Thai, Cyrillic etc
@@ -13,8 +13,9 @@ Now that's out of the way, the objectives are:
     
 Ver1.6
  - subtense array now to 3 decimal places, enabling
- - improved scoring for Actual numerators - rounding previously made the numerator too complex and denominator different if using Actual vs Standard numerator
+ - improved scoring for Actual Numerators - fractional notations are rounded to 0.1m or 0.5ft and the / is replaced by a ! when Actual is selected.
  - cleaned up some superfluous code lines in this area.
+ - updated help topics
  - changed the Snellen R to try and make it more readable - in the field it was proving less readable than the other Snellens. Made the oblique stem more vertical.
 
 Ver1.5
