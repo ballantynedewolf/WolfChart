@@ -11,6 +11,14 @@ Now that's out of the way, the objectives are:
   3. Customisable optotypes and alphabets to come eg Hebrew, Chinese, Thai, Cyrillic etc
     
     
+Ver1.7
+ - added colour picker for background that defaults to white. This is maybe only useful in a research environment.
+ - added Vanishing Sloan optotype/Vanishing ETDRS alphabet.When selected, body background colour is same as optotype colour but 0.5 opacity. Used jquery.not() to exempt white filled elements from optotype color. Body bg reverts to stored with all other optotypes.
+ - Added prototype Shapes optotype
+ - Set color of scoreBox text to be optotype color with opacity 1, so that it will always be the same or more visible than the optotype itself.
+ - thinking of replacing all the fills in the svg raw materials section with classes and then using jquery to fill. Could be more flexible that way?
+ - simplified css in .duo to try and eliminate white gaps in duochrome backgrounds.
+
 Ver1.6
  - subtense array now to 3 decimal places, enabling
  - improved scoring for Actual Numerators - fractional notations are rounded to 0.1m or 0.5ft and the / is replaced by a ! when Actual is selected.

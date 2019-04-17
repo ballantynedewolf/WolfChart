@@ -7,7 +7,7 @@
 
 <html lang=en>
 <head>
-    <title>WolfChart v1.6</title>
+    <title>WolfChart v1.7</title>
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAdCAMAAAD8QJ61AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADBQTFRFqamphoaGxcXF1tbW9/f3U1NTLi4uurq64+PjnZ2ddHR07Ozsk5OTAAAA////////NZC25gAAABB0Uk5T////////////////////AOAjXRkAAAFRSURBVHjadFNZYsUgCATU4AJ6/9sWFVP72vJhCA4wLMK4hUoYHwKXHgp3xj4I+C9AQw6994ZIHZjpF6DGviTPL2YuF4ARGofoCJfSDyDX3CPUzuXc1XlAPAB0c3pcacozC0rcAHeMj4IH0LotAjcAVB8PoOqxpBtAyDOYPewAqu5U4oCSPYOZNU1tKk4nWYRDXXRdPM/66nZrGF5A0h9ySsOTIv68PzkMELEtOh+AzXcCRsS8M6QyD+OQxI6rFeK1W5+qNrSPvDkwOsBrsMhozutntpvZGhXhroHq0VZP0AB5QjOk3QA+0Af3zGE09lYuZ5q4BOS7gfe4eycj+uzYPovJYQSp4SyCyilwjS37yr0xzP2d5AxwdjLQPRDrbFi8iN6txskpeztsd4SsvRG/1z4ai1BFxEAFZT4vKNLudwE2lRHJctH/T8+klPJh+RJgAA5sKxGB5VuMAAAAAElFTkSuQmCC" />
     <meta charset="utf-8" />
     <link rel="manifest" href="/manifest.json">
@@ -432,7 +432,7 @@
             .scoreBox.active {
                 box-shadow: 0 0 3px rgba(0,0,0,0.3);
                 background-color: red;
-                color: white;
+                color: rgba(0,0,0,1);
                 z-index: 9;
             }
 
@@ -470,8 +470,7 @@
             
             #displaySetting .duo {
                 background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB9AAAAABCAIAAAAJn6IqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RUM0RUZGMDRERUNGMTFFNjg4QUZEQ0MwRDg2MzY5M0MiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUM0RUZGMDVERUNGMTFFNjg4QUZEQ0MwRDg2MzY5M0MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFQzRFRkYwMkRFQ0YxMUU2ODhBRkRDQzBEODYzNjkzQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFQzRFRkYwM0RFQ0YxMUU2ODhBRkRDQzBEODYzNjkzQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsIzWMAAAAAmSURBVHja7NAxAQAACAMg17+anbTGDohAbgAAgHZZBwAA0O4FGADq3gHOIgDUAwAAAABJRU5ErkJggg==");/*red and green stripe*/
-                background-size: 100% 100%;
-                background-repeat:  no-repeat;
+                background-size: 100%;
             }
             
             #displaySetting .char-line {
@@ -667,6 +666,7 @@
             display: inline-block;
             cursor: pointer;
             vertical-align: text-top;
+            border: solid 2px rgba(128,128,128,1);
         }
 
         .colorpicker.colorpicker-inline {
@@ -903,7 +903,9 @@
                             <option value="1">Snellen</option>
                             <option value="2">Sloan</option>
                             <option value="3">LandoltC</option>
-                          <option value="4">TumblingE</option>
+                            <option value="4">TumblingE</option>
+                            <option value="5">Vanishing Sloan</option>
+                            <option value="6">Shapes</option>
                         </select>
                     </div>
                 </div>
@@ -1006,7 +1008,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-2">Text colour</label>
+                    <label class="col-2">Optotype colour</label>
                     <div class="color-picker col-8 color-choice">
                         <div id="cp3" class="input-group colorpicker-component">
                             <span class="input-group-addon color"><i></i></span>
@@ -1014,10 +1016,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="col-2">Background colour</label>
+                    <div class="color-picker col-8 color-choice">
+                        <div id="cp4" class="input-group colorpicker-component">
+                            <span class="input-group-addon color"><i></i></span>
+                            <input type="text" id="bgColorBox" class="form-control" />
+                        </div>
+                    </div>
+                </div>
             </fieldset>
             <fieldset>
                 <div class="title">
-                    <a class="questions-btn" href="#shortcuts">?</a> <span>shortcuts</span>
+                    <a class="questions-btn" href="#shortcuts">?</a> <span>Shortcuts</span>
                 </div>
                 <div class="form-group">
                     <label class="col-2">Page Up</label>
@@ -1177,9 +1188,8 @@
                                 <li><strong>Sort</strong>: Unless the display is very large (about 1m wide by about 1.5m tall), the chart will display in pages - see SHORTCUTS below. Here you can select whether to display the page of the smallest or largest lines first on refresh or reconfigure. </li> 
                                 
                                 <li><strong>Mirrored/Direct</strong>: Select "Direct" if the chart is to be viewed directly, otherwise select "Mirrored" and the letters and lines will be reversed, but the labels not. If changing this setting, don't forget to set the Distance (see above) accordingly.</li>
-                                <li>
-                                    <strong>Text colour</strong>: Select from the colour picker or enter any valid rgba string Eg. rgba(0,0,0,1) is black; rgba(0,0,0,0.1) is 10% black; rgba(255,0,0,1) is pure red.
-                                </li>
+                                <li><strong>Optotype colour</strong>: Defaults to solid black. Select from the colour picker or enter any valid rgba string Eg. rgba(0,0,0,1) is solid black; rgba(0,0,0,0.1) is 10% black; rgba(255,0,0,1) is solid red, rgba(255,255,255,1) is solid white.</li>
+                                <li><strong>Background colour</strong>: Defaults to solid white. Select from the colour picker or enter any valid rgba string. If Vanishing Sloan is selected, this value is over-ridden by optotype colour at 0.5 opacity.</li>
                             </ul>
                         </div>
                     </div>
@@ -1259,12 +1269,13 @@
         </div>
         
     </div>
+    <!--The hidden div below contains all the svg for the letters. The elements are only allowed to be paths or polygons, with no strokes used. Changing optotype colour in the config settings will only change the fill of elements which are not classed "white" below. This protects the white filled elements of vanishing optotypes-->
     <div style="display:none;" id="list-character">
         <!--new Snellen-->
         <svg id="Snellen_A" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
-                <polygon points="0,5 1.5,0 2.5,0 1,5" fill="#000000" />
-                <polygon points="4,5 2.5,0 1.5,0 3,5" fill="#000000" />
-                <polygon points="1,3 3,3 3,4 1,4" fill="#000000" />
+                <polygon points="0,5 1.5,0 2.5,0 1,5" fill="black" />
+                <polygon points="4,5 2.5,0 1.5,0 3,5" fill="black" />
+                <polygon points="1,3 3,3 3,4 1,4" fill="black" />
         </svg>
         <svg id="Snellen_D" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
         <path d="M 0 0 H 1.5 A 2 2 0 0 1 1.5 5 H 0 V 1 H 1 V 4 H 1.5 A 1 1 0 0 0 1.5 1 H 0 V 0" fill="black"></path>
@@ -1279,7 +1290,7 @@
             <polygon points="0,0 1,0 1,2 3,2 3,0 4,0 4,5 3,5 3,3 1,3 1,5 0,5" fill="black" />
         </svg>
         <svg id="Snellen_L" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
-            <polygon points="0,0 1,0 1,4 4,4 4,5 0,5" fill="#000000" />
+            <polygon points="0,0 1,0 1,4 4,4 4,5 0,5" fill="black" />
         </svg>
         <svg id="Snellen_N" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 1,0 3,3.1 3,0 4,0 4,5 3,5 1,1.9 1,5 0,5" fill="black" />
@@ -1301,11 +1312,11 @@
             <polygon points="0,0 1.1,0 2,3.5 2.9,0 4,0 2.6,5 1.4,5" fill="black" />
         </svg>
         <svg id="Snellen_X" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
-            <polygon points="0,0 2.8,5 4,5 1.2,0" fill="#000000" />
-            <polygon points="0,5 2.8,0 4,0 1.2,5" fill="#000000" />
+            <polygon points="0,0 2.8,5 4,5 1.2,0" fill="black" />
+            <polygon points="0,5 2.8,0 4,0 1.2,5" fill="black" />
         </svg>
         <svg id="Snellen_Y"xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
-            <polygon points="0,0 1.1,0 2,1.5 2.9,0 4,0 2.5,2.5 2.5,5 1.5,5 1.5,2.5" fill="#000000" />
+            <polygon points="0,0 1.1,0 2,1.5 2.9,0 4,0 2.5,2.5 2.5,5 1.5,5 1.5,2.5" fill="black" />
         </svg>
         <svg id="Snellen_Z" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 4,0 4,1 1.4,4 4,4 4,5 0,5 0,4 2.6,1 0,1" fill="black" />
@@ -1352,8 +1363,8 @@
             <polygon points="0,0 1.1,0 2.5,3.5 3.9,0 5,0 3,5 2,5" fill="black" />
         </svg>
         <svg id="Sloan_X" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
-            <polygon points="0,0 3.7,5 5,5 1.3,0" fill="#000000" />
-            <polygon points="0,5 3.7,0 5,0 1.3,5" fill="#000000" />
+            <polygon points="0,0 3.7,5 5,5 1.3,0" fill="black" />
+            <polygon points="0,5 3.7,0 5,0 1.3,5" fill="black" />
         </svg>
         <svg id="Sloan_Z" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 5,0 5,1 1.6,4 5,4 5,5 0,5 0,4 3.4,1 0,1" fill="black" />
@@ -1386,7 +1397,99 @@
         <svg id="TumblingE_W" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 5,0 5,5 0,5 0,4 4,4 4,3 0,3 0,2 4,2 4,1 0,1" fill="black" />
         </svg>
-  </div>
+        <!--Vanishing Sloan-->
+        <svg id="VanSloan_C" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 5 2 H 4 A 1.52 1.5 0 1 0 4 3 H 4.5 V 3.25 H 4.18 A 1.78 1.75 0 1 1 4.18 1.75 H 4.69 A 2.29 2.27 0 1 0 4.69 3.25 H 4.5 V 3 H 5 A 2.52 2.5 0 1 1 5 2" fill="white" stroke="none"></path>
+            <path d="M 4.7 1.75 A 2.29 2.27 0 1 0 4.7 3.25 H 4.18 A 1.78 1.75 0 1 1 4.18 1.75 H 4.69" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_D" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 3.5 A 1.5 1.5 0 0 1 5 1.5 V 3.5 A 1.5 1.5 0 0 1 3.5 5 H 0 V 0.25 H 0.25 V 4.75 H 3.5 A 1.25 1.25 0 0 0 4.75 3.5 V 1.5 A 1.25 1.25 0 0 0 3.5 0.25 H 0 V 0" stroke="none" fill="white"></path> 
+            <path class="white" d="M 0.75 0.75 H 3.5 A 0.75 0.75 0 0 1 4.25 1.5 V 3.5 A 0.75 0.75 0 0 1 3.5 4.25 H 0.75 V 1 H 1 V 4 H 3.5 A 0.5 0.5 0 0 0 4 3.5 V 1.5 A 0.5 0.5 0 0 0 3.5 1 H 0.75 V 0.75" stroke="none" fill="white"></path>
+            <path d="M 0.25 0.25 H 3.5 A 1.25 1.25 0 0 1 4.75 1.5 V 3.5 A 1.25 1.25 0 0 1 3.5 4.75 H 0.25 V 0.75 H 0.75 V 4.25 H 3.5 A 0.75 0.75 0 0 0 4.25 3.5 V 1.5 A 0.75 0.75 0 0 0 3.5 0.75 H 0.25 V 0.25" stroke="none" fill="black"></path>
+        </svg>
+        <svg id="VanSloan_E" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 5 V 1 H 1 V 2 H 5 V 3 H 1 V 4 H 5 V 5 H 0 V 0.25 H 0.25 V 4.75 H 4.75 V 4.25 H 0.75 V 2.75 H 4.75 V 2.25 H 0.75 V 0.75 H 4.75 V 0.25 H 0 V 0" fill="white" stroke="none"></path>
+            <path d="M 0.25 0.25 H 4.75 V 0.75 H 0.75 V 2.25 H 4.75 V 2.75 H 0.75 V 4.25 H 4.75 V 4.75 H 0.25 V 0.25" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_H" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0.24 0.24 H 0.76 V 2.24 H 4.24 V 0.24 H 4.76 V 4.76 H 4.24 V 2.76 H 0.76 V 4.76 H 0.24 V 0.24" fill="black" stroke="none"></path>
+            <path class="white" d="M 0 0 H 1 V 2 H 4 V 0 H 5 V 5 H 4 V 3 H 1 V 5 H 0 V 0.24 H 0.24 V 4.76 H 0.76 V 2.76 H 4.24 V 4.76 H 4.76 V 0.24 H 4.24 V 2.24 H 0.76 V 0.24 H 0 V 0" fill="white" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_K" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 1 V 1.9 L 3.4 0 H 5 L 2.7 1.8 L 5 5 H 3.7 L 1.9 2.5 L 1 3.2 V 5 H 0 V 0.25 H 0.25 V 4.75 H 0.75 V 3.1 L 1.92 2.18 L 3.8 4.78 H 4.6 L 2.42 1.77 L 4.4 0.22 H 3.5 L 1 2.2 H 0.75 V 0.25 H 0" fill="white" stroke="none"></path>
+            <path d="M 0.25 0.25 V 4.75 H 0.75 V 3.1 L 1.92 2.18 L 3.8 4.78 H 4.6 L 2.42 1.77 L 4.4 0.22 H 3.5 L 1 2.2 H 0.75 V 0.25 H 0.25" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_L" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0.25 0.25 H 0.75 V 4.25 H 4.75 V 4.75 H 0.25 V 0.25" stroke="none" fill="black"></path>
+            <path class="white" d="M 0 0 H 1 V 4 H 5 V 5 H 0 V 0.23 H 0.23 V 4.77 H 4.77 V 4.23 H 0.77 V 0.23 H 0 V 0" stroke="none" fill="white"></path>
+        </svg>
+        <svg id="VanSloan_N" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 1.3 L 4 3.7 V 0 H 5 V 5 H 3.7 L 1 1.3 V 5 H 0 V 0.25 H 0.25 V 4.75 H 0.75 V 0.75 H 0.92 L 3.83 4.75 H 4.75 V 0.25 H 4.25 V 4.25 H 4.07 L 1.17 0.25 H 0 V 0" stroke="none" fill="white"></path>
+            <path d="M 0.25 0.25 V 4.75 H 0.75 V 0.75 H 0.92 L 3.83 4.75 H 4.75 V 0.25 H 4.25 V 4.25 H 4.07 L 1.17 0.25 H 0.25" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_O" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 2.5 0 A 2.5 2.5 0 1 1 2.5 5 V 4 A 1.5 1.5 0 1 0 2.5 1 V 0" fill="white" stroke="none"></path>
+            <path d="M 2.5 0.25 C 5.55 0.35 5.55 4.65 2.5 4.75 V 4.25 C 4.8 4.15 4.8 0.85 2.5 0.75 V 0.25" fill="black" stroke="none"></path>
+            <path class="white" d="M 2.5 0 A 2.5 2.5 0 1 0 2.5 5 V 4 A 1.5 1.5 0 1 1 2.5 1 V 0" fill="white" stroke="none"></path>
+            <path d="M 2.5 0.25 C -0.55 0.35 -0.55 4.65 2.5 4.75 V 4.25 C 0.2 4.15 0.2 0.85 2.5 0.75 V 0.25" fill="black" stroke="none"></path>
+    
+        </svg>
+        <svg id="VanSloan_P" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 3.5 A 1.5 1.5 0 0 1 3.5 3 H 1 V 5 H 0 V 0.25 H 0.25 V 4.75 H 0.75 V 2.75 H 3.5 A 1.25 1.25 0 0 0 3.5 0.25 H 0 V 0" fill="white" stroke="none"></path>
+            <path d="M 0.25 0.25 H 3.5 A 1.25 1.25 0 0 1 3.5 2.75 H 0.75 V 4.74 H 0.25 V 0.75 H 0.75 V 2.25 H 3.5 A 0.75 0.75 0 0 0 3.5 0.75 H 0.25 V 0.25" fill="black" stroke="none"></path>
+            <path class="white" d="M 0.75 0.75 H 3.5 A 0.75 0.75 0 0 1 3.5 2.25 H 0.75 V 1 H 1 V 2 H 3.5 A 0.5 0.5 0 0 0 3.5 1 H 0.75 V 0.75" fill="white" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_R" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 3.5 A 1.5 1.5 0 0 1 3.5 3 L 5 5 H 3.7 L 2.2 3 H 1 V 5 H 0 V 0.25 H 0.25 V 4.75 H 0.75 V 2.75 H 2.35 L 3.85 4.75 H 4.5 L 3 2.75 H 3.5 A 1.25 1.25 0 0 0 3.5 0.25 H 0 V 0" fill="white" stroke="none"></path>
+            <path d="M 0.25 0.25 H 3.5 A 1.25 1.25 0 0 1 3.5 2.75 H 3 L 4.5 4.75 H 3.85 L 2.35 2.75 H 0.75 V 4.74 H 0.25 V 0.75 H 0.75 V 2.25 H 3.5 A 0.75 0.75 0 0 0 3.5 0.75 H 0.25 V 0.25" fill="black" stroke="none"></path>
+            <path class="white" d="M 0.75 0.75 H 3.5 A 0.75 0.75 0 0 1 3.5 2.25 H 0.75 V 1 H 1 V 2 H 3.5 A 0.5 0.5 0 0 0 3.5 1 H 0.75 V 0.75" fill="white" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_S" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 5 1.5 A 1.5 1.5 0 0 0 3.5 0 H 1.5 A 1.5 1.5 0 0 0 1.5 3 H 3.5 A 0.5 0.5 0 0 1 3.5 4 H 1.5 A 0.5 0.5 0 0 1 1 3.5 H 0 A 1.5 1.5 0 0 0 1.5 5 H 3.5 A 1.5 1.5 0 1 0 3.5 2 H 1.5 A 0.5 0.5 0 1 1 1.5 1 H 3.5 A 0.5 0.5 0 0 1 4 1.5 H 4.25 V 1.25 A 0.75 0.75 0 0 0 3.5 0.75 H 1.5 A 0.75 0.75 0 0 0 1.5 2.25 H 3.5 A 1.25 1.25 0 0 1 3.5 4.75 H 1.5 A 1.25 1.25 0 0 1 0.25 3.75 H 0.75 A 0.75 0.75 0 0 0 1.5 4.25 H 3.5 A 0.75 0.75 0 0 0 3.5 2.75 H 1.5 A 1.25 1.25 0 0 1 1.5 0.25 H 3.5 A 1.25 1.25 0 0 1 4.75 1.25 H 4.25 V 1.5 H 5" fill="white" stroke="none"></path>
+            <path d="M4.75 1.25 A 1.25 1.25 0 0 0 3.5 0.25 H 1.5 A 1.25 1.25 0 0 0 1.5 2.75 H 3.5 A 0.75 0.75 0 0 1 3.5 4.25 H 1.5 A 0.75 0.75 0 0 1 0.75 3.75 H 0.25 A 1.25 1.25 0 0 0 1.5 4.75 H 3.5 A 1.25 1.25 0 1 0 3.5 2.25 H 1.5 A 0.75 0.75 0 1 1 1.5 0.75 H 3.5 A 0.75 0.75 0 0 1 4.25 1.25 H 4.75" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_T" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0.25 0.25 H 4.75 V 0.75 H 2.75 V 4.75 H 2.25 V 0.75 H 0.25 V 0.25" fill="black" stroke="none"></path>
+            <path class="white" d="M 0 0 H 5 V 1 H 3 V 5 H 2 V 1 H 0 V 0.24 H 0.24 V 0.76 H 2.24 V 4.76 H 2.76 V 0.76 H 4.76 V 0.24 H 0 V 0" fill="white" stroke="none"></path>       
+        </svg>
+        <svg id="VanSloan_V" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 1.1 L 2.5 3.5 L 3.9 0 H 5 L 3 5 H 2 L 0.1 0.25 H 0.35 L 2.15 4.75 H 2.85 L 4.65 0.25 H 4.05 L 2.5 4.1 L 0.95 0.25 H 0.1 L 0 0" fill="white" stroke="none"></path>
+            <path d="M 0.35 0.25 H 0.95 L 2.5 4.1 L 4.05 0.25 H 4.65 L 2.85 4.75 H 2.15 L 0.35 0.25" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_X" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 1.3 L 2.5 1.62 L 3.7 0 H 5 L 3.15 2.5 L 5 5 H 3.7 L 2.5 3.38 L 1.3 5 H 0 L 1.85 2.5 L 0 0" fill="white" stroke="none"></path>
+            <path d="M 0.43 0.22 H 1.18 L 2.5 1.97 L 3.82 0.22 H 4.57 L 2.87 2.5 L 4.57 4.78 H 3.82 L 2.5 3.03 L 1.18 4.78 H 0.43 L 2.13 2.5 L 0.43 0.22" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="VanSloan_Z" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path class="white" d="M 0 0 H 5 V 1 L 1.7 4 H 5 V 5 H 0 V 4 L 3.4 1 H 0 V 0.23 H 0.23 V 0.77 H 4 L 0.23 4.1 V 4.77 H 4.77 V 4.23 H 1.05 L 4.77 0.9 V 0.23 H 0 V 0" fill="white" stroke="none"></path>
+            <path d="M 0.23 0.23 H 4.77 V 0.9 L 1.05 4.23 H 4.77 V 4.77 H 0.23 V 4.1 L 4 0.77 H 0.23 V 0.23" fill="black" stroke="none"></path>
+        </svg>
+        <!--new Shapes 5x5-->
+        <svg id="Shape5_C" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2 0H3V2H5V3H3V5H2V3H0V2H2z" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="Shape5_M" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 2H5V3H3.2L4.5 5H3.3L2.5 3.8L1.7 5H0.5L1.8 3H0z" fill="black"></path>
+            <circle cx="2.5" cy="1" r="1" fill="black" stroke="none"></circle>
+        </svg>
+        <svg id="Shape5_S" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 0H5V5H0V1H1V4H4V1H0z" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="Shape5_T" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 5L2.5 0L5 5H3.7L2.5 2.5L1.3 5z" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="Shape5_O" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2.5 0 A 2.5 2.5 0 0 1 2.5 5 V 4 A 1.5 1.5 0 0 0 2.5 1 A 1.5 1.5 0 0 0 2.5 4 V 5 A 2.5 2.5 0 0 1 2.5 0" fill="black" stroke="none"></path>
+        </svg>
+        <svg id="Shape5_F" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none"></path>
+            <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none" transform="rotate(72,2.5,2.5)"></path>
+            <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none" transform="rotate(144,2.5,2.5)"></path>
+            <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none" transform="rotate(216,2.5,2.5)"></path>
+            <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none" transform="rotate(288,2.5,2.5)"></path>
+        </svg>
+</div>
+<!--   end of hidden div of svg elements-->
     <!--end setting bar-->
     <div class="mask"></div>
     <div class="IENotice">
@@ -1498,6 +1601,12 @@
                         case '4':
                             $('#sAlphabet').append('<option value="6">Tumbling E</option>');
                             break;
+                        case '5':
+                            $('#sAlphabet').append('<option value="7">Vanishing ETDRS</option>');
+                            break;
+                        case '6':
+                            $('#sAlphabet').append('<option value="8">Shapes</option>');
+                            break;
                     }
                 });
             };
@@ -1506,13 +1615,26 @@
                     $(this).prev().css('background', 'rgb(' + $(this).val() + ')');
                 });
             };
+            this.bgColorPicker = function () {
+                $('#bgColorBox').on('change', function () {
+                    $(this).prev().css('background', 'rgb(' + $(this).val() + ')');
+                });
+            };
             //separating rgb from opacity allows letters to have overlapping elements
             this.SetColorCharacter = function (colorHex) {
                 var rgba = colorHex.replace(/[^\d.,]/g, '').split(',');
                 var colorRGB = "rgb(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + ")";
                 $('#list-character').find('svg').css('opacity', rgba[3]);
-                $('#list-character').find('svg').find('path').css('fill', colorRGB);
-                $('#list-character').find('svg').find('polygon').css('fill', colorRGB);
+                //only update fill of black fills, or Vanishing optotypes won't work
+                $('#list-character').find('svg').find('path').not('.white').css({fill: colorRGB});
+                $('#list-character').find('svg').find('polygon').not('.white').css({fill: colorRGB});
+            };
+            this.SetBgColor = function (bgHex) {
+                if(alphabetType==7){//Vanishing optotype needs background same color and half the opacity of the optotype color
+                  colorHex = colorHex.replace(/[\d\.]+\)$/g, '0.5');
+                    $(document.body).css('background-color',colorHex);
+                }
+                else {$(document.body).css('background-color',bgHex);}
             };
             this.SetHeightCharacter = function (distance) {
                 var pageArray = []; //array of rows on a page
@@ -1616,7 +1738,11 @@
                         arrayCharacter = ['LandoltC_N,LandoltC_S,LandoltC_E,LandoltC_N,LandoltC_W', 'LandoltC_E,LandoltC_E,LandoltC_N,LandoltC_W,LandoltC_S', 'LandoltC_E,LandoltC_S,LandoltC_S,LandoltC_W,LandoltC_N', 'LandoltC_N,LandoltC_W,LandoltC_N,LandoltC_S,LandoltC_E', 'LandoltC_S,LandoltC_W,LandoltC_N,LandoltC_W,LandoltC_E', 'LandoltC_W,LandoltC_E,LandoltC_S,LandoltC_N,LandoltC_S', 'LandoltC_W,LandoltC_N,LandoltC_E,LandoltC_S,LandoltC_W', 'LandoltC_S,LandoltC_N,LandoltC_N,LandoltC_W,LandoltC_E', 'LandoltC_N,LandoltC_E,LandoltC_S,LandoltC_W,LandoltC_W', 'LandoltC_N,LandoltC_S,LandoltC_E,LandoltC_N,LandoltC_W', 'LandoltC_E,LandoltC_E,LandoltC_N,LandoltC_W,LandoltC_S', 'LandoltC_E,LandoltC_S,LandoltC_S,LandoltC_W,LandoltC_N', 'LandoltC_N,LandoltC_W,LandoltC_N,LandoltC_S,LandoltC_E', 'LandoltC_S,LandoltC_W,LandoltC_N,LandoltC_W,LandoltC_E']
                         break;
                     case '6':
-                        arrayCharacter = ['TumblingE_N,TumblingE_S,TumblingE_E,TumblingE_N,TumblingE_W', 'TumblingE_E,TumblingE_E,TumblingE_N,TumblingE_W,TumblingE_S', 'TumblingE_E,TumblingE_S,TumblingE_S,TumblingE_W,TumblingE_N', 'TumblingE_N,TumblingE_W,TumblingE_N,TumblingE_S,TumblingE_E', 'TumblingE_S,TumblingE_W,TumblingE_N,TumblingE_W,TumblingE_E', 'TumblingE_W,TumblingE_E,TumblingE_S,TumblingE_N,TumblingE_S', 'TumblingE_W,TumblingE_N,TumblingE_E,TumblingE_S,TumblingE_W', 'TumblingE_S,TumblingE_N,TumblingE_N,TumblingE_W,TumblingE_E', 'TumblingE_N,TumblingE_E,TumblingE_S,TumblingE_W,TumblingE_W', 'TumblingE_N,TumblingE_S,TumblingE_E,TumblingE_N,TumblingE_W', 'TumblingE_E,TumblingE_E,TumblingE_N,TumblingE_W,TumblingE_S', 'TumblingE_E,TumblingE_S,TumblingE_S,TumblingE_W,TumblingE_N', 'TumblingE_N,TumblingE_W,TumblingE_N,TumblingE_S,TumblingE_E', 'TumblingE_S,TumblingE_W,TumblingE_N,TumblingE_W,TumblingE_E']
+                        arrayCharacter = ['TumblingE_N,TumblingE_S,TumblingE_E,TumblingE_N,TumblingE_W', 'TumblingE_E,TumblingE_E,TumblingE_N,TumblingE_W,TumblingE_S', 'TumblingE_E,TumblingE_S,TumblingE_S,TumblingE_W,TumblingE_N', 'TumblingE_N,TumblingE_W,TumblingE_N,TumblingE_S,TumblingE_E', 'TumblingE_S,TumblingE_W,TumblingE_N,TumblingE_W,TumblingE_E', 'TumblingE_W,TumblingE_E,TumblingE_S,TumblingE_N,TumblingE_S', 'TumblingE_W,TumblingE_N,TumblingE_E,TumblingE_S,TumblingE_W', 'TumblingE_S,TumblingE_N,TumblingE_N,TumblingE_W,TumblingE_E', 'TumblingE_N,TumblingE_E,TumblingE_S,TumblingE_W,TumblingE_W', 'TumblingE_N,TumblingE_S,TumblingE_E,TumblingE_N,TumblingE_W', 'TumblingE_E,TumblingE_E,TumblingE_N,TumblingE_W,TumblingE_S', 'TumblingE_E,TumblingE_S,TumblingE_S,TumblingE_W,TumblingE_N', 'TumblingE_N,TumblingE_W,TumblingE_N,TumblingE_S,TumblingE_E', 'TumblingE_S,TumblingE_W,TumblingE_N,TumblingE_W,TumblingE_E'];
+                        break;
+                    case '7': arrayCharacter =      ['VanSloan_C,VanSloan_H,VanSloan_N,VanSloan_R,VanSloan_V', 'VanSloan_D,VanSloan_K,VanSloan_O,VanSloan_S,VanSloan_V', 'VanSloan_V,VanSloan_O,VanSloan_R,VanSloan_D,VanSloan_N', 'VanSloan_H,VanSloan_Z,VanSloan_C,VanSloan_K,VanSloan_X', 'VanSloan_O,VanSloan_K,VanSloan_V,VanSloan_H,VanSloan_D', 'VanSloan_Z,VanSloan_R,VanSloan_N,VanSloan_S,VanSloan_C', 'VanSloan_K,VanSloan_S,VanSloan_D,VanSloan_C,VanSloan_H', 'VanSloan_R,VanSloan_N,VanSloan_O,VanSloan_V,VanSloan_Z', 'VanSloan_D,VanSloan_H,VanSloan_R,VanSloan_O,VanSloan_K', 'VanSloan_C,VanSloan_N,VanSloan_Z,VanSloan_S,VanSloan_V', 'VanSloan_H,VanSloan_O,VanSloan_S,VanSloan_D,VanSloan_N', 'VanSloan_C,VanSloan_V,VanSloan_K,VanSloan_Z,VanSloan_R', 'VanSloan_D,VanSloan_H,VanSloan_R,VanSloan_N,VanSloan_O', 'VanSloan_S,VanSloan_V,VanSloan_C,VanSloan_K,VanSloan_Z'];
+                        break;
+                        case '8':  arrayCharacter = ['Shape5_S,Shape5_O,Shape5_M,Shape5_C,Shape5_T', 'Shape5_O,Shape5_M,Shape5_S,Shape5_C,Shape5_F', 'Shape5_M,Shape5_T,Shape5_O,Shape5_S,Shape5_C', 'Shape5_F,Shape5_O,Shape5_S,Shape5_M,Shape5_T', 'Shape5_F,Shape5_O,Shape5_M,Shape5_C,Shape5_T', 'Shape5_O,Shape5_S,Shape5_F,Shape5_T,Shape5_C', 'Shape5_S,Shape5_O,Shape5_M,Shape5_T,Shape5_C', 'Shape5_F,Shape5_M,Shape5_C,Shape5_S,Shape5_F', 'Shape5_O,Shape5_T,Shape5_S,Shape5_F,Shape5_C', 'Shape5_M,Shape5_O,Shape5_T,Shape5_F,Shape5_M', 'Shape5_C,Shape5_S,Shape5_F,Shape5_O,Shape5_T', 'Shape5_S,Shape5_F,Shape5_M,Shape5_C,Shape5_S', 'Shape5_O,Shape5_T,Shape5_C,Shape5_M,Shape5_F', 'Shape5_S,Shape5_M,Shape5_T,Shape5_O,Shape5_C'];
                         break;
                   }
                 var arrayHeight = -1;
@@ -1648,7 +1774,8 @@
                     $('#line-' + (i + 1)).css('line-height', heightText + 'mm');
                     $('#line-' + (i + 1)).css('margin', heightText / 2 + 'mm');
                     var parentHeight = convertFunction.ConvertPixelToMM($('#line-' + (i + 1)).parent().height() / 2 - 12.5);
-                    $('<div class="scoreBox" >' + scoreText + '</div>').insertAfter('#line-' + (i + 1));
+                    var scoreBoxCol = colorHex.replace(/[\d\.]+\)$/g, '1');
+                    $('<div class="scoreBox" >' + scoreText + '</div>').insertAfter('#line-' + (i + 1)).css({color:scoreBoxCol});
                     //caculator viewport width
                     var svgBox = $('#line-' + (i + 1)).find('svg:first-child').width(), //get widht of line
                         svgMargin = parseFloat($('#line-' + (i + 1)).find('svg:first-child').css('margin-left')) * 2;
@@ -1997,7 +2124,6 @@
                 localStorage.setItem("DisplayWidth", viewWidth);
                 localStorage.setItem("DisplayHeight", viewHight);
                 localStorage.setItem("Mirrored", localsMirrored);
-                //localStorage.setItem("TextColor", colorHex);
                 localStorage.setItem("PageUp", localPageUp);
                 localStorage.setItem("PageDown", localPageDown);
                 localStorage.setItem("Shuffle", localShuffle);
@@ -2048,6 +2174,7 @@
                     viewHight = $('#iViewHeight').val().trim(),
                     numeratorType = $('#sNumerator').val(),
                     colorHex = 'rgba(0,0,0,1)',
+                    bgHex = 'rgba(255,255,255,1)',
                     alphabetType = $('#sAlphabet').val(),
                     sPageUp = $('#pageUp').val().trim().toUpperCase().charCodeAt(0),
                     sPageDown = $('#pageDown').val().trim().toUpperCase().charCodeAt(0),
@@ -2061,9 +2188,13 @@
                     $('#displaySetting > div').find('.char-line').html('');
                     $('#displaySetting > div').find('.scoreBox').remove();
                     setConfigDefault.SetColorPicker('rgba(0,0,0,1)');
+                    setConfigDefault.SetBgColorPicker('rgba(255,255,255,1)');
                     $('.color i').css('background-color', 'rgba(0,0,0,1)');
+                    $('.bgColor i').css('background-color', 'rgba(255,255,255,1)');
                     $('#colorBox').val('rgba(0, 0, 0,1)');
+                    $('#bgColorBox').val('rgba(255,255,255,1)');
                     localStorage.setItem("TextColor", colorHex);
+                    localStorage.setItem("BgColor", bgHex);
                     $('#updateSetting').removeClass('disabled-btn').addClass('disabled-btn');
                     setConfigDefault.RemoveScrollDiv();
                     $('.char-line').removeAttr('style');
@@ -2082,6 +2213,7 @@
                     gDisplayHeight = localStorage.getItem("DisplayHeight"),
                     gMirrored = localStorage.getItem("Mirrored"),
                     gTextColor = localStorage.getItem("TextColor"),
+                    gBgColor = localStorage.getItem("BgColor"),
                     gPageUp = localStorage.getItem("PageUp"),
                     gPageDown = localStorage.getItem("PageDown"),
                     gShuffle = localStorage.getItem("Shuffle"),
@@ -2099,7 +2231,7 @@
                 $('#iViewHeight').val(gDisplayHeight);
                 $('#sMirrored').val(gMirrored);
                 functionColorPicker.SetColorPicker(gTextColor);
-                //$('#colorBox').val(gTextColor);
+                functionColorPicker.SetBgColorPicker(gBgColor);
                 $('#pageUp').val(gPageUp);
                 $('#pageDown').val(gPageDown);
                 $('#shuffle').val(gShuffle);
@@ -2115,8 +2247,8 @@
                 $('#sNumerator').val("2");
                 $('#display').val('1');
                 $('#sMirrored').val('2');
-                //$('#colorBox').val('0,0,0').change();
                 functionColorPicker.SetColorPicker('rgba(0,0,0,1)');
+                functionColorPicker.SetBgColorPicker('rgba(255,255,255,1)');
                 $('#iDistance').val('');
                 $('#iLengOfLine').val('');
                 $('#iViewWidth').val('');
@@ -2129,6 +2261,12 @@
             };
             this.SetColorPicker = function (color) {
                 $('#cp3').colorpicker({
+                    color: color,
+                    format: 'rgba'
+                });
+            };
+            this.SetBgColorPicker = function (color) {
+                $('#cp4').colorpicker({
                     color: color,
                     format: 'rgba'
                 });
@@ -2185,8 +2323,7 @@
                 $('.scroll-div').remove();
             };
             this.DivideScrollPage = function () {
-                //
-                console.log(window.innerHeight + " " + $(window).height());
+                //console.log(window.innerHeight + " " + $(window).height());
                 var maxHeight = $(window).height(),
                     quotalHeight = 0,
                     checkHeight = false;
@@ -2285,6 +2422,7 @@
                     viewHight = $('#iViewHeight').val().trim(),
                     numeratorType = $('#sNumerator').val(),
                     colorHex = $('#colorBox').val(),
+                    bgHex = $('#bgColorBox').val(),
                     alphabetType = $('#sAlphabet').val(),
                     sPageUp = $('#pageUp').val().trim().toUpperCase().charCodeAt(0),
                     sPageDown = $('#pageDown').val().trim().toUpperCase().charCodeAt(0),
@@ -2323,6 +2461,7 @@
                         callBackFunction.SortCharacterOption();
                         //set text color
                         callBackFunction.SetColorCharacter(colorHex);
+                        callBackFunction.SetBgColor(bgHex);
                         callBackFunction.CaculatorCharacterHeight(numeratorType);
                         //generate text
                         callBackFunction.GenerateCharacter(alphabetType);
@@ -2471,15 +2610,21 @@
                     else {
                         $('.setting-button').trigger('click');
                         this.SetColorPicker('rgba(0,0,0,1)');
+                        this.SetBgColorPicker('rgba(255,255,255,1)');
                     }
                 }
                 else if ($('#iDistance').val().trim() == "" || $('#iLengOfLine').val().trim() == "" || $('#iViewWidth').val().trim() == "") {
                     $('.setting-button').trigger('click');
                     this.SetColorPicker('rgba(0,0,0,1)');
+                    this.SetBgColorPicker('rgba(255,155,255,1)');
                 };
                 this.ResetValueToDefault();
                 $('#cp3').colorpicker().on('changeColor', function (e) {
                     localStorage.setItem("TextColor", e.color.toString('rgba'));
+                    //console.log(e.color.toString('rgba'));
+                });
+                $('#cp4').colorpicker().on('changeColor', function (e) {
+                    localStorage.setItem("BgColor", e.color.toString('rgba'));
                     //console.log(e.color.toString('rgba'));
                 });
                 this.ScrollOnClick();
