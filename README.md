@@ -1,3 +1,8 @@
+# Hacktoberfest
+Current issues:
+1. Need to get rid of display width setting - chart needs to display full width and height in all cases.
+2. Cross browser issue with display height - typically on tablet browsers, when the user scrolls down, the browser enters full screen mode, breaking the format
+
 # WolfChart v1.7
 by Ballantyne de Wolf and Offspring Digital
 
