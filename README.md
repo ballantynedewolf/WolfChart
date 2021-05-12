@@ -1,6 +1,8 @@
 # WolfChart v1.3
 by Ballantyne de Wolf and Offspring Digital
 
+**for up-to-date WolfChart, see https://github.com/ballantynedewolf/devWolfChart ***
+
 This is professional optometrist/optician/ophthalmologist tool for measuring visual acuity. I cannot be used safely by the general public.
 If you have any concerns about your vision or eyes, consult a qualified professional.
 
