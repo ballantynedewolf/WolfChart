@@ -1,22 +1,34 @@
-# Hacktoberfest
-Current issues:
-1. Need to get rid of display width setting - chart needs to display full width and height in all cases.
-2. Cross browser issue with display height - typically on tablet browsers, when the user scrolls down, the browser enters full screen mode, breaking the format
+# WolfChart v2.0
+by Ballantyne de Wolf, Offspring Digital
 
-# WolfChart v1.7
-by Ballantyne de Wolf and Offspring Digital
-
-This is professional optometrist/optician/ophthalmologist tool for measuring visual acuity. It cannot be used safely by the general public.
+This is professional optometrist/optician/ophthalmologist tool for sight testing. It cannot be used safely by the general public.
 If you have any concerns about your vision or eyes, consult a qualified professional.
 
 Now that's out of the way, the objectives are:
-  1. Clinically relevant, scientifically supported visual acuity measurement in the widest possible range of clinical and research settings
+  1. Clinically relevant, scientifically supported sight testing tools, in the widest possible range of clinical and research settings.
   2. Open source with GNU licence
   3. Can be used on a wide variety of screen hardware
-  3. Customisable optotypes and alphabets to come eg Hebrew, Chinese, Thai, Cyrillic etc
+  3. Customisable optotypes and alphabets to come eg Arabic, Hebrew, Chinese, Thai, Cyrillic etc
+
+To Do List
+
+Ver2.1
+ - Now displays charts in 4 categories, using direction buttons and keys to navigate
+ - Paging up and down the letter chart now done by showing and hiding fullscreen pages, rather than scrolling a larger-than-fullscreen page
+ - Right hand sidebar containing controls
+ - Chart keeps track of your usage, offering your most-used chart on key strokes and nav buttons
+ - Fixed viewport - now uses document.documentwindow.clientHeight and a trimmed window.innerWidth at all times
+ - Single charts have spacebar/onclick/button function to eg zoom
+ - Removed colour pickers, replaced with text, preset buttons and hue-only sliders for filter tests
+ - Various improvements under bonnet
+ - Switched off PWA features like manifest and sw.js - will maybe bring them back later.
     
-    
-Ver1.7
+Ver1.8
+ - fixed bug of bg colour not stored on first use.
+ - added coloured dots at 6/4.8(20/16,-0.1,1.1, normal VA) and 6/12(20/40,0.3,0.5, legal VA).
+ - did some code cleaning
+ 
+ Ver1.7
  - added colour picker for background that defaults to white. This is maybe only useful in a research environment.
  - added Vanishing Sloan optotype/Vanishing ETDRS alphabet.When selected, body background colour is same as optotype colour but 0.5 opacity. Used jquery.not() to exempt white filled elements from optotype color. Body bg reverts to stored with all other optotypes.
  - Added prototype Shapes optotype
