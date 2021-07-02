@@ -10,6 +10,14 @@ Now that's out of the way, the objectives are:
   3. Can be used on a wide variety of screen hardware
   3. Customisable optotypes and alphabets to come eg Arabic, Hebrew, Chinese, Thai, Cyrillic etc
 
+Ver2.4
+In this version I want to implement 1- and 3- letter lines for eg crowded optotypes, and vertical shuffle for 1-letter lines.
+  - Bug fixes
+    - 
+    - 
+  - Additions
+    - 
+
 Ver2.3
   - Bug fixes
     - guide dots on V charts hide and show behaviour fixed
