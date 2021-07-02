@@ -1,4 +1,4 @@
-# WolfChart v2.0
+# WolfChart v2.3
 by Ballantyne de Wolf, Offspring Digital
 
 This is professional optometrist/optician/ophthalmologist tool for sight testing. It cannot be used safely by the general public.
@@ -10,7 +10,26 @@ Now that's out of the way, the objectives are:
   3. Can be used on a wide variety of screen hardware
   3. Customisable optotypes and alphabets to come eg Arabic, Hebrew, Chinese, Thai, Cyrillic etc
 
-To Do List
+Ver2.3
+  - Bug fixes
+    - guide dots on V charts hide and show behaviour fixed
+    - shuffle and duochrome disabled in single and column modes
+    - 
+  - Additions
+    - Experimental optotypes in Chinese, Arabic and Hebrew
+    - Removed the Man from Shapes5, leaving 5 shapes in use, and set out alphabet to work better vertically
+
+Ver2.2
+  - Bug fixes
+    - moved SVG transforms to css transforms. Safari doesn't implement SVG transform, all browsers implement SVG.css transform. Means have to add units
+    - fixed badly-written rotate90 function, also not working on Safari
+    - Rejigged Snellen BS4724 6/6 and 6/5 lines to get rid of an FU
+    - fixed sidebar controls not responding to nav links
+    - fixed text-decoration in nav-button-div a
+  - Additions
+    - characterClick now cycles through: mask one letter > mask column of letters > show all >
+
+    
 
 Ver2.1
  - Now displays charts in 4 categories, using direction buttons and keys to navigate
@@ -22,6 +41,7 @@ Ver2.1
  - Removed colour pickers, replaced with text, preset buttons and hue-only sliders for filter tests
  - Various improvements under bonnet
  - Switched off PWA features like manifest and sw.js - will maybe bring them back later.
+ - Versioned as X.y in localStorage
     
 Ver1.8
  - fixed bug of bg colour not stored on first use.

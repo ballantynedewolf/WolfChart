@@ -8,7 +8,7 @@
 <html lang=en>
 <head>
     <meta charset="utf-8" />
-    <title>WolfChart v</title>
+    <title>WolfChart</title>
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAdCAMAAAD8QJ61AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADBQTFRFqamphoaGxcXF1tbW9/f3U1NTLi4uurq64+PjnZ2ddHR07Ozsk5OTAAAA////////NZC25gAAABB0Uk5T////////////////////AOAjXRkAAAFRSURBVHjadFNZYsUgCATU4AJ6/9sWFVP72vJhCA4wLMK4hUoYHwKXHgp3xj4I+C9AQw6994ZIHZjpF6DGviTPL2YuF4ARGofoCJfSDyDX3CPUzuXc1XlAPAB0c3pcacozC0rcAHeMj4IH0LotAjcAVB8PoOqxpBtAyDOYPewAqu5U4oCSPYOZNU1tKk4nWYRDXXRdPM/66nZrGF5A0h9ySsOTIv68PzkMELEtOh+AzXcCRsS8M6QyD+OQxI6rFeK1W5+qNrSPvDkwOsBrsMhozutntpvZGhXhroHq0VZP0AB5QjOk3QA+0Af3zGE09lYuZ5q4BOS7gfe4eycj+uzYPovJYQSp4SyCyilwjS37yr0xzP2d5AxwdjLQPRDrbFi8iN6txskpeztsd4SsvRG/1z4ai1BFxEAFZT4vKNLudwE2lRHJctH/T8+klPJh+RJgAA5sKxGB5VuMAAAAAElFTkSuQmCC" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <style type="text/css">
@@ -566,9 +566,6 @@
                 float: left;
                 cursor: pointer;
             }
-            .char-line svg.guide-dot {
-                cursor: default;
-            }
             
                 .char-line svg.disable {
                     opacity: 0;
@@ -721,7 +718,6 @@
     }
     #nav-button-div {
             display: block;
-            text-decoration: none;
             border-radius:31px 0 0 31px;
             background-color: rgb(204,204,204);
             position:relative;
@@ -731,6 +727,7 @@
     }
     #nav-button-div a{
         cursor: pointer;
+        text-decoration: none;
         display:inline-block;
         height:100%;
         width:62px;
@@ -876,6 +873,10 @@
                             <option value="4">TumblingE</option>
                             <option value="5">Vanishing Sloan</option>
                             <option value="6">Shapes</option>
+                            <option value="7">Chinese (beta)</option>
+                            <option value="8">Arabic (beta)</option>
+                            <option value="9">Hebrew</option>
+                            <!-- <option value="10">Crowded HOTV</option> -->
                         </select>
                     </div>
                 </div>
@@ -1079,7 +1080,7 @@
             </svg>
         </a>
         <div class="panel-body">
-        <strong>Very quick guide: </strong>Calibrate and configure your chart using the Settings form and consult this help guide if you get stuck. You will need a measuring tape to measure viewing distance and a ruler to measure the calibration line.<br />Charts are in 4 categories; V for VA, R for Refraction, B for Binocular and M for Miscellaneous. Use the onscreen arrows or arrows on your keyboard to navigate horizontally between categories and vertically within categories. Alternatively, the category buttons in the flyout at bottom right give you one-click access to your most-used chart in that category. These category links are also mapped to the corresponding letters on your keyboard.<br />Click or tap on any letter to mask it. Click or tap on any line label to mask that line. Click or tap again to unmask. If there is a round button in the sidebar below the navigation arrows, the chart has a function mapped to the spacebar, such as zoom or rotate. You can also activate the function by clicking on or tapping the chart itself or the button.<br /><strong>Why is one of the charts just black?</strong><br />So you can darken your room with one click.<br /><br />
+        <strong>Very quick guide: </strong>Calibrate and configure your chart using the Settings form and consult this help guide if you get stuck. You will need a measuring tape to measure viewing distance and a ruler to measure the calibration line.<br />Charts are in 4 categories; V for VA, R for Refraction, B for Binocular and M for Miscellaneous. Use the onscreen arrows or arrows on your keyboard to navigate horizontally between categories and vertically within categories. Alternatively, the category buttons in the flyout at bottom right give you one-click access to your most-used chart in that category. These category links are also mapped to the corresponding letters on your keyboard.<br />Click or tap on any line label to mask that line. Click or tap again to unmask. <br />Click or tap on any letter to mask it. Click or tap on it again to mask a column of letters. Click or tap on any letter in the column to show all again. <br />If there is a round button in the sidebar below the navigation arrows, the chart has a function mapped to the spacebar, such as zoom or rotate. You can also activate the function by clicking on or tapping the chart itself or the button.<br /><strong>Why is one of the charts just black?</strong><br />So you can darken your room with one click.<br /><br />
         </div>
         <div class="accordion">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -1577,7 +1578,7 @@
         <svg id="Sloan_S" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M 5 1.5 A 1.5 1.5 0 0 0 3.5 0 H 1.5 A 1.5 1.5 0 0 0 1.5 3 H 3.5 A 0.5 0.5 0 0 1 3.5 4 H 1.5 A 0.5 0.5 0 0 1 1 3.5 H 0 A 1.5 1.5 0 0 0 1.5 5 H 3.5 A 1.5 1.5 0 1 0 3.5 2 H 1.5 A 0.5 0.5 0 1 1 1.5 1 H 3.5 A 0.5 0.5 0 0 1 4 1.5 H 5" fill="black"></path>
         </svg>
-        <svg id="Sloan_T" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+        <svg id="Sloan_T" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <polygon points="0,0 5,0 5,1 3,1 3,5 2,5 2,1 0,1" fill="black" />
         </svg>
         <svg id="Sloan_V" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
@@ -1686,36 +1687,158 @@
             <path d="M 0.23 0.23 H 4.77 V 0.9 L 1.05 4.23 H 4.77 V 4.77 H 0.23 V 4.1 L 4 0.77 H 0.23 V 0.23" fill="black" stroke="none"></path>
         </svg>
         <!--new Shapes 5x5-->
-        <svg id="Shape5_C" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+        <svg id="Shape5_0" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M2 0H3V2H5V3H3V5H2V3H0V2H2z" fill="black" stroke="none"></path>
         </svg>
         <svg id="Shape5_M" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M0 2H5V3H3.2L4.5 5H3.3L2.5 3.8L1.7 5H0.5L1.8 3H0z" fill="black"></path>
             <circle cx="2.5" cy="1" r="1" fill="black" stroke="none"></circle>
         </svg>
-        <svg id="Shape5_S" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+        <svg id="Shape5_1" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M0 0H5V5H0V1H1V4H4V1H0z" fill="black" stroke="none"></path>
         </svg>
-        <svg id="Shape5_T" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+        <svg id="Shape5_2" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M0 5L2.5 0L5 5H3.7L2.5 2.5L1.3 5z" fill="black" stroke="none"></path>
         </svg>
-        <svg id="Shape5_O" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+        <svg id="Shape5_3" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M2.5 0 A 2.5 2.5 0 0 1 2.5 5 V 4 A 1.5 1.5 0 0 0 2.5 1 A 1.5 1.5 0 0 0 2.5 4 V 5 A 2.5 2.5 0 0 1 2.5 0" fill="black" stroke="none"></path>
         </svg>
-        <svg id="Shape5_F" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+        <svg id="Shape5_4" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none"></path>
             <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none" transform="rotate(72,2.5,2.5)"></path>
             <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none" transform="rotate(144,2.5,2.5)"></path>
             <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none" transform="rotate(216,2.5,2.5)"></path>
             <path d="M2 0H3V2L2.5 2.5L2 2zz" fill="black" stroke="none" transform="rotate(288,2.5,2.5)"></path>
         </svg>
+        <!-- Chinese01 - experimental -->
+        <svg id="Chinese01_0" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 0H5V1H2.25L2.1 2H4.5V4H5V5H3.5V3H1.9L1.5 4H3.5V5H0V4H0.5L0.9 3H0.5V2H1.1L1.25 1H0V0z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_1" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2 0H3V1H5V4H3V3H4V2H3V5H2V4H0V1H2V2H1V3H2V0z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_2" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M1 0H2V1H5V2H2V4H4V3H5V5H1V2H0V1H1V0z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_3" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 0H5V2H4V1H1V2H5V5H0V3H1V4H4V3H0V0z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_4" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 1H1.9L2 0H3L3.1 1H5V2H3.4C3.8 3 4.2 4 5 5H3.8C3.2 4 2.8 3.3 2.5 2.3C2.2 3.3 1.8 4 1.2 5H0C0.8 4 1.2 3 1.6 2H0V1z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_5" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0.5 0H4.5V1H0.5V0zM0.5 2H4.5V3H0.5V2zM0 4H5V5H0V4z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_6" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2 0H3V1H5V2H3V4H5V5H0V4H2V0z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_7" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,6,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M1 0H2V5H0V4H1V0zM3 0H4V4H3V0zM5 0H6V5H5V0z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_8" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0.5 0H4.5V1H3V4H5V5H0V4H2V1H0.5V0z" fill="black"></path>
+        </svg>
+        <svg id="Chinese01_9" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 1H2.1L2.2 0H3.2L3.1 1H4A1 1 0 0 1 5 2V4A1 1 0 0 1 4 5H3V4H3.75A0.25 0.25 0 0 0 4 3.75V2.25A0.25 0.25 0 0 0 3.75 2H2.9C2.55 3 1.9 4 1.2 5H0C0.8 4 1.4 3 1.9 2H0V1z" fill="black"></path>
+        </svg>
+        <!-- Arabic - experimental - thanks to Alice Kswani -->
+        <svg id="Arabic01_0" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M1 0H3V1H2V2H3V3H0V2H1V0zM4 0H5V5H0V4H4V0z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_1" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M0 1H1V4H4V3H2V0H5V1H3V2H5V5H0V1z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_2" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M0 2H1V4H4V2H5V5H0V2zM1 0H2V1H1V0M3 0H4V1H3V0z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_3" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M2 0H5V5H0V4H4V3H2V1H3V2H4V1H2V0z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_4" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M0 2H1V4H4V0H5V5H0V2z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_5" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M0 0H1V2H4V0H5V3H0V0zM2 4H3V5H2V4z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_6" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M0 0H5V1H2.5C1 3 1 4 2 4H5V5H1.5C-0.25 5 -0.25 3 1.25 1H0V0z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_7" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M1 0H2A3 3 0 0 1 5 3V5H0V4H4V3.5A2.5 2.5 0 0 0 1.5 1H1V0z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_8" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M1 0H2V2H5V5H2V4H4V3H2V5H0V4H1V0z" fill="black"></path>
+        </svg>
+        <svg id="Arabic01_9" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm"
+            style="margin: 3.49mm;">
+            <path d="M2 0H5V1H3V2H4V3H1V4H5V5H0V2H2V0z" fill="black"></path>
+        </svg>
+        <!-- Hebrew01 -->
+        <svg id="Hebrew01_0" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 0 V2 C 0 5.8 4.6 5.78 4.8 3 L5 0 H 4 L3.8 3 C 3.55 4.5 1.4 4.1 1.2 3 Q 2.8 3 2.9 2 L 3 0 H 2 L 1.9 1.5 Q 1.8 2.1 1 2 V 0 H 0" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_1" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M0 0H 1.1 L2.15 2.55C2.6 2 2.8 1.5 2.95 0L4 0.2C3.8 2.5 3 4 0.2 5L0 3.95C0.5 3.7 0.7 3.7 1.3 3.3L0 0z" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_2" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0 0 H 3 Q 4.9 0 5 2.5 V 5 5 H 4 V 3.5 Q 4.15 0.9 2.5 1 H 2 V 4 Q 2 4.9 1 5 H 0 V 4 Q 1.05 4.1 1 3.5 V 1 H 0 V 0" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_3" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0 0.25 C 5.3 -1.4 5.3 6.4 0 4.75 V 3.75 C 4 5.4 3.7 0 0.9 0.9 V 1.5 Q 0.9 2.4 1.5 2.2 V 3.1 Q 0.1 3.3 0 1.5 V 0.25" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_4" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0 0 H 1.1 L 2.3 2.1 Q 3.1 1.8 3 0 H 4 Q 4.1 2.2 2.8 3 L 4 5 H 2.9 L 1.35 2.3 Q 1.1 2.4 1.1 3 L 1 5 H 0 Q 0 1.8 0.8 1.4 L 0 0" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_5" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,3.5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0.5 0 H 1.5 Q 2.9 0.2 3 1.5 V 3.5 L 3.5 5 H 2.5 L 2.1 3.8 Q 1 3.7 1 5 H 0 Q 0 3 2 2.85 V 2 Q 2 1 1 1 H 0.5 V 0" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_6" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0 0.25 C 5.3 -1.4 5.3 6.4 0 4.75 V 3.75 C 4 5.4 4 -0.4 0 1.25 V 0.25" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_7" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0 0 L 2.8 4 H 0 V 5 H 4 V 3.9 L 2.9 2.4 Q 4 2 4 1 V 0 H 3 V 0.5 Q 3 1.4 2.4 1.7 L 1.2 0 H 0" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_8" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0 0 H 4 V 1 H 3 V 5 H 2 V 1 H 0 V 0" fill="black"></path>
+        </svg>
+        <svg id="Hebrew01_9" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M 0 0 H 2 Q 4 0 4 2 V 4 H 5 V 5 H 0 V 4 H 3 V 2.5 Q 3 1.1 2 1 H 0 V 0" fill="black"></path>
+        </svg>
+        <!-- Crowded HOTV -->
+        <svg id="CrowdedHOTV01_0" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,8,9" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2 0H6V1H2V0zM7 2H8V7H7V2zM2 8H6V9H2V8zM0 2H1V7H0V2z" fill="black"></path>
+            <path d="M2 2H3V4H5V2H6V7H5V5H3V7H2V2z" fill="black"></path>
+        </svg>
+        <svg id="CrowdedHOTV01_1" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,9,9" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2 0H7V1H2V0zM8 2H9V7H8V2zM2 8H7V9H2V8zM0 2H1V7H0V2z" fill="black"></path>
+            <path d="M4.5 2A2.5 2.5 0 1 1 4.5 7V6A1.5 1.5 0 1 0 4.5 3V2z" fill="black"></path>
+            <path d="M4.5 2A2.5 2.5 0 1 0 4.5 7V6A1.5 1.5 0 1 1 4.5 3V2z" fill="black"></path>
+        </svg>
+        <svg id="CrowdedHOTV01_2" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,8,9" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2 0H6V1H2V0zM7 2H8V7H7V2zM2 8H6V9H2V8zM0 2H1V7H0V2z" fill="black"></path>
+            <path d="M2 2H6V3H4.5V7H3.5V3H2V2z" fill="black"></path>
+        </svg>
+        <svg id="CrowdedHOTV01_3" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,8,9" height="8.73mm" style="margin: 3.49mm;">
+            <path d="M2 0H6V1H2V0zM7 2H8V7H7V2zM2 8H6V9H2V8zM0 2H1V7H0V2z" fill="black"></path>
+            <path d="M2 2H3.1L4 5.2L4.9 2H6L4.5 7H3.5L2 2z" fill="black"></path>
+        </svg>        
+        <!-- end of optotype svgs -->
         <!-- other letter chart furniture-->
         <!-- guides for 6/12 and 6/6 --->
         <svg id="red_rect" class="guide-dot" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
-                <rect x="0" cy="0" width="5" height="5" fill="rgba(255,0,0,1)" stroke="rgba(100,100,125,1)" stroke-width="0.05" />  
+                <rect x="0" cy="0" width="5" height="5" fill="rgba(255,0,0,1)" stroke="none" />  
         </svg>
         <svg id="green_dot" class="guide-dot" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
-                <circle cx="2.5" cy="2.5" r="1.5" fill="rgba(0,200,127,1)" stroke="rgba(100,120,106,1)" stroke-width="0.05" />  
+                <circle cx="2.5" cy="2.5" r="2.5" fill="rgba(0,200,127,1)" stroke="none" />  
         </svg>
         <!-- arrows and buttons for navigation -->
         <div id="buttons">
@@ -1868,8 +1991,8 @@
             return this.pushStack(this.get().reverse(), arguments);
         };
         //Version number
-        var ver = 2.1;
-        document.title += ver;
+        var ver = 2.3;
+        document.title += " v"+ver;
         //main js
         function configBarSetting() {
             this.sidebar = function () {
@@ -2159,7 +2282,7 @@
 
                 }
             }
-            this.sidebarControls = function (selCat) {
+            this.sidebarControls = function (selCat, selChart) {
                 var callBackFunction = this;
                 var thisLink = $('#bt'+objWolf[selCat].cat);
                 var thisCol = objWolf[selCat].col;
@@ -2215,8 +2338,10 @@
                     $('.shuffle-button').show();
                 } else {
                     $('.f-button').hide();
+                    $('.bg-button').hide();
+                    $('.shuffle-button').hide();
                     // display a space bar function button
-                    var thisSVG = $('#' + objWolf.chartThisId).find('svg'), thisChart = objWolf[objWolf.catThis].arCharts[objWolf.chartThis];
+                    var thisChart = objWolf[selCat].arCharts[selChart], thisSVG = $('#' + thisChart.id).find('svg');
                     if (thisSVG.length > 0) {
                         objWolf.hasSBFunc.forEach(function (el, idx) {
                             if (thisSVG[0].id == el[0]) {
@@ -2303,7 +2428,7 @@
                                 setTimeout(function() {
                                     outGoingChart.removeClass(anims.join(' ')).hide();
                                     inComingChart.addClass(objWolf.animIn).show();
-                                    functionConfigWolfChart.sidebarControls(objWolf.catThis);
+                                    functionConfigWolfChart.sidebarControls(selCat,selChart);
                                 },200);
                             },
                             function() {
@@ -2313,13 +2438,14 @@
                     } else {//using navigation buttons
                         outGoingChart.removeClass(anims.join(' ')).hide();
                         inComingChart.show();
-                        functionConfigWolfChart.sidebarControls(objWolf.catThis);
+                        functionConfigWolfChart.sidebarControls(selCat,selChart);
                     }
                 
                 } else {//first use
                     $(charts[selChart]).show();
-                    functionConfigWolfChart.sidebarControls(objWolf.catThis);
+                    functionConfigWolfChart.sidebarControls(selCat,selChart);
                 }
+                //navigation to and display of chart is now finished
                 //update cat and chartThis
                 objWolf.chartThis = selChart;
                 objWolf.chartThisId = charts[selChart].id;
@@ -2353,17 +2479,30 @@
                             $('#sAlphabet').append('<option value="3">ETDRS</option><option value="4">SloanU</option>');
                             break;
                         case '3':
-                            $('#sAlphabet').append('<option value="5">Landolt C</option>');
+                            $('#sAlphabet').append('<option value="5">Landolt_5Chars_01</option>');
                             break;
                         case '4':
-                            $('#sAlphabet').append('<option value="6">Tumbling E</option>');
+                            $('#sAlphabet').append('<option value="6">Tumbling_5Chars_01</option>');
                             break;
                         case '5':
-                            $('#sAlphabet').append('<option value="7">Vanishing ETDRS</option>');
+                            $('#sAlphabet').append('<option value="7">Vanishing_5Chars_01</option>');
                             break;
                         case '6':
-                            $('#sAlphabet').append('<option value="8">Shapes</option>');
+                            $('#sAlphabet').append('<option value="8">Shapes_5Chars_01</option>');
                             break;
+                        case '7':
+                            $('#sAlphabet').append('<option value="9">Chinese_5Chars_01</option>');
+                            break;
+                        case '8':
+                            $('#sAlphabet').append('<option value="10">Arabic_5chars_01</option>');
+                            break;
+                        case '9':
+                            $('#sAlphabet').append('<option value="11">Hebrew_5Chars_01</option>');
+                            break;
+                        /* case '10':
+                            $('#sAlphabet').append('<option value="13">Crowded HOTV 3</option><option value="12">Crowded HOTV 1</option>');
+                            break; */
+                    
                     }
                 });
             };
@@ -2403,6 +2542,7 @@
                 };
             };
             this.CaculatorCharacterHeight = function (numeratorType) {
+                //sets the VA value to be displayed in scoreBox div
                 var setHeightFunction = this;
                 var dist = $('#iDistance').val();
                 switch (notation) {
@@ -2464,7 +2604,7 @@
                 //set height for character
                 setHeightFunction.SetHeightCharacter(dist)
             };
-            this.GenerateCharacter = function (alphabetType) {
+            this.GenerateCharacter = function (alphabetType,localOptotype) {
                 var arrayCharacter = [],
                     convertFunction = this;
                 switch (alphabetType) {
@@ -2473,7 +2613,7 @@
                         arrayCharacter = ['Snellen_N,Snellen_L,Snellen_A,Snellen_Y,Snellen_Z', 'Snellen_E,Snellen_F,Snellen_R,Snellen_D,Snellen_U', 'Snellen_T,Snellen_P,Snellen_V,Snellen_H,Snellen_X', 'Snellen_Y,Snellen_E,Snellen_L,Snellen_R,Snellen_T', 'Snellen_F,Snellen_X,Snellen_U,Snellen_D,Snellen_H', 'Snellen_A,Snellen_N,Snellen_P,Snellen_V,Snellen_Z', 'Snellen_H,Snellen_Z,Snellen_T,Snellen_Y,Snellen_D', 'Snellen_V,Snellen_F,Snellen_X,Snellen_N,Snellen_R', 'Snellen_A,Snellen_L,Snellen_P,Snellen_U,Snellen_E', 'Snellen_P,Snellen_U,Snellen_V,Snellen_F,Snellen_Y', 'Snellen_T,Snellen_A,Snellen_H,Snellen_E,Snellen_D', 'Snellen_L,Snellen_R,Snellen_N,Snellen_Z,Snellen_X', 'Snellen_D,Snellen_Y,Snellen_P,Snellen_L,Snellen_N', 'Snellen_Z,Snellen_A,Snellen_T,Snellen_F,Snellen_R']
                         break;
                     case '2'://BS4274.3
-                        arrayCharacter = ['Snellen_U,Snellen_R,Snellen_N,Snellen_D,Snellen_V', 'Snellen_N,Snellen_F,Snellen_R,Snellen_Z,Snellen_E', 'Snellen_P,Snellen_H,Snellen_D,Snellen_F,Snellen_U', 'Snellen_R,Snellen_P,Snellen_N,Snellen_E,Snellen_Z', 'Snellen_D,Snellen_V,Snellen_E,Snellen_P,Snellen_R', 'Snellen_U,Snellen_D,Snellen_H,Snellen_V,Snellen_N', 'Snellen_Z,Snellen_U,Snellen_V,Snellen_F,Snellen_P', 'Snellen_E,Snellen_R,Snellen_D,Snellen_H,Snellen_Z', 'Snellen_U,Snellen_D,Snellen_P,Snellen_N,Snellen_F', 'Snellen_V,Snellen_E,Snellen_H,Snellen_U,Snellen_P', 'Snellen_F,Snellen_Z,Snellen_V,Snellen_R,Snellen_N', 'Snellen_H,Snellen_R,Snellen_E,Snellen_Z,Snellen_D', 'Snellen_N,Snellen_F,Snellen_H,Snellen_P,Snellen_Z', 'Snellen_U,Snellen_V,Snellen_F,Snellen_E,Snellen_H']
+                        arrayCharacter = ['Snellen_U,Snellen_R,Snellen_N,Snellen_D,Snellen_V', 'Snellen_N,Snellen_F,Snellen_R,Snellen_Z,Snellen_E', 'Snellen_P,Snellen_H,Snellen_D,Snellen_F,Snellen_V', 'Snellen_R,Snellen_U,Snellen_N,Snellen_E,Snellen_Z', 'Snellen_D,Snellen_V,Snellen_E,Snellen_P,Snellen_R', 'Snellen_U,Snellen_D,Snellen_H,Snellen_V,Snellen_N', 'Snellen_Z,Snellen_U,Snellen_V,Snellen_F,Snellen_P', 'Snellen_E,Snellen_R,Snellen_D,Snellen_H,Snellen_Z', 'Snellen_U,Snellen_D,Snellen_P,Snellen_N,Snellen_F', 'Snellen_V,Snellen_E,Snellen_H,Snellen_U,Snellen_P', 'Snellen_F,Snellen_Z,Snellen_V,Snellen_R,Snellen_N', 'Snellen_H,Snellen_R,Snellen_E,Snellen_Z,Snellen_D', 'Snellen_N,Snellen_F,Snellen_H,Snellen_P,Snellen_Z', 'Snellen_U,Snellen_V,Snellen_F,Snellen_E,Snellen_H']
                         break;
                     case '3':
                         arrayCharacter = ['Sloan_C,Sloan_H,Sloan_N,Sloan_R,Sloan_V', 'Sloan_D,Sloan_K,Sloan_O,Sloan_S,Sloan_V', 'Sloan_V,Sloan_O,Sloan_R,Sloan_D,Sloan_N', 'Sloan_H,Sloan_Z,Sloan_C,Sloan_K,Sloan_X', 'Sloan_O,Sloan_K,Sloan_V,Sloan_H,Sloan_D', 'Sloan_Z,Sloan_R,Sloan_N,Sloan_S,Sloan_C', 'Sloan_K,Sloan_S,Sloan_D,Sloan_C,Sloan_H', 'Sloan_R,Sloan_N,Sloan_O,Sloan_V,Sloan_Z', 'Sloan_D,Sloan_H,Sloan_R,Sloan_O,Sloan_K', 'Sloan_C,Sloan_N,Sloan_Z,Sloan_S,Sloan_V', 'Sloan_H,Sloan_O,Sloan_S,Sloan_D,Sloan_N', 'Sloan_C,Sloan_V,Sloan_K,Sloan_Z,Sloan_R', 'Sloan_D,Sloan_H,Sloan_R,Sloan_N,Sloan_O', 'Sloan_S,Sloan_V,Sloan_C,Sloan_K,Sloan_Z']
@@ -2487,10 +2627,27 @@
                     case '6':
                         arrayCharacter = ['TumblingE_N,TumblingE_S,TumblingE_E,TumblingE_N,TumblingE_W', 'TumblingE_E,TumblingE_E,TumblingE_N,TumblingE_W,TumblingE_S', 'TumblingE_E,TumblingE_S,TumblingE_S,TumblingE_W,TumblingE_N', 'TumblingE_N,TumblingE_W,TumblingE_N,TumblingE_S,TumblingE_E', 'TumblingE_S,TumblingE_W,TumblingE_N,TumblingE_W,TumblingE_E', 'TumblingE_W,TumblingE_E,TumblingE_S,TumblingE_N,TumblingE_S', 'TumblingE_W,TumblingE_N,TumblingE_E,TumblingE_S,TumblingE_W', 'TumblingE_S,TumblingE_N,TumblingE_N,TumblingE_W,TumblingE_E', 'TumblingE_N,TumblingE_E,TumblingE_S,TumblingE_W,TumblingE_W', 'TumblingE_N,TumblingE_S,TumblingE_E,TumblingE_N,TumblingE_W', 'TumblingE_E,TumblingE_E,TumblingE_N,TumblingE_W,TumblingE_S', 'TumblingE_E,TumblingE_S,TumblingE_S,TumblingE_W,TumblingE_N', 'TumblingE_N,TumblingE_W,TumblingE_N,TumblingE_S,TumblingE_E', 'TumblingE_S,TumblingE_W,TumblingE_N,TumblingE_W,TumblingE_E'];
                         break;
-                    case '7': arrayCharacter =      ['VanSloan_C,VanSloan_H,VanSloan_N,VanSloan_R,VanSloan_V', 'VanSloan_D,VanSloan_K,VanSloan_O,VanSloan_S,VanSloan_V', 'VanSloan_V,VanSloan_O,VanSloan_R,VanSloan_D,VanSloan_N', 'VanSloan_H,VanSloan_Z,VanSloan_C,VanSloan_K,VanSloan_X', 'VanSloan_O,VanSloan_K,VanSloan_V,VanSloan_H,VanSloan_D', 'VanSloan_Z,VanSloan_R,VanSloan_N,VanSloan_S,VanSloan_C', 'VanSloan_K,VanSloan_S,VanSloan_D,VanSloan_C,VanSloan_H', 'VanSloan_R,VanSloan_N,VanSloan_O,VanSloan_V,VanSloan_Z', 'VanSloan_D,VanSloan_H,VanSloan_R,VanSloan_O,VanSloan_K', 'VanSloan_C,VanSloan_N,VanSloan_Z,VanSloan_S,VanSloan_V', 'VanSloan_H,VanSloan_O,VanSloan_S,VanSloan_D,VanSloan_N', 'VanSloan_C,VanSloan_V,VanSloan_K,VanSloan_Z,VanSloan_R', 'VanSloan_D,VanSloan_H,VanSloan_R,VanSloan_N,VanSloan_O', 'VanSloan_S,VanSloan_V,VanSloan_C,VanSloan_K,VanSloan_Z'];
+                    case '7': 
+                        arrayCharacter = ['VanSloan_C,VanSloan_H,VanSloan_N,VanSloan_R,VanSloan_V', 'VanSloan_D,VanSloan_K,VanSloan_O,VanSloan_S,VanSloan_V', 'VanSloan_V,VanSloan_O,VanSloan_R,VanSloan_D,VanSloan_N', 'VanSloan_H,VanSloan_Z,VanSloan_C,VanSloan_K,VanSloan_X', 'VanSloan_O,VanSloan_K,VanSloan_V,VanSloan_H,VanSloan_D', 'VanSloan_Z,VanSloan_R,VanSloan_N,VanSloan_S,VanSloan_C', 'VanSloan_K,VanSloan_S,VanSloan_D,VanSloan_C,VanSloan_H', 'VanSloan_R,VanSloan_N,VanSloan_O,VanSloan_V,VanSloan_Z', 'VanSloan_D,VanSloan_H,VanSloan_R,VanSloan_O,VanSloan_K', 'VanSloan_C,VanSloan_N,VanSloan_Z,VanSloan_S,VanSloan_V', 'VanSloan_H,VanSloan_O,VanSloan_S,VanSloan_D,VanSloan_N', 'VanSloan_C,VanSloan_V,VanSloan_K,VanSloan_Z,VanSloan_R', 'VanSloan_D,VanSloan_H,VanSloan_R,VanSloan_N,VanSloan_O', 'VanSloan_S,VanSloan_V,VanSloan_C,VanSloan_K,VanSloan_Z'];
                         break;
-                        case '8':  arrayCharacter = ['Shape5_S,Shape5_O,Shape5_M,Shape5_C,Shape5_T', 'Shape5_O,Shape5_M,Shape5_S,Shape5_C,Shape5_F', 'Shape5_M,Shape5_T,Shape5_O,Shape5_S,Shape5_C', 'Shape5_F,Shape5_O,Shape5_S,Shape5_M,Shape5_T', 'Shape5_F,Shape5_O,Shape5_M,Shape5_C,Shape5_T', 'Shape5_O,Shape5_S,Shape5_F,Shape5_T,Shape5_C', 'Shape5_S,Shape5_O,Shape5_M,Shape5_T,Shape5_C', 'Shape5_F,Shape5_M,Shape5_C,Shape5_S,Shape5_F', 'Shape5_O,Shape5_T,Shape5_S,Shape5_F,Shape5_C', 'Shape5_M,Shape5_O,Shape5_T,Shape5_F,Shape5_M', 'Shape5_C,Shape5_S,Shape5_F,Shape5_O,Shape5_T', 'Shape5_S,Shape5_F,Shape5_M,Shape5_S,Shape5_C', 'Shape5_O,Shape5_T,Shape5_C,Shape5_M,Shape5_F', 'Shape5_S,Shape5_M,Shape5_T,Shape5_O,Shape5_C'];
+                    case '8':
+                        arrayCharacter = ['Shape5_0,Shape5_3,Shape5_1,Shape5_4,Shape5_2','Shape5_1,Shape5_2,Shape5_0,Shape5_3,Shape5_4','Shape5_4,Shape5_0,Shape5_2,Shape5_1,Shape5_3','Shape5_2,Shape5_3,Shape5_1,Shape5_4,Shape5_0','Shape5_1,Shape5_4,Shape5_3,Shape5_0,Shape5_2','Shape5_3,Shape5_0,Shape5_4,Shape5_2,Shape5_1','Shape5_2,Shape5_1,Shape5_0,Shape5_4,Shape5_3','Shape5_0,Shape5_2,Shape5_1,Shape5_3,Shape5_4','Shape5_3,Shape5_1,Shape5_0,Shape5_4,Shape5_2','Shape5_4,Shape5_0,Shape5_2,Shape5_3,Shape5_1','Shape5_2,Shape5_4,Shape5_3,Shape5_1,Shape5_0','Shape5_1,Shape5_3,Shape5_4,Shape5_0,Shape5_2','Shape5_0,Shape5_4,Shape5_2,Shape5_1,Shape5_3','Shape5_4,Shape5_1,Shape5_3,Shape5_0,Shape5_2'];
                         break;
+                    case '9':
+                        arrayCharacter = ['Chinese01_0,Chinese01_1,Chinese01_6,Chinese01_3,Chinese01_2','Chinese01_3,Chinese01_2,Chinese01_4,Chinese01_8,Chinese01_7','Chinese01_6,Chinese01_9,Chinese01_5,Chinese01_0,Chinese01_1','Chinese01_4,Chinese01_3,Chinese01_0,Chinese01_7,Chinese01_9','Chinese01_8,Chinese01_1,Chinese01_2,Chinese01_5,Chinese01_6','Chinese01_9,Chinese01_8,Chinese01_6,Chinese01_4,Chinese01_0','Chinese01_1,Chinese01_7,Chinese01_3,Chinese01_9,Chinese01_5','Chinese01_5,Chinese01_0,Chinese01_2,Chinese01_7,Chinese01_8','Chinese01_6,Chinese01_3,Chinese01_8,Chinese01_4,Chinese01_1','Chinese01_2,Chinese01_4,Chinese01_1,Chinese01_7,Chinese01_9','Chinese01_8,Chinese01_5,Chinese01_3,Chinese01_0,Chinese01_6','Chinese01_4,Chinese01_2,Chinese01_1,Chinese01_8,Chinese01_7','Chinese01_9,Chinese01_6,Chinese01_5,Chinese01_3,Chinese01_2','Chinese01_7,Chinese01_4,Chinese01_0,Chinese01_9,Chinese01_5'];
+                        break;
+                    case '10':
+                        arrayCharacter = ['Arabic01_0,Arabic01_1,Arabic01_6,Arabic01_3,Arabic01_2','Arabic01_3,Arabic01_2,Arabic01_4,Arabic01_8,Arabic01_7','Arabic01_6,Arabic01_9,Arabic01_5,Arabic01_0,Arabic01_1','Arabic01_4,Arabic01_3,Arabic01_0,Arabic01_7,Arabic01_9','Arabic01_8,Arabic01_1,Arabic01_2,Arabic01_5,Arabic01_6','Arabic01_9,Arabic01_8,Arabic01_6,Arabic01_4,Arabic01_0','Arabic01_1,Arabic01_7,Arabic01_3,Arabic01_9,Arabic01_5','Arabic01_5,Arabic01_0,Arabic01_2,Arabic01_7,Arabic01_8','Arabic01_6,Arabic01_3,Arabic01_8,Arabic01_4,Arabic01_1','Arabic01_2,Arabic01_4,Arabic01_1,Arabic01_7,Arabic01_9','Arabic01_8,Arabic01_5,Arabic01_3,Arabic01_0,Arabic01_6','Arabic01_4,Arabic01_2,Arabic01_1,Arabic01_8,Arabic01_7','Arabic01_9,Arabic01_6,Arabic01_5,Arabic01_3,Arabic01_2','Arabic01_7,Arabic01_4,Arabic01_0,Arabic01_9,Arabic01_5'];
+                        break;
+                    case '11':
+                        arrayCharacter = ['Hebrew01_2,Hebrew01_8,Hebrew01_0,Hebrew01_6,Hebrew01_4','Hebrew01_7,Hebrew01_1,Hebrew01_5,Hebrew01_9,Hebrew01_3','Hebrew01_8,Hebrew01_0,Hebrew01_2,Hebrew01_4,Hebrew01_6','Hebrew01_9,Hebrew01_5,Hebrew01_7,Hebrew01_3,Hebrew01_1','Hebrew01_6,Hebrew01_4,Hebrew01_8,Hebrew01_0,Hebrew01_2','Hebrew01_1,Hebrew01_3,Hebrew01_9,Hebrew01_5,Hebrew01_7','Hebrew01_0,Hebrew01_6,Hebrew01_4,Hebrew01_2,Hebrew01_8','Hebrew01_5,Hebrew01_7,Hebrew01_3,Hebrew01_1,Hebrew01_9','Hebrew01_4,Hebrew01_2,Hebrew01_8,Hebrew01_6,Hebrew01_0','Hebrew01_3,Hebrew01_9,Hebrew01_1,Hebrew01_7,Hebrew01_5','Hebrew01_2,Hebrew01_6,Hebrew01_0,Hebrew01_8,Hebrew01_4','Hebrew01_7,Hebrew01_5,Hebrew01_9,Hebrew01_1,Hebrew01_3','Hebrew01_8,Hebrew01_4,Hebrew01_2,Hebrew01_0,Hebrew01_6','Hebrew01_1,Hebrew01_5,Hebrew01_7,Hebrew01_3,Hebrew01_9'];
+                        break;
+                    /* case '12':
+                        arrayCharacter = ['CrowdedHOTV01_0','CrowdedHOTV01_2','CrowdedHOTV01_3','CrowdedHOTV01_1','CrowdedHOTV01_2','CrowdedHOTV01_0','CrowdedHOTV01_1','CrowdedHOTV01_3','CrowdedHOTV01_1','CrowdedHOTV01_0','CrowdedHOTV01_2','CrowdedHOTV01_3','CrowdedHOTV01_0','CrowdedHOTV01_2'];
+                        break;
+                    case '13':
+                        arrayCharacter = ['CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_2,CrowdedHOTV01_3','CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_1,CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_2,CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_0,CrowdedHOTV01_1,CrowdedHOTV01_3','CrowdedHOTV01_1,CrowdedHOTV01_2,CrowdedHOTV01_0','CrowdedHOTV01_3,CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_1,CrowdedHOTV01_2,CrowdedHOTV01_3','CrowdedHOTV01_0,CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_2,CrowdedHOTV01_1,CrowdedHOTV01_0','CrowdedHOTV01_3,CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_0,CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_2,CrowdedHOTV01_1,CrowdedHOTV01_3'];
+                        break; */
                   }
                 //reverse the order of each line if config set to Mirrored
                 if(localsMirrored == 2) {
@@ -2508,15 +2665,16 @@
                 var arrayHeight = -1, counter = 0;
                 for (var i = 0; i < arrayCharacter.length; i++) {
                     arrayHeight++;
-                    var scoreText = chartArray[arrayHeight][1], //get score text
-                        heightText = chartArray[arrayHeight][2]; //get heigth for character
-                    var splitArr = arrayCharacter[i].split(',')
+                    var scoreText = chartArray[arrayHeight][1]; //get score text
+                    var heightText = (localOptotype == 10) ? chartArray[arrayHeight][2]*9/5 : chartArray[arrayHeight][2]; //get height for character
+                    var marginText = (localOptotype == 10) ? heightText  : heightText / 2; //get height for character
+                    var splitArr = arrayCharacter[i].split(',');
                     for (var x = 0; x < splitArr.length; x++) {
                         var alphabet = splitArr[x];
                         //set style and append svg
                         $('#list-character #' + alphabet).clone().css({
                             height: heightText + 'mm',
-                            margin: heightText / 2 + 'mm',
+                            margin: heightText + 'mm ' + marginText + 'mm',
                         }).attr({
                             id: alphabet + '_'+counter,
                         }).appendTo('#line-' + (i + 1));
@@ -2534,7 +2692,7 @@
                     //set height for parent line
                     $('#line-' + (i + 1)).css('height', heightText + 'mm');
                     $('#line-' + (i + 1)).css('line-height', heightText + 'mm');
-                    $('#line-' + (i + 1)).css('margin', heightText / 2 + 'mm');
+                    $('#line-' + (i + 1)).css('margin', heightText/2 + 'mm');
                     var parentHeight = convertFunction.ConvertPixelToMM($('#line-' + (i + 1)).parent().height() / 2 - 12.5);
                     var scoreBoxCol = colours.optotype.replace(/[\d\.]+\)$/g, '1');
                     $('<div class="scoreBox" >' + scoreText + '</div>').insertAfter('#line-' + (i + 1)).css({color:scoreBoxCol});
@@ -2620,21 +2778,23 @@
                     //svg is centred with css text-align on the chart
                     var svgW = svg.viewBox.baseVal.width*elSubtense, svgH = svg.viewBox.baseVal.height*elSubtense,
                     svgX = viewWidth/2-svgW/2, svgY = viewHeight/2-svgH/2;
-                    var strTrans = 'translate(0,'+svgY+')';
+                    var strTrans = 'translate(0,'+svgY+'px)';
                     if(localsMirrored == 2) {
                         strTrans += 'scale(-1,1)';
                     }
                     var thisChart = $('#'+chartsSVG[s].id);
                     if(!thisChart.parent().hasClass('animated')) {//exclude animated charts which will be fullscreen
                         thisChart.attr({
-                            'transform':strTrans,
                             'width':svgW,
+                        }).css({
+                            'transform':strTrans,//svg 1.0 doesn't allow transform on SVG, so only some browsers allow it
                         });
                     } else {
                         thisChart.attr({
                             'width': viewWidth,
                             'height': viewHeight*0.8,
-                            'transform': 'translate(0,'+viewHeight*0.1+')',                            
+                        }).css({
+                            'transform': 'translate(0,'+viewHeight*0.1+'px)',//but does allow css transform                           
                         });
                     }
                 }
@@ -2683,17 +2843,17 @@
                         });
                 }
                 function rotate90 (el) {
-                    var angle = 0, trans = $(el).attr('transform');
-                    angle = 90;
-                    if(!objWolf.isRotated){trans +=' rotate('+angle+')';}
-                    else {
-                        var arTrans = trans.split(' ');
-                        trans = arTrans[0];
+                    var angle = 90, trans = $(el).css('transform');
+                    if(!thisChart.isToggled) {
+                        trans +=' rotate(-'+angle+'deg)';
                     }
-                    $(el).attr('transform',trans);
+                    else {
+                        trans +=' rotate('+angle+'deg)';
+                    }
+                    $(el).css('transform',trans);
                 }
                 function spaceSeptumChart () {
-                    var thisChart = objWolf[objWolf.catThis].arCharts[objWolf.chartThis].isToggled = true;
+                    thisChart.isToggled = true;
                     var buttonLayers = $('.interspace-button').find('g');
                     $(buttonLayers[0]).hide();
                     $(buttonLayers[1]).show();
@@ -2732,36 +2892,41 @@
 
             this.shuffleLetters = function () {
                 if(objWolf.catThis == 0) {
-                    var callBack = this;
-                    callBack.swapSVGLayers($('.shuffle-button'));
-                    if(!objWolf.isShuffled) {
-                        $('.char-line').each(function (index) {
-                            var parent = $(this);
-                            var arVisible = parent.find('svg:not([style*="display: none"])'),
-                            arDots = parent.find('svg.guide-dot');
-                            //count how many letters are visible
-                            var lineLength = arVisible.length;
-                            //hide all the letters
-                            arAlphabet = parent.find('svg.optotype-symbol').hide(),    
-                            //shuffle them
-                            arAlphabet = callBack.YatesShuffle(arAlphabet);
-                            //append shuffled letters to the number in the pre-shuffled line
-                            for (i = 0; i < lineLength; i++) {
-                                $(arAlphabet[i]).appendTo(parent).show();
-                                
+                    //check if letters are displayed in a column or singled
+                    var colCheck = $('.in-a-column, .disable');
+                    //if not, shuffle, else do nothing
+                    if(colCheck.length == 0) {
+                        var callBack = this;
+                        callBack.swapSVGLayers($('.shuffle-button'));
+                        if(!objWolf.isShuffled) {
+                            $('.char-line').each(function (index) {
+                                var parent = $(this);
+                                var arVisible = parent.find('svg:not([style*="display: none"])'),
+                                arDots = parent.find('svg.guide-dot');
+                                //count how many letters are visible
+                                var lineLength = arVisible.length;
+                                //hide all the letters
+                                arAlphabet = parent.find('svg.optotype-symbol').hide(),    
+                                //shuffle them
+                                arAlphabet = callBack.YatesShuffle(arAlphabet);
+                                //append shuffled letters to the number in the pre-shuffled line
+                                for (i = 0; i < lineLength; i++) {
+                                    $(arAlphabet[i]).appendTo(parent).show();
+                                    
+                                }
+                                if (arDots.length != 0) {
+                                    parent.prepend(arDots[0]).append(arDots[1]);
+                                }
+                                $('#sUnshuffled').attr('display','block');
+                                $('#sShuffled').attr('display','none');                                
+                            });
+                            } else {
+                                callBack.UnShuffleFunction(oldCharacter);
+                                $('#sUnshuffled').attr('display','none');
+                                $('#sShuffled').attr('display','block');
                             }
-                            if (arDots.length != 0) {
-                                parent.prepend(arDots[0]).append(arDots[1]);
-                            }
-                            $('#sUnshuffled').attr('display','block');
-                            $('#sShuffled').attr('display','none');                                
-                        });
-                        } else {
-                            callBack.UnShuffleFunction(oldCharacter);
-                            $('#sUnshuffled').attr('display','none');
-                            $('#sShuffled').attr('display','block');
-                        }
-                    objWolf.isShuffled=!objWolf.isShuffled;
+                        objWolf.isShuffled=!objWolf.isShuffled;
+                    }
                 }    
             }
              
@@ -2770,15 +2935,24 @@
                     var id = oldCharacter[i][0],
                         svg = oldCharacter[i][1];
                         var dataLine = $('.chart.V').find('>div[data-line=' + id + ']').html(svg);
+                        if (objWolf.isDuo) {
+                            $('.guide-dot').hide();
+                        }
                     }
             };
 
             this.duoBGFunction = function () {
                 var callBack = this;
-                if(objWolf.catThis == 0) {
+                //check if letters are displayed in a column, or singled
+                var colCheck = $('.in-a-column, .disable');
+                //only duochrome if not a column
+                if(colCheck.length == 0) {
+                    if(objWolf.catThis == 0) {
                         $('#letterChart').toggleClass('duo');
+                        $('.guide-dot').toggle();
                         objWolf.isDuo = !objWolf.isDuo;
                         callBack.swapSVGLayers($('.bg-button'));
+                    }
                 }
             };
             this.swapSVGLayers = function (el) {
@@ -3341,35 +3515,71 @@
             }
             this.characterClick = function () {
                 $(document).on('click', '.optotype-symbol', function () {
-                    var characterSVG = $('.char-line svg');
-                    if ($(this).hasClass('active')) {
-                        $(this).removeClass('active');
-                        characterSVG.removeClass('disable')
-                    } else {
-                        $(this).addClass('active');
-                        characterSVG.addClass('disable')
+                    var characterSVG = $('.char-line .optotype-symbol'), el = $(this),
+                    guideDotSVG = $('svg.guide-dot');
+                    if(el.hasClass('in-a-column')) {
+                        //show all letters
+                        characterSVG.attr('class','optotype-symbol');
+                        if (!objWolf.isDuo) {
+                            guideDotSVG.show();
+                        }
                     }
-                })
+                    else if (el.hasClass('active')) {
+                        //show a column of letters containing this one
+                        el.removeClass('active');
+                        guideDotSVG.hide();
+                        var lines = $('.char-line').each(function (idx, elem) {
+                            var b = objWolf.pointer;
+                            $(elem).find('.optotype-symbol').each(function (idx, elem) {
+                                    if (idx == b) {
+                                        $(elem).addClass('in-a-column');
+                                        $(elem).removeClass('disable');
+                                        
+                                    }
+                                });
+
+                            });
+                    }
+                    else {
+                        //show only the letter clicked
+                        el.addClass('active');
+                        characterSVG.addClass('disable');
+                        el.removeClass('disable');
+                        guideDotSVG.hide();
+                        //find the position of the clicked letter along the line
+                        var parent = this.parentNode, callBack = this, pos="";
+                        $('#'+parent.id).find('.optotype-symbol').each(function (idx, elem) {
+                            if (elem.id == callBack.id) {
+                                objWolf.pointer = idx;
+                            }
+                        });
+                        
+                    }
+                });
             };
             this.scoreBoxClick = function () {
-                 $(document).on('click', '.character-line .scoreBox', function () {
-                    var lineSVG = $(this).prev();
-                    var characterLine = $('.character-line .char-line');
-                    var characterSVG = $('.char-line svg');
-                    if($(this).hasClass('active')) {
-                        $(this).removeClass('active');
+                $(document).on('click','.scoreBox, .guide-dot', function() {
+                    var clicked = $(this), lineSVG = "", characterLine = $('.character-line .char-line'),
+                        characterSVG = $('.char-line .optotype-symbol');
+                    if(clicked[0].getAttribute('class')=="scoreBox") {
+                        lineSVG = $(this).prev();
+                    } else {
+                        lineSVG = clicked.parent();
+                    }
+                    var activeElems = lineSVG.parent().find('.guide-dot, .scoreBox')
+                    if(clicked.hasClass('active')) {
+                        activeElems.removeClass('active');
                         characterLine.css('visibility','visible')
                         characterSVG.removeClass('disable active');
 
                     } else {
-                    $('.character-line .scoreBox').removeClass('active');
-                        $(this).addClass('active');
+                    $('.character-line .scoreBox, .guide-dot').removeClass('active');
+                        activeElems.addClass('active');
                         characterLine.css('visibility','hidden')
                         lineSVG.css('visibility','visible');
                         characterSVG.removeClass('disable active')
                     }
-                   
-                })
+                });
             };
             this.hideIdleMouse = function () {
                 var idleMouseTimer;
@@ -3491,7 +3701,7 @@
                         callBackFunction.SetBgColor(colours.backgrounds.optotype);
                         callBackFunction.CaculatorCharacterHeight(numeratorType);
                         //generate letter charts
-                        callBackFunction.GenerateCharacter(alphabetType);
+                        callBackFunction.GenerateCharacter(alphabetType, localOptotype);
                         //generate single charts
                         callBackFunction.GenerateSingleCharts();
                         //set shortcut
