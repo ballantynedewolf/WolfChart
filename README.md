@@ -8,7 +8,7 @@ Now that's out of the way, the objectives are:
   1. Clinically relevant, scientifically supported sight testing tools, in the widest possible range of clinical and research settings.
   2. Open source with GNU licence
   3. Can be used on a wide variety of screen hardware
-  3. Customisable optotypes and alphabets to come eg Arabic, Hebrew, Chinese, Thai, Cyrillic etc
+  4. User-generated and Customisable optotypes and alphabets to come
 
 Ver2.3
   - Bug fixes
