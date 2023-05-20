@@ -5,13 +5,12 @@
 <html lang='en' class='old_ie'>
 <![endif]-->
 
-<html lang=en>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>WolfChart</title>
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAdCAMAAAD8QJ61AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADBQTFRFqamphoaGxcXF1tbW9/f3U1NTLi4uurq64+PjnZ2ddHR07Ozsk5OTAAAA////////NZC25gAAABB0Uk5T////////////////////AOAjXRkAAAFRSURBVHjadFNZYsUgCATU4AJ6/9sWFVP72vJhCA4wLMK4hUoYHwKXHgp3xj4I+C9AQw6994ZIHZjpF6DGviTPL2YuF4ARGofoCJfSDyDX3CPUzuXc1XlAPAB0c3pcacozC0rcAHeMj4IH0LotAjcAVB8PoOqxpBtAyDOYPewAqu5U4oCSPYOZNU1tKk4nWYRDXXRdPM/66nZrGF5A0h9ySsOTIv68PzkMELEtOh+AzXcCRsS8M6QyD+OQxI6rFeK1W5+qNrSPvDkwOsBrsMhozutntpvZGhXhroHq0VZP0AB5QjOk3QA+0Af3zGE09lYuZ5q4BOS7gfe4eycj+uzYPovJYQSp4SyCyilwjS37yr0xzP2d5AxwdjLQPRDrbFi8iN6txskpeztsd4SsvRG/1z4ai1BFxEAFZT4vKNLudwE2lRHJctH/T8+klPJh+RJgAA5sKxGB5VuMAAAAAElFTkSuQmCC" />
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAdCAMAAAD8QJ61AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADBQTFRFqamphoaGxcXF1tbW9/f3U1NTLi4uurq64+PjnZ2ddHR07Ozsk5OTAAAA////////NZC25gAAABB0Uk5T////////////////////AOAjXRkAAAFRSURBVHjadFNZYsUgCATU4AJ6/9sWFVP72vJhCA4wLMK4hUoYHwKXHgp3xj4I+C9AQw6994ZIHZjpF6DGviTPL2YuF4ARGofoCJfSDyDX3CPUzuXc1XlAPAB0c3pcacozC0rcAHeMj4IH0LotAjcAVB8PoOqxpBtAyDOYPewAqu5U4oCSPYOZNU1tKk4nWYRDXXRdPM/66nZrGF5A0h9ySsOTIv68PzkMELEtOh+AzXcCRsS8M6QyD+OQxI6rFeK1W5+qNrSPvDkwOsBrsMhozutntpvZGhXhroHq0VZP0AB5QjOk3QA+0Af3zGE09lYuZ5q4BOS7gfe4eycj+uzYPovJYQSp4SyCyilwjS37yr0xzP2d5AxwdjLQPRDrbFi8iN6txskpeztsd4SsvRG/1z4ai1BFxEAFZT4vKNLudwE2lRHJctH/T8+klPJh+RJgAA5sKxGB5VuMAAAAAElFTkSuQmCC">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <style type="text/css">
+    <style>
        
         .old_ie  .setting-bar,
          .old_ie  .guide-section,
@@ -187,10 +186,10 @@
             margin-left: 5px;
         }
 
-        .red {
+        /* .red {
             color: #D30000;
             font-size: 12px;
-        }
+        } */
 
         .form-group {
             display: table;
@@ -331,6 +330,7 @@
         }
         
         .slider {
+            appearance: none;
             -webkit-appearance: none;
             position: absolute;
             left: 40%;
@@ -515,7 +515,29 @@
             line-height: 0;
             font-size: 0;
             width: 100%;
-            }
+        }
+        .guideline {
+            position: absolute;
+            width: 96%;
+            height: 100%;
+            margin: 0 2%;
+            z-index: -2;
+        }
+        .redline {
+            background: rgba(255,255,255,0);
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(255,0,0,1) 45%, rgba(255,0,0,1) 55%, rgba(255,255,255,0) 55%, rgba(255,255,255,0) 100%);
+        }
+
+        .greenline {
+            background: rgba(255,255,255,0);
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(0,200,127,1) 45%, rgba(0,200,127,1) 55%, rgba(255,255,255,0) 55%, rgba(255,255,255,0) 100%);
+        }
+
+        .blueline {
+            background: rgba(255,255,255,0);
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgb(179, 18, 201) 45%, rgb(179, 18, 201) 55%, rgba(255,255,255,0) 55%, rgba(255,255,255,0) 100%);
+        }
+        
         .duo {
             background-size: 100%;
             background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(0,200,127,1) 50%, rgba(0,200,127,1) 100%);
@@ -629,6 +651,14 @@
         height:100%;
         z-index: 14;
     }
+    #side-bar-bg {
+        background: rgba(0,0,0,1);
+        position:absolute;
+        width: 80px;
+        right:0px;
+        height:100%;
+        z-index: 14;
+    }
     .setting-button a {
             display: block;
             position: relative;
@@ -642,11 +672,20 @@
             top: 20px;
             
         }
-    
+    #fs-div {
+        display: block;
+        position: relative;
+        top: -24px;
+        right: 80px;
+    }
+    #fs-div svg {
+        position: relative;
+        width: 42px
+    }
     #clock-div {
         display: block;
         position: relative;
-        top: 30px;
+        top: 0px;
         width: 100%;
         color: rgb(255,255,255);
         font: 800 20px sans-serif;
@@ -654,7 +693,7 @@
     #button-div {
         display: block;
         position: relative;
-        top: 40px;
+        top: 20px;
     }
     #arrow-button-div {
         display: block;
@@ -754,9 +793,38 @@
     @-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
     @-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
 
+    /* Bouncing Ball animations */
+    .ball {
+        -webkit-animation: bounce;
+        animation: bounce;
+        -webkit-animation-direction: alternate;
+                animation-direction: alternate;
+        -webkit-animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+                animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+    }
+    .purple-ball {
+        -webkit-animation-duration: 1s;animation-duration: 1s;
+    }
+    .orange-ball {
+        -webkit-animation-duration: 0.6s;animation-duration: 0.6s;
+    }
+    .green-ball {
+        -webkit-animation-duration: 0.4s;animation-duration: 0.4s;
+    }
+    @-webkit-keyframes bounce {
+        from { -webkit-transform: translate3d(0, -25%, 0); transform: translate3d(0, -25%, 0);}
+        to   { -webkit-transform: translate3d(0, 25%, 0); transform: translate3d(0, 25%, 0);}
+    }
+    @keyframes bounce {
+        from { -webkit-transform: translate3d(0, -25, 0); transform: translate3d(0, -25%, 0);}
+        to   { -webkit-transform: translate3d(0, 25%, 0); transform: translate3d(0, 25%, 0);}
+    }
+
     @media only screen and (max-width: 1024px) {
         /* For tablets */
-        #side-bar {
+        #side-bar, #side-bar-bg {
             width: 50px;
         }
         #clock-div {
@@ -801,6 +869,7 @@
     <!--dpi-->
     <div id="dpi"></div>
     <!--setting bar-->
+    <div id="side-bar-bg"></div>
     <div id="side-bar">
         <a class="setting-button" href="#setting-bar">
             <svg id="bHamburger" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -812,6 +881,9 @@
                 <rect x="2.5" y="8" width="9" height="1" rx="0.5" fill="rgb(102,102,102)" stroke-width="0"></rect>
             </svg>
         </a>
+        <div id="fs-div">
+            <a id="btFullscreenFunc"></a>
+        </div>
         <div id="clock-div"></div>
         <div id="button-div">
             <div id="arrow-button-div">
@@ -845,10 +917,10 @@
         <a class="close" href="#">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="1 1 16 16" enable-background="new 1 1 16 16" xml:space="preserve" style="width:24px;height:24px">
-            <g id="Layer_7" display="none">
+            <g id="close-Layer_7" display="none">
             <rect x="1" y="1" display="inline" width="16" height="16" />
             </g>
-            <g id="Layer_31">
+            <g id="close-Layer_31">
             <path fill="#68707D" d="M12.1,11.6c0.1,0.1,0.1,0.3,0,0.5c-0.1,0.1-0.2,0.1-0.2,0.1c-0.1,0-0.2,0-0.2-0.1L9,9.5l-2.6,2.6
                     c-0.1,0.1-0.2,0.1-0.2,0.1c-0.1,0-0.2,0-0.2-0.1c-0.1-0.1-0.1-0.3,0-0.5L8.5,9L5.9,6.4C5.8,6.2,5.8,6,5.9,5.9
                     c0.1-0.1,0.3-0.1,0.5,0L9,8.5l2.6-2.6c0.1-0.1,0.3-0.1,0.5,0c0.1,0.1,0.1,0.3,0,0.5L9.5,9L12.1,11.6z M9,16.5L9,16.5L9,16.5z
@@ -857,8 +929,8 @@
             </g>
         </svg>
         </a>
-        <form action="" method="" id="form-setting">
-            <legend>Settings</legend>
+        <form id="form-setting">
+            <h2>Settings</h2>
             <fieldset>
                 <div class="title">
                     <a class="questions-btn" href="#character-set">?</a> <span>OPTOTYPES</span>
@@ -876,7 +948,7 @@
                             <option value="7">Chinese (beta)</option>
                             <option value="8">Arabic (beta)</option>
                             <option value="9">Hebrew</option>
-                            <!-- <option value="10">Crowded HOTV</option> -->
+                            <option value="10">Crowded HOTV</option>
                         </select>
                     </div>
                 </div>
@@ -922,13 +994,13 @@
                 <div class="form-group" id="fgDistance">
                     <label class="col-2" for="iDistance" >Distance <span style="color:red">*</span></label>
                     <div class="col-8 ">
-                        <input type="text" class="form-control input-sm" id="iDistance" title="Chart Distance" min="3000"> <span class="unit">mm</span>
+                        <input type="number" class="form-control input-sm" id="iDistance" title="Chart Distance" min="3000"> <span class="unit">mm</span>
                     </div>
                 </div>
                 <div class="form-group" id="fgLengthOfLine">
                     <label class="col-2" for="iLengOfLine" >Length of line below<span style="color:red">*</span></label>
                     <div class="col-8 ">
-                        <input type="text" class="form-control input-sm" id="iLengOfLine" title="Length of Calibration Line" min="25" max="250"> <span class="unit">mm</span> <span class="red">(be precise)</span>
+                        <input type="number" class="form-control input-sm" id="iLengOfLine" title="Length of Calibration Line" min="25" max="250"> <span class="unit">mm</span> <span class="red">(be precise)</span>
                     </div>
                 </div>
                 <div class="rule form-group">
@@ -962,11 +1034,11 @@
                         </select>
                     </div>
                 </div>
-                <hr class="fg-divider" />
+                <hr class="fg-divider">
                 <div class="form-group" id="fgOptoColour">
                     <label class="col-2" for="tOptoColour" >Optotype colour</label>
                     <div class="col-setting">
-                        <input type="text" id="tOptoColour" class="form-control input" value="rgba(0,0,0,1)" /><i> </i>       
+                        <input type="text" id="tOptoColour" class="form-control input" value="rgba(0,0,0,1)"><i> </i>       
                     </div>
                 </div>
                 <div class="form-group" id="fgPresetsOpto">
@@ -978,19 +1050,19 @@
                         <button class="btn btn-tiny col-preset-opto" id="bt100Blue" type="button" value="rgba(0,0,255,1)">100% Blue</button>        
                     </div>
                 </div>
-                <hr class="fg-divider" />
+                <hr class="fg-divider">
                 <div class="form-group" id="fgBgColour">
                     <label class="col-2" for="tBgColour" >Background colour</label>
                     <div class="col-setting">
-                        <input type="text" id="tBgColour" class="form-control input" value="rgba(255,255,255,1)" /><i></i>
+                        <input type="text" id="tBgColour" class="form-control input" value="rgb(255,255,255)"><i></i>
                     </div>
                 </div>
                 <div class="form-group" id="fgPresetsBg">
-                    <label class="col-2" for="bt100Wh" >Presets: <button class="btn btn-tiny col-preset-bg" id="bt100Wh" type="button" value="rgba(255,255,255,1)">100% White</button>
+                    <label class="col-2" for="bt100Wh" >Presets: <button class="btn btn-tiny col-preset-bg" id="bt100Wh" type="button" value="rgb(255,255,255)">100% White</button>
                     </label>
                     <div class="">
-                        <button class="btn btn-tiny col-preset-bg" id="bt90Blk" type="button" value="rgba(0,0,0,0.9)">90% Black</button>
-                        <button class="btn btn-tiny col-preset-bg" id="bt50Blk" type="button" value="rgba(0,0,0,0.5)">50% Black (mid-grey)</button>        
+                        <button class="btn btn-tiny col-preset-bg" id="bt90Blk" type="button" value="rgb(25,25,25)">90% Black</button>
+                        <button class="btn btn-tiny col-preset-bg" id="bt50Blk" type="button" value="rgb(127,127,127)">50% Black (mid-grey)</button>        
 
                     </div>
                 </div>
@@ -1063,14 +1135,14 @@
     <!--end setting bar-->
     <!-- guide section-->
     <div id="guide-section" class="guide-section">
-        <legend>Help</legend>
+        <h2>Help</h2>
         <a class="close-guide" href="#">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="1 1 16 16" enable-background="new 1 1 16 16" xml:space="preserve" style="width:24px;height:24px">
-            <g id="Layer_7" display="none">
+            <g id="close-guide-Layer_7" display="none">
             <rect x="1" y="1" display="inline" width="16" height="16" />
             </g>
-            <g id="Layer_31">
+            <g id="close-guide-Layer_31">
             <path fill="#68707D" d="M12.1,11.6c0.1,0.1,0.1,0.3,0,0.5c-0.1,0.1-0.2,0.1-0.2,0.1c-0.1,0-0.2,0-0.2-0.1L9,9.5l-2.6,2.6
                     c-0.1,0.1-0.2,0.1-0.2,0.1c-0.1,0-0.2,0-0.2-0.1c-0.1-0.1-0.1-0.3,0-0.5L8.5,9L5.9,6.4C5.8,6.2,5.8,6,5.9,5.9
                     c0.1-0.1,0.3-0.1,0.5,0L9,8.5l2.6-2.6c0.1-0.1,0.3-0.1,0.5,0c0.1,0.1,0.1,0.3,0,0.5L9.5,9L12.1,11.6z M9,16.5L9,16.5L9,16.5z
@@ -1080,7 +1152,7 @@
             </svg>
         </a>
         <div class="panel-body">
-        <strong>Very quick guide: </strong>Calibrate and configure your chart using the Settings form and consult this help guide if you get stuck. You will need a measuring tape to measure viewing distance and a ruler to measure the calibration line.<br />Charts are in 4 categories; V for VA, R for Refraction, B for Binocular and M for Miscellaneous. Use the onscreen arrows or arrows on your keyboard to navigate horizontally between categories and vertically within categories. Alternatively, the category buttons in the flyout at bottom right give you one-click access to your most-used chart in that category. These category links are also mapped to the corresponding letters on your keyboard.<br />Click or tap on any line label to mask that line. Click or tap again to unmask. <br />Click or tap on any letter to mask it. Click or tap on it again to mask a column of letters. Click or tap on any letter in the column to show all again. <br />If there is a round button in the sidebar below the navigation arrows, the chart has a function mapped to the spacebar, such as zoom or rotate. You can also activate the function by clicking on or tapping the chart itself or the button.<br /><strong>Why is one of the charts just black?</strong><br />So you can darken your room with one click.<br /><br />
+        <strong>Very quick guide: </strong>Calibrate and configure your chart using the Settings form and consult this help guide if you get stuck. You will need a measuring tape to measure viewing distance and a ruler to measure the calibration line.<br>Charts are in 4 categories; V for VA, R for Refraction, B for Binocular and M for Miscellaneous. Use the onscreen arrows or arrows on your keyboard to navigate horizontally between categories and vertically within categories. Alternatively, the category buttons in the flyout at bottom right give you one-click access to your most-used chart in that category. These category links are also mapped to the corresponding letters on your keyboard.<br>Click or tap on any line label to mask that line. Click or tap again to unmask. <br>Click or tap on any letter to mask it. Click or tap on it again to mask a column of letters. Click or tap on any letter in the column to show all again. <br>If there is a round button in the sidebar below the navigation arrows, the chart has a function mapped to the spacebar, such as zoom or rotate. You can also activate the function by clicking on or tapping the chart itself or the button.<br><strong>Why is one of the charts just black?</strong><br>So you can darken your room with one click.<br><br>
         </div>
         <div class="accordion">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -1121,7 +1193,7 @@
                                     <strong>Notation</strong>: Sets the notation type on the VA label on each chart line. Regardless of notation or optotype, WolfChart uses the standard logMAR array of subtenses (0.501", 0.631", 0.794", 1", 1.259", 1.585", 2", 2.512", 3.162", 3.981", 5.012", 6.31", 7.943", 10") with each 3 lines doubling the subtense. Notation and Numerator express these subtenses as your preferred VA value. "Metres" is standard Snellen notation eg. 6/6; "Feet" is the imperialist equivalent eg. 20/20; DecimalV is a the European standard (EN ISO 8596) eg. 6/60 = 0.1, 6/12 = 0.5; logMAR is explained here <a href="https://en.wikipedia.org/wiki/LogMAR_chart" target="_blank">https://en.wikipedia.org/wiki/LogMAR_chart.</a>
                                 </li>
                                 <li>
-                                    <strong>Numerator</strong>: Sets the numerator of the fraction notation types only; if Notation is set to logMar or DecimalV, this setting makes no difference.<br />"Standard" is either 6 or 20 depending whether Notation is set to Metres or Feet above. VA labels will display as either 6/ or 20/ regardless of the value in Distance.<br />"Actual" is the value entered in Distance (see below) rounded to the nearest 0.1m or 0.5ft, and VA labels will show this rounded numerator, with a ! instead of a /, and a proportionally adjusted denominator. Please note that it is not advisable to use Standard if the Distance varies a large amount from 6000mm, say outside 5500-6500mm. The numerator should be the tested distance or near to it.
+                                    <strong>Numerator</strong>: Sets the numerator of the fraction notation types only; if Notation is set to logMar or DecimalV, this setting makes no difference.<br>"Standard" is either 6 or 20 depending whether Notation is set to Metres or Feet above. VA labels will display as either 6/ or 20/ regardless of the value in Distance.<br>"Actual" is the value entered in Distance (see below) rounded to the nearest 0.1m or 0.5ft, and VA labels will show this rounded numerator, with a ! instead of a /, and a proportionally adjusted denominator. Please note that it is not advisable to use Standard if the Distance varies a large amount from 6000mm, say outside 5500-6500mm. The numerator should be the tested distance or near to it.
 
                                 </li>
                             </ul>
@@ -1194,7 +1266,7 @@
                             <p> Use these fields to specify keyboard shortcuts for operating WolfChart. Certain keys eg. v, r, b and m are reserved and you will be alerted not to use them if you try.</p>
                             <ul>
                                 <li>
-                                    <strong>Page Up/Dn/Left/Right</strong>: Page Up, Down, Left and Right are already mapped to the arrows on your keyboard, and the arrow buttons on screen. If your controller doesn't have arrow keys, add custom shortcuts here, eg u,n,g and k respectively<br />
+                                    <strong>Page Up/Dn/Left/Right</strong>: Page Up, Down, Left and Right are already mapped to the arrows on your keyboard, and the arrow buttons on screen. If your controller doesn't have arrow keys, add custom shortcuts here, eg u,n,g and k respectively<br>
                                 </li>
                                 <li>
                                     <strong>Shuffle:</strong>: Toggles shuffle of the letters. Each shuffle is random, but each unshuffle returns the alphabet to it's original order.
@@ -1211,7 +1283,7 @@
     </div>
     <!--end guide-section-->
     <div id="letterChart" style="height:100%;">
-        <div data-line="1" class="character-line">
+        <!-- <div data-line="1" class="character-line">
             <div class="char-line" id="line-1"></div>
         </div>
         <div data-line="2" class="character-line">
@@ -1253,7 +1325,7 @@
         <div data-line="14" class="character-line">
             <div class="char-line" id="line-14"></div>   
         </div>
-        
+     -->    
     </div>
 <div id="otherChart">
     <!--these hidden divs below represent a chart each, using class for categorising. 
@@ -1263,13 +1335,13 @@
         <svg id="rJCCDots" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"
                 width="200px">
                 <defs></defs>
-                <g id="layer0" style="display:none;">
+                <g id="rJCCDots-layer0" style="display:none;">
                     <circle cx="2" cy="10" r="2" fill="rgba(0,0,0,1)" stroke="none"></circle><circle cx="6" cy="4" r="2" fill="rgba(0,0,0,1)" stroke="none"></circle>
                     <circle cx="6" cy="16" r="2" fill="rgba(0,0,0,1)" stroke="none"></circle><circle cx="10" cy="10" r="2" fill="rgba(0,0,0,1)" stroke="none"></circle>
                     <circle cx="14" cy="4" r="2" fill="rgba(0,0,0,1)" stroke="none"></circle><circle cx="14" cy="16" r="2" fill="rgba(0,0,0,1)" stroke="none"></circle>
                     <circle cx="18" cy="10" r="2" fill="rgba(0,0,0,1)" stroke="none"></circle>
                 </g>
-                <g id="layer1">
+                <g id="rJCCDots-layer1">
                     <circle cx="2" cy="6" r="1" fill="rgba(0,0,0,1)" stroke="none"></circle><circle cx="2" cy="10" r="1" fill="rgba(0,0,0,1)" stroke="none"></circle>
                     <circle cx="2" cy="14" r="1" fill="rgba(0,0,0,1)" stroke="none"></circle><circle cx="6" cy="4" r="1" fill="rgba(0,0,0,1)" stroke="none"></circle>
                     <circle cx="6" cy="8" r="1" fill="rgba(0,0,0,1)" stroke="none"></circle><circle cx="6" cy="12" r="1" fill="rgba(0,0,0,1)" stroke="none"></circle>
@@ -1288,27 +1360,130 @@
         <svg id="rBullseye" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 14 14" width="200px">
             <defs></defs>
-            <g id="layer0" style="display:none;">
+            <g id="rBullseye-layer0" style="display:none;">
                 <path
                     d="M 7 0 A 7 7 0 1 1 6.999 0z M 7 2 A 5 5 0 1 1 6.999 2z M 7 4 A 3 3 0 1 1 6.999 4z M 7 6 A 1 1 0 1 1 6.999 6z"
                     fill="#000000" stroke="none" fill-rule="evenodd"></path>
             </g>
-            <g id="layer1">
+            <g id="rBullseye-layer1">
                 <path
                     d="M 7 3.5 A 3.5 3.5 0 1 1 6.999 3.5z M 7 4.5 A 2.5 2.5 0 1 1 6.999 4.5z M 7 5.5 A 1.5 1.5 0 1 1 6.999 5.5z M 7 6.5 A 0.5 0.5 0 1 1 6.999 6.5z"
                     fill="#000000" stroke="none" fill-rule="evenodd"></path>
             </g>
         </svg>
     </div>   
-    <div class="chart R" id="R2" style="background-color: rgba(255,255,255,1);">
+    <div class="chart R" id="R2" style="background-color:rgba(255,255,255,1);">
+        <svg id="rMegaBullseye" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,40,40">
+            <g id="rMegaBullseye-layer0" style="display:none;">
+                <path d="M 20 0 A 20 20 0 1 1 19.999 0z M 20 2 A 18 18 0 1 1 19.999 2z"
+                                fill="#000000" stroke="none" fill-rule="evenodd"></path>
+                <path d="M 20 4 A 16 16 0 1 1 19.999 4z M 20 6 A 14 14 0 1 1 19.999 6z"
+                                fill="#000000" stroke="none" fill-rule="evenodd"></path>
+                <path d="M 20 8 A 12 12 0 1 1 19.999 8z M 20 10 A 10 10 0 1 1 19.999 10z"
+                                fill="#000000" stroke="none" fill-rule="evenodd"></path>
+                <path d="M 20 12 A 8 8 0 1 1 19.999 12z M 20 14 A 6 6 0 1 1 19.999 14z"
+                                fill="#000000" stroke="none" fill-rule="evenodd"></path>
+                <path d="M 20 16 A 4 4 0 1 1 19.999 16z M 20 18 A 2 2 0 1 1 19.999 18z"
+                                fill="#000000" stroke="none" fill-rule="evenodd"></path>
+            </g>
+            <g id="rMegaBullseye-layer1">
+                <path d="M 20 10 A 10 10 0 1 1 19.999 10z M 20 11 A 9 9 0 1 1 19.999 11z" 
+                    fill="#000000" stroke="none" fill-rule="evenodd"></path>
+                <path d="M 20 12 A 8 8 0 1 1 19.999 12z M 20 13 A 7 7 0 1 1 19.999 13z" 
+                    fill="#000000" stroke="none" fill-rule="evenodd">
+                </path>
+                <path d="M 20 14 A 6 6 0 1 1 19.999 14z M 20 15 A 5 5 0 1 1 19.999 15z" 
+                    fill="#000000" stroke="none" fill-rule="evenodd">
+                </path>
+                <path d="M 20 16 A 4 4 0 1 1 19.999 16z M 20 17 A 3 3 0 1 1 19.999 17z" 
+                    fill="#000000" stroke="none" fill-rule="evenodd">
+                </path>
+                <path d="M 20 18 A 2 2 0 1 1 19.999 18z M 20 19 A 1 1 0 1 1 19.999 19z" 
+                    fill="#000000" stroke="none" fill-rule="evenodd">
+                </path>
+            </g>
+        </svg>
+    </div>
+    <div class="chart R" id="R3" style="background-color: rgba(255,255,255,1);">
+        <svg id="rFusedXCyl" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 29 29">
+            <defs>
+                <rect id="rFusedXCyl_e0" x="0" y="0" width="1" height="29" fill="rgba(0,0,0,1)" stroke="none" />
+                <rect id="rFusedXCyl_e1" x="0" y="0" width="0.5" height="14.5" fill="rgba(0,0,0,1)" stroke="none" />
+            </defs>
+            <g id="rFusedXCyl-layer0" style="display:none;">
+                <g id="rFusedXCylVGroup" transform="translate(8,0)">
+                    <use xlink:href="#rFusedXCyl_e0" />
+                    <use xlink:href="#rFusedXCyl_e0" transform="translate(3,0)" />
+                    <use xlink:href="#rFusedXCyl_e0" transform="translate(6,0)" />
+                    <use xlink:href="#rFusedXCyl_e0" transform="translate(9,0)" />
+                    <use xlink:href="#rFusedXCyl_e0" transform="translate(12,0)" />
+                </g>
+                <g id="rFusedXCylHGroup" transform="translate(0,9)">
+                    <use xlink:href="#rFusedXCyl_e0" transform="rotate(-90,0,0)" />
+                    <use xlink:href="#rFusedXCyl_e0" transform="translate(0,3)  rotate(-90,0,0)" />
+                    <use xlink:href="#rFusedXCyl_e0" transform="translate(0,6)  rotate(-90,0,0)" />
+                    <use xlink:href="#rFusedXCyl_e0" transform="translate(0,9)  rotate(-90,0,0)" />
+                    <use xlink:href="#rFusedXCyl_e0" transform="translate(0,12)  rotate(-90,0,0)" />
+                </g>
+            
+            </g>
+            <g id="rFusedXCyl-layer1">
+                <g id="rFusedXCylVGroup" transform="translate(11.25,7.25)">
+                    <use xlink:href="#rFusedXCyl_e1" />
+                    <use xlink:href="#rFusedXCyl_e1" transform="translate(1.5,0)" />
+                    <use xlink:href="#rFusedXCyl_e1" transform="translate(3,0)" />
+                    <use xlink:href="#rFusedXCyl_e1" transform="translate(4.5,0)" />
+                    <use xlink:href="#rFusedXCyl_e1" transform="translate(6,0)" />
+                </g>
+                <g id="rFusedXCylHGroup" transform="translate(7.25,11.75)">
+                    <use xlink:href="#rFusedXCyl_e1" transform="rotate(-90,0,0)" />
+                    <use xlink:href="#rFusedXCyl_e1" transform="translate(0,1.5)  rotate(-90,0,0)" />
+                    <use xlink:href="#rFusedXCyl_e1" transform="translate(0,3)  rotate(-90,0,0)" />
+                    <use xlink:href="#rFusedXCyl_e1" transform="translate(0,4.5)  rotate(-90,0,0)" />
+                    <use xlink:href="#rFusedXCyl_e1" transform="translate(0,6)  rotate(-90,0,0)" />
+                </g>
+            
+            </g>  
+        </svg>
+    </div>
+    <div class="chart R" id="R4" style="background-color: rgba(255,255,255,1);">
+        <svg id="rDuoSeptumChart" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 50 28">
+            <defs>
+                <path id="path-bg" d="M0 2A2 2 0 0 1 2 0H25.2V14H0z" stroke="none"></path>
+                <path id="path-ring"
+                    d="M 3.5 0 A 3.5 3.5 0 1 1 3.499 0z M 3.5 1 A 2.5 2.5 0 1 1 3.499 1z M 3.5 2 A 1.5 1.5 0 1 1 3.499 2z M 3.5 3 A 0.5 0.5 0 1 1 3.499 3z"
+                    fill="#000000" stroke="none" fill-rule="evenodd"></path>
+                <path id="path-box"
+                    d="M0 0H7V7H0zM1 1H6V6H1zM2 2H5V5H2zM3 3H4V4H3z"
+                    fill="#000000" stroke="none" fill-rule="evenodd"></path>
+            </defs>
+            <g id="dscChart" transform="translate(5,0)">
+                <g class="LGroup" transform="translate(0,0)">
+                    <use xlink:href="#path-bg" fill="#d42c2c" />
+                    <use xlink:href="#path-bg" fill="#2cd72c" transform="scale(1,-1) translate(0,-28)" />
+                    <use xlink:href="#path-ring" transform="translate(7.5 17.5)" />
+                    <use xlink:href="#path-ring" transform="translate(7.5 3.5)" />
+                </g>
+                <g class="RGroup" transform="translate(0,0)">
+                    <use xlink:href="#path-bg" fill="#d42c2c" transform="scale(-1,1) translate(-40,0)" />
+                    <use xlink:href="#path-bg" fill="#2cd72c" transform="rotate(180,20,14)" />
+                    <use xlink:href="#path-box" transform="translate(25.5 3.5)" />
+                    <use xlink:href="#path-box" transform="translate(25.5 17.5)" />
+                </g>
+            </g>
+        </svg>
+    </div>   
+    <div class="chart R" id="R5" style="background-color: rgba(255,255,255,1);">
         <svg id="rSeptumChart" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 40 28" width="200px">
             <defs></defs>
-                <g id="layer0">
+                <g id="rSeptumChart-layer0">
                 </g>
-                <g id="layer1" transform="">
+                <g id="rSeptumChart-layer1" transform="">
                     <g id="scChart" transform="translate (10,1.5)">
-                        <g id="scRGroup" transform="translate (15,0)">
+                        <g class="RGroup" transform="translate (15,0)">
                             <g id="scTURN" transform="translate(2,0)">
                                 <path d="M0 0H4V1H2.5V5H1.5V1H0z" fill="#000000" transform="translate(0,2)" stroke-width="0">
                                 </path>
@@ -1323,7 +1498,7 @@
                             <path d="M8 0 H0V0.5H7.5V24.5H0V25H8z" fill="#000000" transform=""
                                 stroke-width="0"></path>
                         </g>
-                        <g id="scLGroup" transform="translate (-3,0)">
+                        <g class="LGroup" transform="translate (-3,0)">
                             <g id="scHELP" transform="translate(2,0)">
                                 <path d="M0 0H1V2H3V0H4V5H3V3H1V5H0z" fill="#000000" transform="translate(0,2)" stroke-width="0">
                                 </path>
@@ -1341,7 +1516,7 @@
                     </g>
                 </g>
         </svg>
-    </div>   
+    </div>
     <div class="chart B" id="B0" style="background-color:hsl(0,0%,90%);">
         <svg id="bFixDisp" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 28 26" width="200px" style="border: 1px black;">
@@ -1352,8 +1527,8 @@
                 <path d="M13.5 11H14.5V12.5H16V13.5H14.5V15H13.5V13.5H12V12.5H13.5V11" fill="#000000" stroke-width="0">
                 </path>
                 <circle cx="19" cy="13" r="1.5" fill="none" stroke="#000000" stroke-width="1"></circle>
-                <path class="filterGreen" d="M13 1H15V10H13V1" fill="#2cd72c" stroke-width="0"></path>
-                <path class="filterRed" d="M13 16H15V25H13V15" fill="#d42c2c" stroke-width="0"></path>
+                <path class="filterGreen" d="M13 16H15V25H13V15" fill="#2cd72c" stroke-width="0"></path>
+                <path class="filterRed" d="M13 1H15V10H13V1" fill="#d42c2c" stroke-width="0"></path>
             </g>
         </svg>
     </div>   
@@ -1361,20 +1536,74 @@
         <svg id="bWorth4Dot" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 35 35" width="200px">
             <defs></defs>
-            <g id="layer0" style="display:none">
+            <g id="bWorth4Dot-layer0" style="display:none">
                 <circle class="filterGreen" cx="17.5" cy="15" r="1" fill="#2cd72c" stroke-width="0"></circle>
                 <circle class="filterRed" cx="15" cy="17.5" r="1" fill="#d42c2c" stroke-width="0"></circle>
                 <circle class="filterRed" cx="20" cy="17.5" r="1" fill="#d42c2c" stroke-width="0"></circle>
                 <circle cx="17.5" cy="20" r="1" fill="rgba(0,0,0,1)" stroke-width="0"></circle>
             </g>
-            <g id="layer1">
+            <g id="bWorth4Dot-layer1">
                 <circle class="filterGreen" cx="17.5" cy="10" r="2.5" fill="#2cd72c" stroke-width="0"></circle>
                 <circle class="filterRed" cx="10" cy="17.5" r="2.5" fill="#d42c2c" stroke-width="0"></circle>
                 <circle class="filterRed" cx="25" cy="17.5" r="2.5" fill="#d42c2c" stroke-width="0"></circle>
                 <circle cx="17.5" cy="25" r="2.5" fill="rgba(0,0,0,1)" stroke-width="0"></circle>
             </g>
         </svg>
-    </div>   
+    </div>
+    <div class="chart B" id="B2" style="background-color:hsl(0,0%,90%)">
+        <svg id="bDPhoriaH" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 2 40" >
+            <defs></defs>
+            <g id="bDPhoriaH-layer0">
+                <path class="filterRed" d="M0 0H2V19L1 20L0 19z" fill="#d42c2c" stroke-width="0"></path>
+                <path class="filterGreen" d="M0 21L1 20L2 21V40H0z" fill="#2cd72c" stroke-width="0"></path>
+            </g>
+        </svg>
+    </div>
+    <div class="chart B" id="B3" style="background-color:hsl(0,0%,90%);">
+        <svg id="bDPhoriaV" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60 2" >
+            <defs></defs>
+            <g id="bDPhoriaV-layer0">
+                <path class="filterRed" d="M0 0H29L30 1L29 2H0z" fill="#d42c2c" stroke-width="0"></path>
+                <path class="filterGreen" d="M31 0H60V2H31L30 1z" fill="#2cd72c" stroke-width="0"></path>
+            </g>
+        </svg>
+    </div>
+    <div class="chart B" id="B4" style="background-color:hsl(0,0%,90%);">
+        <svg id="bDPhoriaBoxes" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 20 20" width="200px">
+            <defs></defs>
+            <g id="bDPhoriaBoxes-layer0" style="display:none">
+                
+            </g>
+            <g id="bDPhoriaBoxes-layer1">
+                <rect class="filterRed" x="0" y="0" width="9" height="9" fill="#d42c2c" stroke-width="0"></rect>
+                <rect class="filterRed" x="11" y="11" width="9" height="9" fill="#d42c2c" stroke-width="0"></rect>
+                <rect class="filterGreen" x="11" y="0" width="9" height="9" fill="#d42c2c" stroke-width="0"></rect>
+                <rect class="filterGreen" x="0" y="11" width="9" height="9" fill="#d42c2c" stroke-width="0"></rect>
+            </g>
+        </svg>
+    </div>
+    <div class="chart B" id="B5" style="background-color:hsl(0,0%,90%);">
+        <svg id="bDPhoriaArrows" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 60 40" width="200px">
+            <defs></defs>
+            <g id="bDPhoriaArrows-layer0">
+                <path class="filterRed" d="M29 0H31V18L30 19L29 18z" fill="#d42c2c" stroke-width="0"></path>
+                <path class="filterGreen" d="M0 19H28L29 20L28 21H0z" fill="#2cd72c" stroke-width="0"></path>
+                <path class="filterRed" d="M29 0H31V18L30 19L29 18z" fill="#d42c2c" stroke-width="0" transform="rotate(180,30,20)"></path>
+                <path class="filterGreen" d="M0 19H28L29 20L28 21H0z" fill="#2cd72c" stroke-width="0" transform="rotate(180,30,20)"></path>
+            </g>
+            <g id="bDPhoriaArrows-layer1" style="display:none;">
+                <path class="filterGreen" d="M29 0H31V18L30 19L29 18z" fill="#d42c2c" stroke-width="0"></path>
+                <path class="filterRed" d="M0 19H28L29 20L28 21H0z" fill="#2cd72c" stroke-width="0"></path>
+                <path class="filterGreen" d="M29 0H31V18L30 19L29 18z" fill="#d42c2c" stroke-width="0" transform="rotate(180,30,20)"></path>
+                <path class="filterRed" d="M0 19H28L29 20L28 21H0z" fill="#2cd72c" stroke-width="0" transform="rotate(180,30,20)"></path>
+            </g>
+        </svg>
+    </div>
+       
     <div class="chart M" id="M0" style="background-color: rgba(0,0,0,1);">
         
     </div>
@@ -1382,114 +1611,116 @@
         <svg id="mWhiteDot" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 10 10" width="200px" style="background-color: rgba(0,0,0,1);">
             <defs></defs>
-            <g id="layer0" style="display:none;">
+            <g id="mWhiteDot-layer0" style="display:none;">
                 <circle cx="5" cy="5" r="5" fill="rgba(255,255,255,1)" stroke="none"></circle>
             </g>
-            <g id="layer1">
+            <g id="mWhiteDot-layer1">
                 <circle cx="5" cy="5" r="2.5" fill="rgba(255,255,255,1)" stroke="none"></circle>
             </g>
         </svg>
     </div>
     
     <div class="chart M animated" id="M2" style="background-color: rgba(0,0,0,1);">
-        <svg id="mLetterMorph" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,5" width="200px">
-            <defs>
-                <mask id="letterMask">
-                    <rect x="1" y="1" width="2" height="3" fill="#fff" />
-                </mask>
-            </defs>
-                <polygon id="SVGLetter" points="" fill="hsl(0,50%,50%)" fill-rule="evenodd">
-                    <animate id="morph0" attributeName="points" dur="0.35s" fill="freeze" 
-                        from="0,0 1,0 1,2 3,2 3,0 4,0 4,5 3,5 3,3 1,3 1,5 0,5" 
-                        to="0,0 0,0 1,0 1,0 1,4 1,4 4,4 4,4 4,5 4,5 0,5 0,5" 
-                    />
-                </polygon>
-        </svg>    
+        <svg id="mBouncingBall" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 10 10" width="200px" style="background-color: rgba(0,0,0,1);">
+        <circle class="ball purple-ball" cx="2" cy="5" r="1" fill="rgb(174,39,96)" stroke="none"></circle>     
+        <circle class="ball orange-ball" cx="5" cy="5" r="1" fill="rgb(214,116,10)" stroke="none"></circle>     
+        <circle class="ball green-ball" cx="8" cy="5" r="1" fill="rgb(8,190,144)" stroke="none"></circle>     
+        </svg>   
     </div>
-
+    
     <div class="chart M animated" id="M3" style="background-color: rgba(0,0,0,1);">
         <svg id="mMilesElam" version="1.1" width="200px" viewBox="0 0 320 320" fill="none" stroke="#fff"
             stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
-                <path id="r1">
+                <path id="r1" d="">
                     <animate id="p1" attributeName="d"
-                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                        values="m160,20l0,0 0,0;m130,60l30,-17 30,17;m130,110l30,-17 30,17;m160,160l0,0 0,0" dur="11s"
                         repeatCount="indefinite" />
-                    <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite"
+                    <animate attributeName="stroke-width" values="0;2;3;2;0" dur="7s" repeatCount="indefinite"
                         begin="p1.begin" />
                 </path>
-                <path id="r2">
+                <path id="r2" d="">
                     <animate attributeName="d"
-                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="7s"
                         repeatCount="indefinite" begin="p1.begin+1s" />
-                    <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite"
+                    <animate attributeName="stroke-width" values="0;2;3;2;0" dur="3s" repeatCount="indefinite"
                         begin="p1.begin+1s" />
                 </path>
-                <path id="r3">
+                <path id="r3" d="">
                     <animate attributeName="d"
-                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                    values="m160,20l0,0 0,0;m130,60l30,-17 30,17;m130,110l30,-17 30,17;m160,160l0,0 0,0;" dur="15s"
                         repeatCount="indefinite" begin="p1.begin+2s" />
-                    <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite"
+                    <animate attributeName="stroke-width" values="0;2;3;2;0" dur="9s" repeatCount="indefinite"
                         begin="p1.begin+2s" />
                 </path>
-                <path id="r4">
+                <path id="r4" d="">
                     <animate id="p1" attributeName="d"
-                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                        values="m160,20l0,0 0,0;m130,60l30,-17 30,17;m130,110l30,-17 30,17;m160,160l0,0 0,0" dur="5s"
                         repeatCount="indefinite" begin="p1.begin+3s" />
-                    <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite"
+                    <animate attributeName="stroke-width" values="0;2;3;2;0" dur="5s" repeatCount="indefinite"
                         begin="p1.begin+3s" />
                 </path>
-                <path id="r5">
+                <path id="r5" d="">
                     <animate attributeName="d"
-                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="4s"
                         repeatCount="indefinite" begin="p1.begin+4s" />
-                    <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite"
+                    <animate attributeName="stroke-width" values="0;2;3;2;0" dur="5s" repeatCount="indefinite"
                         begin="p1.begin+4s" />
                 </path>
-                <path id="r6">
+                <path id="r6" d="">
                     <animate attributeName="d"
-                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                        values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="2s"
                         repeatCount="indefinite" begin="p1.begin+5s" />
-                    <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite"
+                    <animate attributeName="stroke-width" values="0;2;3;2;0" dur="3s" repeatCount="indefinite"
                         begin="p1.begin+5s" />
                 </path>
             </defs>
-            <use xlink:href="#r1" />
-            <use xlink:href="#r1" transform="rotate(60 160 160)" />
-            <use xlink:href="#r1" transform="rotate(120 160 160)" />
-            <use xlink:href="#r1" transform="rotate(180 160 160)" />
-            <use xlink:href="#r1" transform="rotate(240 160 160)" />
-            <use xlink:href="#r1" transform="rotate(300 160 160)" />
-            <use xlink:href="#r2" transform="rotate(30 160 160)" />
-            <use xlink:href="#r2" transform="rotate(90 160 160)" />
-            <use xlink:href="#r2" transform="rotate(150 160 160)" />
-            <use xlink:href="#r2" transform="rotate(210 160 160)" />
-            <use xlink:href="#r2" transform="rotate(270 160 160)" />
-            <use xlink:href="#r2" transform="rotate(330 160 160)" />
-            <use xlink:href="#r3" />
-            <use xlink:href="#r3" transform="rotate(60 160 160)" />
-            <use xlink:href="#r3" transform="rotate(120 160 160)" />
-            <use xlink:href="#r3" transform="rotate(180 160 160)" />
-            <use xlink:href="#r3" transform="rotate(240 160 160)" />
-            <use xlink:href="#r3" transform="rotate(300 160 160)" />
-            <use xlink:href="#r4" transform="rotate(30 160 160)" />
-            <use xlink:href="#r4" transform="rotate(90 160 160)" />
-            <use xlink:href="#r4" transform="rotate(150 160 160)" />
-            <use xlink:href="#r4" transform="rotate(210 160 160)" />
-            <use xlink:href="#r4" transform="rotate(270 160 160)" />
-            <use xlink:href="#r4" transform="rotate(330 160 160)" />
-            <use xlink:href="#r5" />
-            <use xlink:href="#r5" transform="rotate(60 160 160)" />
-            <use xlink:href="#r5" transform="rotate(120 160 160)" />
-            <use xlink:href="#r5" transform="rotate(180 160 160)" />
-            <use xlink:href="#r5" transform="rotate(240 160 160)" />
-            <use xlink:href="#r5" transform="rotate(300 160 160)" />
-            <use xlink:href="#r6" transform="rotate(30 160 160)" />
-            <use xlink:href="#r6" transform="rotate(90 160 160)" />
-            <use xlink:href="#r6" transform="rotate(150 160 160)" />
-            <use xlink:href="#r6" transform="rotate(210 160 160)" />
-            <use xlink:href="#r6" transform="rotate(270 160 160)" />
-            <use xlink:href="#r6" transform="rotate(330 160 160)" />
+            <g id="g0" transform="rotate(350)">
+                <use xlink:href="#r1"/>
+                <use xlink:href="#r1" transform="rotate(60 160 160)" />
+                <use xlink:href="#r1" transform="rotate(120 160 160)" />
+                <use xlink:href="#r1" transform="rotate(180 160 160)" />
+                <use xlink:href="#r1" transform="rotate(240 160 160)" />
+                <use xlink:href="#r1" transform="rotate(300 160 160)" />
+                <use xlink:href="#r2" transform="rotate(30 160 160)" />
+                <use xlink:href="#r2" transform="rotate(90 160 160)" />
+                <use xlink:href="#r2" transform="rotate(150 160 160)" />
+                <use xlink:href="#r2" transform="rotate(210 160 160)" />
+                <use xlink:href="#r2" transform="rotate(270 160 160)" />
+                <use xlink:href="#r2" transform="rotate(330 160 160)" />
+                <use xlink:href="#r3" />
+                <use xlink:href="#r3" transform="rotate(60 160 160)" />
+                <use xlink:href="#r3" transform="rotate(120 160 160)" />
+                <use xlink:href="#r3" transform="rotate(180 160 160)" />
+                <use xlink:href="#r3" transform="rotate(240 160 160)" />
+                <use xlink:href="#r3" transform="rotate(300 160 160)" />
+                <use xlink:href="#r4" transform="rotate(30 160 160)" />
+                <use xlink:href="#r4" transform="rotate(90 160 160)" />
+                <use xlink:href="#r4" transform="rotate(150 160 160)" />
+                <use xlink:href="#r4" transform="rotate(210 160 160)" />
+                <use xlink:href="#r4" transform="rotate(270 160 160)" />
+                <use xlink:href="#r4" transform="rotate(330 160 160)" />
+                <use xlink:href="#r5" />
+                <use xlink:href="#r5" transform="rotate(60 160 160)" />
+                <use xlink:href="#r5" transform="rotate(120 160 160)" />
+                <use xlink:href="#r5" transform="rotate(180 160 160)" />
+                <use xlink:href="#r5" transform="rotate(240 160 160)" />
+                <use xlink:href="#r5" transform="rotate(300 160 160)" />
+                <use xlink:href="#r6" transform="rotate(30 160 160)" />
+                <use xlink:href="#r6" transform="rotate(90 160 160)" />
+                <use xlink:href="#r6" transform="rotate(150 160 160)" />
+                <use xlink:href="#r6" transform="rotate(210 160 160)" />
+                <use xlink:href="#r6" transform="rotate(270 160 160)" />
+                <use xlink:href="#r6" transform="rotate(330 160 160)" />
+                <animateTransform
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                values="0 160 160;30,160,160;0 160 160"
+                dur="50s"
+                repeatCount="indefinite" />   
+            </g>
         </svg>
     </div>
              
@@ -1566,8 +1797,8 @@
             <polygon points="0,5 0,0 1,0 4,3.5 4,0 5,0 5,5 4,5 1,1.6 1,5" fill="black" />
         </svg>
         <svg id="Sloan_O" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
-            <path d="M 2.5 0 A 2.5 2.5 0 1 1 2.5 5 V 4 A 1.5 1.5 0 1 0 2.5 1 V 0" fill="black"></path>
-            <path d="M 2.5 0 A 2.5 2.5 0 1 0 2.5 5 V 4 A 1.5 1.5 0 1 1 2.5 1 V 0" fill="black"></path>
+            <path d="M 2.5 0 A 2.5 2.5 0 1 1 2.499 0z M 2.5 1 A 1.5 1.5 0 1 1 2.499 1z"
+                    fill="#000000" stroke="none" fill-rule="evenodd"></path>
         </svg>
         <svg id="Sloan_P" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
             <path d="M 0 0 H 3.5 A 1.5 1.5 0 0 1 3.5 3 H 1 V 5 H 0 V 1 H 1 V 2 H 3.5 A 0.5 0.5 0 1 0 3.5 1 H 0 V 0" fill="black"></path>
@@ -1820,8 +2051,8 @@
         </svg>
         <svg id="CrowdedHOTV01_1" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,9,9" height="8.73mm" style="margin: 3.49mm;">
             <path d="M2 0H7V1H2V0zM8 2H9V7H8V2zM2 8H7V9H2V8zM0 2H1V7H0V2z" fill="black"></path>
-            <path d="M4.5 2A2.5 2.5 0 1 1 4.5 7V6A1.5 1.5 0 1 0 4.5 3V2z" fill="black"></path>
-            <path d="M4.5 2A2.5 2.5 0 1 0 4.5 7V6A1.5 1.5 0 1 1 4.5 3V2z" fill="black"></path>
+            <path d="M 4.5 2 A 2.5 2.5 0 1 1 4.499 2z M4.5 3A 1.5 1.5 0 1 1 4.499 3z"
+                    fill="#000000" stroke="none" fill-rule="evenodd"></path>
         </svg>
         <svg id="CrowdedHOTV01_2" class="optotype-symbol" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,8,9" height="8.73mm" style="margin: 3.49mm;">
             <path d="M2 0H6V1H2V0zM7 2H8V7H7V2zM2 8H6V9H2V8zM0 2H1V7H0V2z" fill="black"></path>
@@ -1832,14 +2063,6 @@
             <path d="M2 2H3.1L4 5.2L4.9 2H6L4.5 7H3.5L2 2z" fill="black"></path>
         </svg>        
         <!-- end of optotype svgs -->
-        <!-- other letter chart furniture-->
-        <!-- guides for 6/12 and 6/6 --->
-        <svg id="red_rect" class="guide-dot" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
-                <rect x="0" cy="0" width="5" height="5" fill="rgba(255,0,0,1)" stroke="none" />  
-        </svg>
-        <svg id="green_dot" class="guide-dot" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,5,5" height="8.73mm" style="margin: 3.49mm;">
-                <circle cx="2.5" cy="2.5" r="2.5" fill="rgba(0,200,127,1)" stroke="none" />  
-        </svg>
         <!-- arrows and buttons for navigation -->
         <div id="buttons">
             <svg class="arrow-button-prototype" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,4" overflow="visible">
@@ -1961,6 +2184,27 @@
                     <use xlink:href="#path-interspace-arrow" transform="rotate(180,2,2)" fill="rgb(0,200,127)" stroke="none" />
                 </g>
             </svg>
+            <svg class="fullscreen-button-prototype" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,4" overflow="visible" width="200px">
+                <defs>
+                    <path id="path-fullscreen-corner" d="M0.7 1.2V0.75A0.05 0.05 0 0 1 0.75 0.7H1.2M0.8 0.8L1.2 1.2" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="0.2" stroke-linecap="round"></path>
+                </defs>
+                <rect class='arrow-active' x='0' y='0' width='4' height='4' rx='0.4' fill="transparent" stroke-width="0.3" stroke="rgba(0,0,0,0.3)"/>
+                <rect class="arrow-dot" x="0.3" y="0.3" width="3.4" height="3.4" rx="0.2" fill="none" stroke-width="0.1" stroke="rgba(0,0,0,0.1)"/>
+                <g id="fullscreen-button-fullscreen">
+                    <use xlink:href="#path-fullscreen-corner" />
+                    <use xlink:href="#path-fullscreen-corner" transform="rotate(90,2,2)" />
+                    <use xlink:href="#path-fullscreen-corner" transform="rotate(180,2,2)" />
+                    <use xlink:href="#path-fullscreen-corner" transform="rotate(-90,2,2)" />
+                      
+                </g>
+                <g id="fullscreen-button-unfullscreen" display="none">
+                    <use xlink:href="#path-fullscreen-corner" transform="rotate(180,1.2,1.2)" />
+                    <use xlink:href="#path-fullscreen-corner" transform="rotate(180,2.8,1.2) rotate(90,2,2)" />
+                    <use xlink:href="#path-fullscreen-corner" transform="translate(1.6,1.6)" />
+                    <use xlink:href="#path-fullscreen-corner" transform="rotate(180,1.2,2.8) rotate(-90,2,2)" />
+                    
+                </g>
+            </svg>
             <svg class="nav-button-prototype" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,4" overflow="visible">
                 <circle class='dot-active' cx='2' cy='2' r='2.4' fill='transparent' stroke-width='0.3' stroke='rgb(102,102,102)'/>
                 <circle class="dot" cx="2" cy="2" r="2" fill="rgb(174,39,96)" stroke-width="0.1" stroke="rgb(152,152,152)"/>
@@ -1974,7 +2218,7 @@
     <div class="IENotice">
         <div class="modal">Your browser is not supported. You can download the latest version <a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">here </a></div>
     </div>
-    <script type="text/javascript">
+    <script>
         /*! jQuery v3.1.1 | (c) jQuery Foundation | jquery.org/license */
         !function (a, b) { "use strict"; "object" == typeof module && "object" == typeof module.exports ? module.exports = a.document ? b(a, !0) : function (a) { if (!a.document) throw new Error("jQuery requires a window with a document"); return b(a) } : b(a) }("undefined" != typeof window ? window : this, function (a, b) {
             "use strict"; var c = [], d = a.document, e = Object.getPrototypeOf, f = c.slice, g = c.concat, h = c.push, i = c.indexOf, j = {}, k = j.toString, l = j.hasOwnProperty, m = l.toString, n = m.call(Object), o = {}; function p(a, b) { b = b || d; var c = b.createElement("script"); c.text = a, b.head.appendChild(c).parentNode.removeChild(c) } var q = "3.1.1", r = function (a, b) { return new r.fn.init(a, b) }, s = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, t = /^-ms-/, u = /-([a-z])/g, v = function (a, b) { return b.toUpperCase() }; r.fn = r.prototype = { jquery: q, constructor: r, length: 0, toArray: function () { return f.call(this) }, get: function (a) { return null == a ? f.call(this) : a < 0 ? this[a + this.length] : this[a] }, pushStack: function (a) { var b = r.merge(this.constructor(), a); return b.prevObject = this, b }, each: function (a) { return r.each(this, a) }, map: function (a) { return this.pushStack(r.map(this, function (b, c) { return a.call(b, c, b) })) }, slice: function () { return this.pushStack(f.apply(this, arguments)) }, first: function () { return this.eq(0) }, last: function () { return this.eq(-1) }, eq: function (a) { var b = this.length, c = +a + (a < 0 ? b : 0); return this.pushStack(c >= 0 && c < b ? [this[c]] : []) }, end: function () { return this.prevObject || this.constructor() }, push: h, sort: c.sort, splice: c.splice }, r.extend = r.fn.extend = function () { var a, b, c, d, e, f, g = arguments[0] || {}, h = 1, i = arguments.length, j = !1; for ("boolean" == typeof g && (j = g, g = arguments[h] || {}, h++), "object" == typeof g || r.isFunction(g) || (g = {}), h === i && (g = this, h--) ; h < i; h++) if (null != (a = arguments[h])) for (b in a) c = g[b], d = a[b], g !== d && (j && d && (r.isPlainObject(d) || (e = r.isArray(d))) ? (e ? (e = !1, f = c && r.isArray(c) ? c : []) : f = c && r.isPlainObject(c) ? c : {}, g[b] = r.extend(j, f, d)) : void 0 !== d && (g[b] = d)); return g }, r.extend({ expando: "jQuery" + (q + Math.random()).replace(/\D/g, ""), isReady: !0, error: function (a) { throw new Error(a) }, noop: function () { }, isFunction: function (a) { return "function" === r.type(a) }, isArray: Array.isArray, isWindow: function (a) { return null != a && a === a.window }, isNumeric: function (a) { var b = r.type(a); return ("number" === b || "string" === b) && !isNaN(a - parseFloat(a)) }, isPlainObject: function (a) { var b, c; return !(!a || "[object Object]" !== k.call(a)) && (!(b = e(a)) || (c = l.call(b, "constructor") && b.constructor, "function" == typeof c && m.call(c) === n)) }, isEmptyObject: function (a) { var b; for (b in a) return !1; return !0 }, type: function (a) { return null == a ? a + "" : "object" == typeof a || "function" == typeof a ? j[k.call(a)] || "object" : typeof a }, globalEval: function (a) { p(a) }, camelCase: function (a) { return a.replace(t, "ms-").replace(u, v) }, nodeName: function (a, b) { return a.nodeName && a.nodeName.toLowerCase() === b.toLowerCase() }, each: function (a, b) { var c, d = 0; if (w(a)) { for (c = a.length; d < c; d++) if (b.call(a[d], d, a[d]) === !1) break } else for (d in a) if (b.call(a[d], d, a[d]) === !1) break; return a }, trim: function (a) { return null == a ? "" : (a + "").replace(s, "") }, makeArray: function (a, b) { var c = b || []; return null != a && (w(Object(a)) ? r.merge(c, "string" == typeof a ? [a] : a) : h.call(c, a)), c }, inArray: function (a, b, c) { return null == b ? -1 : i.call(b, a, c) }, merge: function (a, b) { for (var c = +b.length, d = 0, e = a.length; d < c; d++) a[e++] = b[d]; return a.length = e, a }, grep: function (a, b, c) { for (var d, e = [], f = 0, g = a.length, h = !c; f < g; f++) d = !b(a[f], f), d !== h && e.push(a[f]); return e }, map: function (a, b, c) { var d, e, f = 0, h = []; if (w(a)) for (d = a.length; f < d; f++) e = b(a[f], f, c), null != e && h.push(e); else for (f in a) e = b(a[f], f, c), null != e && h.push(e); return g.apply([], h) }, guid: 1, proxy: function (a, b) { var c, d, e; if ("string" == typeof b && (c = a[b], b = a, a = c), r.isFunction(a)) return d = f.call(arguments, 2), e = function () { return a.apply(b || this, d.concat(f.call(arguments))) }, e.guid = a.guid = a.guid || r.guid++, e }, now: Date.now, support: o }), "function" == typeof Symbol && (r.fn[Symbol.iterator] = c[Symbol.iterator]), r.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "), function (a, b) { j["[object " + b + "]"] = b.toLowerCase() }); function w(a) { var b = !!a && "length" in a && a.length, c = r.type(a); return "function" !== c && !r.isWindow(a) && ("array" === c || 0 === b || "number" == typeof b && b > 0 && b - 1 in a) } var x = function (a) { var b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u = "sizzle" + 1 * new Date, v = a.document, w = 0, x = 0, y = ha(), z = ha(), A = ha(), B = function (a, b) { return a === b && (l = !0), 0 }, C = {}.hasOwnProperty, D = [], E = D.pop, F = D.push, G = D.push, H = D.slice, I = function (a, b) { for (var c = 0, d = a.length; c < d; c++) if (a[c] === b) return c; return -1 }, J = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped", K = "[\\x20\\t\\r\\n\\f]", L = "(?:\\\\.|[\\w-]|[^\0-\\xa0])+", M = "\\[" + K + "*(" + L + ")(?:" + K + "*([*^$|!~]?=)" + K + "*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + L + "))|)" + K + "*\\]", N = ":(" + L + ")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|" + M + ")*)|.*)\\)|)", O = new RegExp(K + "+", "g"), P = new RegExp("^" + K + "+|((?:^|[^\\\\])(?:\\\\.)*)" + K + "+$", "g"), Q = new RegExp("^" + K + "*," + K + "*"), R = new RegExp("^" + K + "*([>+~]|" + K + ")" + K + "*"), S = new RegExp("=" + K + "*([^\\]'\"]*?)" + K + "*\\]", "g"), T = new RegExp(N), U = new RegExp("^" + L + "$"), V = { ID: new RegExp("^#(" + L + ")"), CLASS: new RegExp("^\\.(" + L + ")"), TAG: new RegExp("^(" + L + "|[*])"), ATTR: new RegExp("^" + M), PSEUDO: new RegExp("^" + N), CHILD: new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" + K + "*(even|odd|(([+-]|)(\\d*)n|)" + K + "*(?:([+-]|)" + K + "*(\\d+)|))" + K + "*\\)|)", "i"), bool: new RegExp("^(?:" + J + ")$", "i"), needsContext: new RegExp("^" + K + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" + K + "*((?:-\\d)?\\d*)" + K + "*\\)|)(?=[^-]|$)", "i") }, W = /^(?:input|select|textarea|button)$/i, X = /^h\d$/i, Y = /^[^{]+\{\s*\[native \w/, Z = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/, $ = /[+~]/, _ = new RegExp("\\\\([\\da-f]{1,6}" + K + "?|(" + K + ")|.)", "ig"), aa = function (a, b, c) { var d = "0x" + b - 65536; return d !== d || c ? b : d < 0 ? String.fromCharCode(d + 65536) : String.fromCharCode(d >> 10 | 55296, 1023 & d | 56320) }, ba = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g, ca = function (a, b) { return b ? "\0" === a ? "\ufffd" : a.slice(0, -1) + "\\" + a.charCodeAt(a.length - 1).toString(16) + " " : "\\" + a }, da = function () { m() }, ea = ta(function (a) { return a.disabled === !0 && ("form" in a || "label" in a) }, { dir: "parentNode", next: "legend" }); try { G.apply(D = H.call(v.childNodes), v.childNodes), D[v.childNodes.length].nodeType } catch (fa) { G = { apply: D.length ? function (a, b) { F.apply(a, H.call(b)) } : function (a, b) { var c = a.length, d = 0; while (a[c++] = b[d++]); a.length = c - 1 } } } function ga(a, b, d, e) { var f, h, j, k, l, o, r, s = b && b.ownerDocument, w = b ? b.nodeType : 9; if (d = d || [], "string" != typeof a || !a || 1 !== w && 9 !== w && 11 !== w) return d; if (!e && ((b ? b.ownerDocument || b : v) !== n && m(b), b = b || n, p)) { if (11 !== w && (l = Z.exec(a))) if (f = l[1]) { if (9 === w) { if (!(j = b.getElementById(f))) return d; if (j.id === f) return d.push(j), d } else if (s && (j = s.getElementById(f)) && t(b, j) && j.id === f) return d.push(j), d } else { if (l[2]) return G.apply(d, b.getElementsByTagName(a)), d; if ((f = l[3]) && c.getElementsByClassName && b.getElementsByClassName) return G.apply(d, b.getElementsByClassName(f)), d } if (c.qsa && !A[a + " "] && (!q || !q.test(a))) { if (1 !== w) s = b, r = a; else if ("object" !== b.nodeName.toLowerCase()) { (k = b.getAttribute("id")) ? k = k.replace(ba, ca) : b.setAttribute("id", k = u), o = g(a), h = o.length; while (h--) o[h] = "#" + k + " " + sa(o[h]); r = o.join(","), s = $.test(a) && qa(b.parentNode) || b } if (r) try { return G.apply(d, s.querySelectorAll(r)), d } catch (x) { } finally { k === u && b.removeAttribute("id") } } } return i(a.replace(P, "$1"), b, d, e) } function ha() { var a = []; function b(c, e) { return a.push(c + " ") > d.cacheLength && delete b[a.shift()], b[c + " "] = e } return b } function ia(a) { return a[u] = !0, a } function ja(a) { var b = n.createElement("fieldset"); try { return !!a(b) } catch (c) { return !1 } finally { b.parentNode && b.parentNode.removeChild(b), b = null } } function ka(a, b) { var c = a.split("|"), e = c.length; while (e--) d.attrHandle[c[e]] = b } function la(a, b) { var c = b && a, d = c && 1 === a.nodeType && 1 === b.nodeType && a.sourceIndex - b.sourceIndex; if (d) return d; if (c) while (c = c.nextSibling) if (c === b) return -1; return a ? 1 : -1 } function ma(a) { return function (b) { var c = b.nodeName.toLowerCase(); return "input" === c && b.type === a } } function na(a) { return function (b) { var c = b.nodeName.toLowerCase(); return ("input" === c || "button" === c) && b.type === a } } function oa(a) { return function (b) { return "form" in b ? b.parentNode && b.disabled === !1 ? "label" in b ? "label" in b.parentNode ? b.parentNode.disabled === a : b.disabled === a : b.isDisabled === a || b.isDisabled !== !a && ea(b) === a : b.disabled === a : "label" in b && b.disabled === a } } function pa(a) { return ia(function (b) { return b = +b, ia(function (c, d) { var e, f = a([], c.length, b), g = f.length; while (g--) c[e = f[g]] && (c[e] = !(d[e] = c[e])) }) }) } function qa(a) { return a && "undefined" != typeof a.getElementsByTagName && a } c = ga.support = {}, f = ga.isXML = function (a) { var b = a && (a.ownerDocument || a).documentElement; return !!b && "HTML" !== b.nodeName }, m = ga.setDocument = function (a) { var b, e, g = a ? a.ownerDocument || a : v; return g !== n && 9 === g.nodeType && g.documentElement ? (n = g, o = n.documentElement, p = !f(n), v !== n && (e = n.defaultView) && e.top !== e && (e.addEventListener ? e.addEventListener("unload", da, !1) : e.attachEvent && e.attachEvent("onunload", da)), c.attributes = ja(function (a) { return a.className = "i", !a.getAttribute("className") }), c.getElementsByTagName = ja(function (a) { return a.appendChild(n.createComment("")), !a.getElementsByTagName("*").length }), c.getElementsByClassName = Y.test(n.getElementsByClassName), c.getById = ja(function (a) { return o.appendChild(a).id = u, !n.getElementsByName || !n.getElementsByName(u).length }), c.getById ? (d.filter.ID = function (a) { var b = a.replace(_, aa); return function (a) { return a.getAttribute("id") === b } }, d.find.ID = function (a, b) { if ("undefined" != typeof b.getElementById && p) { var c = b.getElementById(a); return c ? [c] : [] } }) : (d.filter.ID = function (a) { var b = a.replace(_, aa); return function (a) { var c = "undefined" != typeof a.getAttributeNode && a.getAttributeNode("id"); return c && c.value === b } }, d.find.ID = function (a, b) { if ("undefined" != typeof b.getElementById && p) { var c, d, e, f = b.getElementById(a); if (f) { if (c = f.getAttributeNode("id"), c && c.value === a) return [f]; e = b.getElementsByName(a), d = 0; while (f = e[d++]) if (c = f.getAttributeNode("id"), c && c.value === a) return [f] } return [] } }), d.find.TAG = c.getElementsByTagName ? function (a, b) { return "undefined" != typeof b.getElementsByTagName ? b.getElementsByTagName(a) : c.qsa ? b.querySelectorAll(a) : void 0 } : function (a, b) { var c, d = [], e = 0, f = b.getElementsByTagName(a); if ("*" === a) { while (c = f[e++]) 1 === c.nodeType && d.push(c); return d } return f }, d.find.CLASS = c.getElementsByClassName && function (a, b) { if ("undefined" != typeof b.getElementsByClassName && p) return b.getElementsByClassName(a) }, r = [], q = [], (c.qsa = Y.test(n.querySelectorAll)) && (ja(function (a) { o.appendChild(a).innerHTML = "<a id='" + u + "'></a><select id='" + u + "-\r\\' msallowcapture=''><option selected=''></option></select>", a.querySelectorAll("[msallowcapture^='']").length && q.push("[*^$]=" + K + "*(?:''|\"\")"), a.querySelectorAll("[selected]").length || q.push("\\[" + K + "*(?:value|" + J + ")"), a.querySelectorAll("[id~=" + u + "-]").length || q.push("~="), a.querySelectorAll(":checked").length || q.push(":checked"), a.querySelectorAll("a#" + u + "+*").length || q.push(".#.+[+~]") }), ja(function (a) { a.innerHTML = "<a href='' disabled='disabled'></a><select disabled='disabled'><option/></select>"; var b = n.createElement("input"); b.setAttribute("type", "hidden"), a.appendChild(b).setAttribute("name", "D"), a.querySelectorAll("[name=d]").length && q.push("name" + K + "*[*^$|!~]?="), 2 !== a.querySelectorAll(":enabled").length && q.push(":enabled", ":disabled"), o.appendChild(a).disabled = !0, 2 !== a.querySelectorAll(":disabled").length && q.push(":enabled", ":disabled"), a.querySelectorAll("*,:x"), q.push(",.*:") })), (c.matchesSelector = Y.test(s = o.matches || o.webkitMatchesSelector || o.mozMatchesSelector || o.oMatchesSelector || o.msMatchesSelector)) && ja(function (a) { c.disconnectedMatch = s.call(a, "*"), s.call(a, "[s!='']:x"), r.push("!=", N) }), q = q.length && new RegExp(q.join("|")), r = r.length && new RegExp(r.join("|")), b = Y.test(o.compareDocumentPosition), t = b || Y.test(o.contains) ? function (a, b) { var c = 9 === a.nodeType ? a.documentElement : a, d = b && b.parentNode; return a === d || !(!d || 1 !== d.nodeType || !(c.contains ? c.contains(d) : a.compareDocumentPosition && 16 & a.compareDocumentPosition(d))) } : function (a, b) { if (b) while (b = b.parentNode) if (b === a) return !0; return !1 }, B = b ? function (a, b) { if (a === b) return l = !0, 0; var d = !a.compareDocumentPosition - !b.compareDocumentPosition; return d ? d : (d = (a.ownerDocument || a) === (b.ownerDocument || b) ? a.compareDocumentPosition(b) : 1, 1 & d || !c.sortDetached && b.compareDocumentPosition(a) === d ? a === n || a.ownerDocument === v && t(v, a) ? -1 : b === n || b.ownerDocument === v && t(v, b) ? 1 : k ? I(k, a) - I(k, b) : 0 : 4 & d ? -1 : 1) } : function (a, b) { if (a === b) return l = !0, 0; var c, d = 0, e = a.parentNode, f = b.parentNode, g = [a], h = [b]; if (!e || !f) return a === n ? -1 : b === n ? 1 : e ? -1 : f ? 1 : k ? I(k, a) - I(k, b) : 0; if (e === f) return la(a, b); c = a; while (c = c.parentNode) g.unshift(c); c = b; while (c = c.parentNode) h.unshift(c); while (g[d] === h[d]) d++; return d ? la(g[d], h[d]) : g[d] === v ? -1 : h[d] === v ? 1 : 0 }, n) : n }, ga.matches = function (a, b) { return ga(a, null, null, b) }, ga.matchesSelector = function (a, b) { if ((a.ownerDocument || a) !== n && m(a), b = b.replace(S, "='$1']"), c.matchesSelector && p && !A[b + " "] && (!r || !r.test(b)) && (!q || !q.test(b))) try { var d = s.call(a, b); if (d || c.disconnectedMatch || a.document && 11 !== a.document.nodeType) return d } catch (e) { } return ga(b, n, null, [a]).length > 0 }, ga.contains = function (a, b) { return (a.ownerDocument || a) !== n && m(a), t(a, b) }, ga.attr = function (a, b) { (a.ownerDocument || a) !== n && m(a); var e = d.attrHandle[b.toLowerCase()], f = e && C.call(d.attrHandle, b.toLowerCase()) ? e(a, b, !p) : void 0; return void 0 !== f ? f : c.attributes || !p ? a.getAttribute(b) : (f = a.getAttributeNode(b)) && f.specified ? f.value : null }, ga.escape = function (a) { return (a + "").replace(ba, ca) }, ga.error = function (a) { throw new Error("Syntax error, unrecognized expression: " + a) }, ga.uniqueSort = function (a) { var b, d = [], e = 0, f = 0; if (l = !c.detectDuplicates, k = !c.sortStable && a.slice(0), a.sort(B), l) { while (b = a[f++]) b === a[f] && (e = d.push(f)); while (e--) a.splice(d[e], 1) } return k = null, a }, e = ga.getText = function (a) { var b, c = "", d = 0, f = a.nodeType; if (f) { if (1 === f || 9 === f || 11 === f) { if ("string" == typeof a.textContent) return a.textContent; for (a = a.firstChild; a; a = a.nextSibling) c += e(a) } else if (3 === f || 4 === f) return a.nodeValue } else while (b = a[d++]) c += e(b); return c }, d = ga.selectors = { cacheLength: 50, createPseudo: ia, match: V, attrHandle: {}, find: {}, relative: { ">": { dir: "parentNode", first: !0 }, " ": { dir: "parentNode" }, "+": { dir: "previousSibling", first: !0 }, "~": { dir: "previousSibling" } }, preFilter: { ATTR: function (a) { return a[1] = a[1].replace(_, aa), a[3] = (a[3] || a[4] || a[5] || "").replace(_, aa), "~=" === a[2] && (a[3] = " " + a[3] + " "), a.slice(0, 4) }, CHILD: function (a) { return a[1] = a[1].toLowerCase(), "nth" === a[1].slice(0, 3) ? (a[3] || ga.error(a[0]), a[4] = +(a[4] ? a[5] + (a[6] || 1) : 2 * ("even" === a[3] || "odd" === a[3])), a[5] = +(a[7] + a[8] || "odd" === a[3])) : a[3] && ga.error(a[0]), a }, PSEUDO: function (a) { var b, c = !a[6] && a[2]; return V.CHILD.test(a[0]) ? null : (a[3] ? a[2] = a[4] || a[5] || "" : c && T.test(c) && (b = g(c, !0)) && (b = c.indexOf(")", c.length - b) - c.length) && (a[0] = a[0].slice(0, b), a[2] = c.slice(0, b)), a.slice(0, 3)) } }, filter: { TAG: function (a) { var b = a.replace(_, aa).toLowerCase(); return "*" === a ? function () { return !0 } : function (a) { return a.nodeName && a.nodeName.toLowerCase() === b } }, CLASS: function (a) { var b = y[a + " "]; return b || (b = new RegExp("(^|" + K + ")" + a + "(" + K + "|$)")) && y(a, function (a) { return b.test("string" == typeof a.className && a.className || "undefined" != typeof a.getAttribute && a.getAttribute("class") || "") }) }, ATTR: function (a, b, c) { return function (d) { var e = ga.attr(d, a); return null == e ? "!=" === b : !b || (e += "", "=" === b ? e === c : "!=" === b ? e !== c : "^=" === b ? c && 0 === e.indexOf(c) : "*=" === b ? c && e.indexOf(c) > -1 : "$=" === b ? c && e.slice(-c.length) === c : "~=" === b ? (" " + e.replace(O, " ") + " ").indexOf(c) > -1 : "|=" === b && (e === c || e.slice(0, c.length + 1) === c + "-")) } }, CHILD: function (a, b, c, d, e) { var f = "nth" !== a.slice(0, 3), g = "last" !== a.slice(-4), h = "of-type" === b; return 1 === d && 0 === e ? function (a) { return !!a.parentNode } : function (b, c, i) { var j, k, l, m, n, o, p = f !== g ? "nextSibling" : "previousSibling", q = b.parentNode, r = h && b.nodeName.toLowerCase(), s = !i && !h, t = !1; if (q) { if (f) { while (p) { m = b; while (m = m[p]) if (h ? m.nodeName.toLowerCase() === r : 1 === m.nodeType) return !1; o = p = "only" === a && !o && "nextSibling" } return !0 } if (o = [g ? q.firstChild : q.lastChild], g && s) { m = q, l = m[u] || (m[u] = {}), k = l[m.uniqueID] || (l[m.uniqueID] = {}), j = k[a] || [], n = j[0] === w && j[1], t = n && j[2], m = n && q.childNodes[n]; while (m = ++n && m && m[p] || (t = n = 0) || o.pop()) if (1 === m.nodeType && ++t && m === b) { k[a] = [w, n, t]; break } } else if (s && (m = b, l = m[u] || (m[u] = {}), k = l[m.uniqueID] || (l[m.uniqueID] = {}), j = k[a] || [], n = j[0] === w && j[1], t = n), t === !1) while (m = ++n && m && m[p] || (t = n = 0) || o.pop()) if ((h ? m.nodeName.toLowerCase() === r : 1 === m.nodeType) && ++t && (s && (l = m[u] || (m[u] = {}), k = l[m.uniqueID] || (l[m.uniqueID] = {}), k[a] = [w, t]), m === b)) break; return t -= e, t === d || t % d === 0 && t / d >= 0 } } }, PSEUDO: function (a, b) { var c, e = d.pseudos[a] || d.setFilters[a.toLowerCase()] || ga.error("unsupported pseudo: " + a); return e[u] ? e(b) : e.length > 1 ? (c = [a, a, "", b], d.setFilters.hasOwnProperty(a.toLowerCase()) ? ia(function (a, c) { var d, f = e(a, b), g = f.length; while (g--) d = I(a, f[g]), a[d] = !(c[d] = f[g]) }) : function (a) { return e(a, 0, c) }) : e } }, pseudos: { not: ia(function (a) { var b = [], c = [], d = h(a.replace(P, "$1")); return d[u] ? ia(function (a, b, c, e) { var f, g = d(a, null, e, []), h = a.length; while (h--) (f = g[h]) && (a[h] = !(b[h] = f)) }) : function (a, e, f) { return b[0] = a, d(b, null, f, c), b[0] = null, !c.pop() } }), has: ia(function (a) { return function (b) { return ga(a, b).length > 0 } }), contains: ia(function (a) { return a = a.replace(_, aa), function (b) { return (b.textContent || b.innerText || e(b)).indexOf(a) > -1 } }), lang: ia(function (a) { return U.test(a || "") || ga.error("unsupported lang: " + a), a = a.replace(_, aa).toLowerCase(), function (b) { var c; do if (c = p ? b.lang : b.getAttribute("xml:lang") || b.getAttribute("lang")) return c = c.toLowerCase(), c === a || 0 === c.indexOf(a + "-"); while ((b = b.parentNode) && 1 === b.nodeType); return !1 } }), target: function (b) { var c = a.location && a.location.hash; return c && c.slice(1) === b.id }, root: function (a) { return a === o }, focus: function (a) { return a === n.activeElement && (!n.hasFocus || n.hasFocus()) && !!(a.type || a.href || ~a.tabIndex) }, enabled: oa(!1), disabled: oa(!0), checked: function (a) { var b = a.nodeName.toLowerCase(); return "input" === b && !!a.checked || "option" === b && !!a.selected }, selected: function (a) { return a.parentNode && a.parentNode.selectedIndex, a.selected === !0 }, empty: function (a) { for (a = a.firstChild; a; a = a.nextSibling) if (a.nodeType < 6) return !1; return !0 }, parent: function (a) { return !d.pseudos.empty(a) }, header: function (a) { return X.test(a.nodeName) }, input: function (a) { return W.test(a.nodeName) }, button: function (a) { var b = a.nodeName.toLowerCase(); return "input" === b && "button" === a.type || "button" === b }, text: function (a) { var b; return "input" === a.nodeName.toLowerCase() && "text" === a.type && (null == (b = a.getAttribute("type")) || "text" === b.toLowerCase()) }, first: pa(function () { return [0] }), last: pa(function (a, b) { return [b - 1] }), eq: pa(function (a, b, c) { return [c < 0 ? c + b : c] }), even: pa(function (a, b) { for (var c = 0; c < b; c += 2) a.push(c); return a }), odd: pa(function (a, b) { for (var c = 1; c < b; c += 2) a.push(c); return a }), lt: pa(function (a, b, c) { for (var d = c < 0 ? c + b : c; --d >= 0;) a.push(d); return a }), gt: pa(function (a, b, c) { for (var d = c < 0 ? c + b : c; ++d < b;) a.push(d); return a }) } }, d.pseudos.nth = d.pseudos.eq; for (b in { radio: !0, checkbox: !0, file: !0, password: !0, image: !0 }) d.pseudos[b] = ma(b); for (b in { submit: !0, reset: !0 }) d.pseudos[b] = na(b); function ra() { } ra.prototype = d.filters = d.pseudos, d.setFilters = new ra, g = ga.tokenize = function (a, b) { var c, e, f, g, h, i, j, k = z[a + " "]; if (k) return b ? 0 : k.slice(0); h = a, i = [], j = d.preFilter; while (h) { c && !(e = Q.exec(h)) || (e && (h = h.slice(e[0].length) || h), i.push(f = [])), c = !1, (e = R.exec(h)) && (c = e.shift(), f.push({ value: c, type: e[0].replace(P, " ") }), h = h.slice(c.length)); for (g in d.filter) !(e = V[g].exec(h)) || j[g] && !(e = j[g](e)) || (c = e.shift(), f.push({ value: c, type: g, matches: e }), h = h.slice(c.length)); if (!c) break } return b ? h.length : h ? ga.error(a) : z(a, i).slice(0) }; function sa(a) { for (var b = 0, c = a.length, d = ""; b < c; b++) d += a[b].value; return d } function ta(a, b, c) { var d = b.dir, e = b.next, f = e || d, g = c && "parentNode" === f, h = x++; return b.first ? function (b, c, e) { while (b = b[d]) if (1 === b.nodeType || g) return a(b, c, e); return !1 } : function (b, c, i) { var j, k, l, m = [w, h]; if (i) { while (b = b[d]) if ((1 === b.nodeType || g) && a(b, c, i)) return !0 } else while (b = b[d]) if (1 === b.nodeType || g) if (l = b[u] || (b[u] = {}), k = l[b.uniqueID] || (l[b.uniqueID] = {}), e && e === b.nodeName.toLowerCase()) b = b[d] || b; else { if ((j = k[f]) && j[0] === w && j[1] === h) return m[2] = j[2]; if (k[f] = m, m[2] = a(b, c, i)) return !0 } return !1 } } function ua(a) { return a.length > 1 ? function (b, c, d) { var e = a.length; while (e--) if (!a[e](b, c, d)) return !1; return !0 } : a[0] } function va(a, b, c) { for (var d = 0, e = b.length; d < e; d++) ga(a, b[d], c); return c } function wa(a, b, c, d, e) { for (var f, g = [], h = 0, i = a.length, j = null != b; h < i; h++) (f = a[h]) && (c && !c(f, d, e) || (g.push(f), j && b.push(h))); return g } function xa(a, b, c, d, e, f) { return d && !d[u] && (d = xa(d)), e && !e[u] && (e = xa(e, f)), ia(function (f, g, h, i) { var j, k, l, m = [], n = [], o = g.length, p = f || va(b || "*", h.nodeType ? [h] : h, []), q = !a || !f && b ? p : wa(p, m, a, h, i), r = c ? e || (f ? a : o || d) ? [] : g : q; if (c && c(q, r, h, i), d) { j = wa(r, n), d(j, [], h, i), k = j.length; while (k--) (l = j[k]) && (r[n[k]] = !(q[n[k]] = l)) } if (f) { if (e || a) { if (e) { j = [], k = r.length; while (k--) (l = r[k]) && j.push(q[k] = l); e(null, r = [], j, i) } k = r.length; while (k--) (l = r[k]) && (j = e ? I(f, l) : m[k]) > -1 && (f[j] = !(g[j] = l)) } } else r = wa(r === g ? r.splice(o, r.length) : r), e ? e(null, g, r, i) : G.apply(g, r) }) } function ya(a) { for (var b, c, e, f = a.length, g = d.relative[a[0].type], h = g || d.relative[" "], i = g ? 1 : 0, k = ta(function (a) { return a === b }, h, !0), l = ta(function (a) { return I(b, a) > -1 }, h, !0), m = [function (a, c, d) { var e = !g && (d || c !== j) || ((b = c).nodeType ? k(a, c, d) : l(a, c, d)); return b = null, e }]; i < f; i++) if (c = d.relative[a[i].type]) m = [ta(ua(m), c)]; else { if (c = d.filter[a[i].type].apply(null, a[i].matches), c[u]) { for (e = ++i; e < f; e++) if (d.relative[a[e].type]) break; return xa(i > 1 && ua(m), i > 1 && sa(a.slice(0, i - 1).concat({ value: " " === a[i - 2].type ? "*" : "" })).replace(P, "$1"), c, i < e && ya(a.slice(i, e)), e < f && ya(a = a.slice(e)), e < f && sa(a)) } m.push(c) } return ua(m) } function za(a, b) { var c = b.length > 0, e = a.length > 0, f = function (f, g, h, i, k) { var l, o, q, r = 0, s = "0", t = f && [], u = [], v = j, x = f || e && d.find.TAG("*", k), y = w += null == v ? 1 : Math.random() || .1, z = x.length; for (k && (j = g === n || g || k) ; s !== z && null != (l = x[s]) ; s++) { if (e && l) { o = 0, g || l.ownerDocument === n || (m(l), h = !p); while (q = a[o++]) if (q(l, g || n, h)) { i.push(l); break } k && (w = y) } c && ((l = !q && l) && r--, f && t.push(l)) } if (r += s, c && s !== r) { o = 0; while (q = b[o++]) q(t, u, g, h); if (f) { if (r > 0) while (s--) t[s] || u[s] || (u[s] = E.call(i)); u = wa(u) } G.apply(i, u), k && !f && u.length > 0 && r + b.length > 1 && ga.uniqueSort(i) } return k && (w = y, j = v), t }; return c ? ia(f) : f } return h = ga.compile = function (a, b) { var c, d = [], e = [], f = A[a + " "]; if (!f) { b || (b = g(a)), c = b.length; while (c--) f = ya(b[c]), f[u] ? d.push(f) : e.push(f); f = A(a, za(e, d)), f.selector = a } return f }, i = ga.select = function (a, b, c, e) { var f, i, j, k, l, m = "function" == typeof a && a, n = !e && g(a = m.selector || a); if (c = c || [], 1 === n.length) { if (i = n[0] = n[0].slice(0), i.length > 2 && "ID" === (j = i[0]).type && 9 === b.nodeType && p && d.relative[i[1].type]) { if (b = (d.find.ID(j.matches[0].replace(_, aa), b) || [])[0], !b) return c; m && (b = b.parentNode), a = a.slice(i.shift().value.length) } f = V.needsContext.test(a) ? 0 : i.length; while (f--) { if (j = i[f], d.relative[k = j.type]) break; if ((l = d.find[k]) && (e = l(j.matches[0].replace(_, aa), $.test(i[0].type) && qa(b.parentNode) || b))) { if (i.splice(f, 1), a = e.length && sa(i), !a) return G.apply(c, e), c; break } } } return (m || h(a, n))(e, b, !p, c, !b || $.test(a) && qa(b.parentNode) || b), c }, c.sortStable = u.split("").sort(B).join("") === u, c.detectDuplicates = !!l, m(), c.sortDetached = ja(function (a) { return 1 & a.compareDocumentPosition(n.createElement("fieldset")) }), ja(function (a) { return a.innerHTML = "<a href='#'></a>", "#" === a.firstChild.getAttribute("href") }) || ka("type|href|height|width", function (a, b, c) { if (!c) return a.getAttribute(b, "type" === b.toLowerCase() ? 1 : 2) }), c.attributes && ja(function (a) { return a.innerHTML = "<input/>", a.firstChild.setAttribute("value", ""), "" === a.firstChild.getAttribute("value") }) || ka("value", function (a, b, c) { if (!c && "input" === a.nodeName.toLowerCase()) return a.defaultValue }), ja(function (a) { return null == a.getAttribute("disabled") }) || ka(J, function (a, b, c) { var d; if (!c) return a[b] === !0 ? b.toLowerCase() : (d = a.getAttributeNode(b)) && d.specified ? d.value : null }), ga }(a); r.find = x, r.expr = x.selectors, r.expr[":"] = r.expr.pseudos, r.uniqueSort = r.unique = x.uniqueSort, r.text = x.getText, r.isXMLDoc = x.isXML, r.contains = x.contains, r.escapeSelector = x.escape; var y = function (a, b, c) { var d = [], e = void 0 !== c; while ((a = a[b]) && 9 !== a.nodeType) if (1 === a.nodeType) { if (e && r(a).is(c)) break; d.push(a) } return d }, z = function (a, b) { for (var c = []; a; a = a.nextSibling) 1 === a.nodeType && a !== b && c.push(a); return c }, A = r.expr.match.needsContext, B = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i, C = /^.[^:#\[\.,]*$/; function D(a, b, c) { return r.isFunction(b) ? r.grep(a, function (a, d) { return !!b.call(a, d, a) !== c }) : b.nodeType ? r.grep(a, function (a) { return a === b !== c }) : "string" != typeof b ? r.grep(a, function (a) { return i.call(b, a) > -1 !== c }) : C.test(b) ? r.filter(b, a, c) : (b = r.filter(b, a), r.grep(a, function (a) { return i.call(b, a) > -1 !== c && 1 === a.nodeType })) } r.filter = function (a, b, c) { var d = b[0]; return c && (a = ":not(" + a + ")"), 1 === b.length && 1 === d.nodeType ? r.find.matchesSelector(d, a) ? [d] : [] : r.find.matches(a, r.grep(b, function (a) { return 1 === a.nodeType })) }, r.fn.extend({ find: function (a) { var b, c, d = this.length, e = this; if ("string" != typeof a) return this.pushStack(r(a).filter(function () { for (b = 0; b < d; b++) if (r.contains(e[b], this)) return !0 })); for (c = this.pushStack([]), b = 0; b < d; b++) r.find(a, e[b], c); return d > 1 ? r.uniqueSort(c) : c }, filter: function (a) { return this.pushStack(D(this, a || [], !1)) }, not: function (a) { return this.pushStack(D(this, a || [], !0)) }, is: function (a) { return !!D(this, "string" == typeof a && A.test(a) ? r(a) : a || [], !1).length } }); var E, F = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/, G = r.fn.init = function (a, b, c) { var e, f; if (!a) return this; if (c = c || E, "string" == typeof a) { if (e = "<" === a[0] && ">" === a[a.length - 1] && a.length >= 3 ? [null, a, null] : F.exec(a), !e || !e[1] && b) return !b || b.jquery ? (b || c).find(a) : this.constructor(b).find(a); if (e[1]) { if (b = b instanceof r ? b[0] : b, r.merge(this, r.parseHTML(e[1], b && b.nodeType ? b.ownerDocument || b : d, !0)), B.test(e[1]) && r.isPlainObject(b)) for (e in b) r.isFunction(this[e]) ? this[e](b[e]) : this.attr(e, b[e]); return this } return f = d.getElementById(e[2]), f && (this[0] = f, this.length = 1), this } return a.nodeType ? (this[0] = a, this.length = 1, this) : r.isFunction(a) ? void 0 !== c.ready ? c.ready(a) : a(r) : r.makeArray(a, this) }; G.prototype = r.fn, E = r(d); var H = /^(?:parents|prev(?:Until|All))/, I = { children: !0, contents: !0, next: !0, prev: !0 }; r.fn.extend({ has: function (a) { var b = r(a, this), c = b.length; return this.filter(function () { for (var a = 0; a < c; a++) if (r.contains(this, b[a])) return !0 }) }, closest: function (a, b) { var c, d = 0, e = this.length, f = [], g = "string" != typeof a && r(a); if (!A.test(a)) for (; d < e; d++) for (c = this[d]; c && c !== b; c = c.parentNode) if (c.nodeType < 11 && (g ? g.index(c) > -1 : 1 === c.nodeType && r.find.matchesSelector(c, a))) { f.push(c); break } return this.pushStack(f.length > 1 ? r.uniqueSort(f) : f) }, index: function (a) { return a ? "string" == typeof a ? i.call(r(a), this[0]) : i.call(this, a.jquery ? a[0] : a) : this[0] && this[0].parentNode ? this.first().prevAll().length : -1 }, add: function (a, b) { return this.pushStack(r.uniqueSort(r.merge(this.get(), r(a, b)))) }, addBack: function (a) { return this.add(null == a ? this.prevObject : this.prevObject.filter(a)) } }); function J(a, b) { while ((a = a[b]) && 1 !== a.nodeType); return a } r.each({ parent: function (a) { var b = a.parentNode; return b && 11 !== b.nodeType ? b : null }, parents: function (a) { return y(a, "parentNode") }, parentsUntil: function (a, b, c) { return y(a, "parentNode", c) }, next: function (a) { return J(a, "nextSibling") }, prev: function (a) { return J(a, "previousSibling") }, nextAll: function (a) { return y(a, "nextSibling") }, prevAll: function (a) { return y(a, "previousSibling") }, nextUntil: function (a, b, c) { return y(a, "nextSibling", c) }, prevUntil: function (a, b, c) { return y(a, "previousSibling", c) }, siblings: function (a) { return z((a.parentNode || {}).firstChild, a) }, children: function (a) { return z(a.firstChild) }, contents: function (a) { return a.contentDocument || r.merge([], a.childNodes) } }, function (a, b) { r.fn[a] = function (c, d) { var e = r.map(this, b, c); return "Until" !== a.slice(-5) && (d = c), d && "string" == typeof d && (e = r.filter(d, e)), this.length > 1 && (I[a] || r.uniqueSort(e), H.test(a) && e.reverse()), this.pushStack(e) } }); var K = /[^\x20\t\r\n\f]+/g; function L(a) { var b = {}; return r.each(a.match(K) || [], function (a, c) { b[c] = !0 }), b } r.Callbacks = function (a) { a = "string" == typeof a ? L(a) : r.extend({}, a); var b, c, d, e, f = [], g = [], h = -1, i = function () { for (e = a.once, d = b = !0; g.length; h = -1) { c = g.shift(); while (++h < f.length) f[h].apply(c[0], c[1]) === !1 && a.stopOnFalse && (h = f.length, c = !1) } a.memory || (c = !1), b = !1, e && (f = c ? [] : "") }, j = { add: function () { return f && (c && !b && (h = f.length - 1, g.push(c)), function d(b) { r.each(b, function (b, c) { r.isFunction(c) ? a.unique && j.has(c) || f.push(c) : c && c.length && "string" !== r.type(c) && d(c) }) }(arguments), c && !b && i()), this }, remove: function () { return r.each(arguments, function (a, b) { var c; while ((c = r.inArray(b, f, c)) > -1) f.splice(c, 1), c <= h && h-- }), this }, has: function (a) { return a ? r.inArray(a, f) > -1 : f.length > 0 }, empty: function () { return f && (f = []), this }, disable: function () { return e = g = [], f = c = "", this }, disabled: function () { return !f }, lock: function () { return e = g = [], c || b || (f = c = ""), this }, locked: function () { return !!e }, fireWith: function (a, c) { return e || (c = c || [], c = [a, c.slice ? c.slice() : c], g.push(c), b || i()), this }, fire: function () { return j.fireWith(this, arguments), this }, fired: function () { return !!d } }; return j }; function M(a) { return a } function N(a) { throw a } function O(a, b, c) { var d; try { a && r.isFunction(d = a.promise) ? d.call(a).done(b).fail(c) : a && r.isFunction(d = a.then) ? d.call(a, b, c) : b.call(void 0, a) } catch (a) { c.call(void 0, a) } } r.extend({ Deferred: function (b) { var c = [["notify", "progress", r.Callbacks("memory"), r.Callbacks("memory"), 2], ["resolve", "done", r.Callbacks("once memory"), r.Callbacks("once memory"), 0, "resolved"], ["reject", "fail", r.Callbacks("once memory"), r.Callbacks("once memory"), 1, "rejected"]], d = "pending", e = { state: function () { return d }, always: function () { return f.done(arguments).fail(arguments), this }, "catch": function (a) { return e.then(null, a) }, pipe: function () { var a = arguments; return r.Deferred(function (b) { r.each(c, function (c, d) { var e = r.isFunction(a[d[4]]) && a[d[4]]; f[d[1]](function () { var a = e && e.apply(this, arguments); a && r.isFunction(a.promise) ? a.promise().progress(b.notify).done(b.resolve).fail(b.reject) : b[d[0] + "With"](this, e ? [a] : arguments) }) }), a = null }).promise() }, then: function (b, d, e) { var f = 0; function g(b, c, d, e) { return function () { var h = this, i = arguments, j = function () { var a, j; if (!(b < f)) { if (a = d.apply(h, i), a === c.promise()) throw new TypeError("Thenable self-resolution"); j = a && ("object" == typeof a || "function" == typeof a) && a.then, r.isFunction(j) ? e ? j.call(a, g(f, c, M, e), g(f, c, N, e)) : (f++, j.call(a, g(f, c, M, e), g(f, c, N, e), g(f, c, M, c.notifyWith))) : (d !== M && (h = void 0, i = [a]), (e || c.resolveWith)(h, i)) } }, k = e ? j : function () { try { j() } catch (a) { r.Deferred.exceptionHook && r.Deferred.exceptionHook(a, k.stackTrace), b + 1 >= f && (d !== N && (h = void 0, i = [a]), c.rejectWith(h, i)) } }; b ? k() : (r.Deferred.getStackHook && (k.stackTrace = r.Deferred.getStackHook()), a.setTimeout(k)) } } return r.Deferred(function (a) { c[0][3].add(g(0, a, r.isFunction(e) ? e : M, a.notifyWith)), c[1][3].add(g(0, a, r.isFunction(b) ? b : M)), c[2][3].add(g(0, a, r.isFunction(d) ? d : N)) }).promise() }, promise: function (a) { return null != a ? r.extend(a, e) : e } }, f = {}; return r.each(c, function (a, b) { var g = b[2], h = b[5]; e[b[1]] = g.add, h && g.add(function () { d = h }, c[3 - a][2].disable, c[0][2].lock), g.add(b[3].fire), f[b[0]] = function () { return f[b[0] + "With"](this === f ? void 0 : this, arguments), this }, f[b[0] + "With"] = g.fireWith }), e.promise(f), b && b.call(f, f), f }, when: function (a) { var b = arguments.length, c = b, d = Array(c), e = f.call(arguments), g = r.Deferred(), h = function (a) { return function (c) { d[a] = this, e[a] = arguments.length > 1 ? f.call(arguments) : c, --b || g.resolveWith(d, e) } }; if (b <= 1 && (O(a, g.done(h(c)).resolve, g.reject), "pending" === g.state() || r.isFunction(e[c] && e[c].then))) return g.then(); while (c--) O(e[c], h(c), g.reject); return g.promise() } }); var P = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/; r.Deferred.exceptionHook = function (b, c) { a.console && a.console.warn && b && P.test(b.name) && a.console.warn("jQuery.Deferred exception: " + b.message, b.stack, c) }, r.readyException = function (b) { a.setTimeout(function () { throw b }) }; var Q = r.Deferred(); r.fn.ready = function (a) { return Q.then(a)["catch"](function (a) { r.readyException(a) }), this }, r.extend({ isReady: !1, readyWait: 1, holdReady: function (a) { a ? r.readyWait++ : r.ready(!0) }, ready: function (a) { (a === !0 ? --r.readyWait : r.isReady) || (r.isReady = !0, a !== !0 && --r.readyWait > 0 || Q.resolveWith(d, [r])) } }), r.ready.then = Q.then; function R() {
@@ -1991,7 +2235,7 @@
             return this.pushStack(this.get().reverse(), arguments);
         };
         //Version number
-        var ver = 2.3;
+        var ver = 2.41;
         document.title += " v"+ver;
         //main js
         function configBarSetting() {
@@ -2114,8 +2358,9 @@
             }
         };
         function ConfigWolfChart() {
+            var functionConfigWolfChart = this;
             var objWolf = {};
-            var notation, viewWidth, viewHeight = document.documentElement.clientHeight, numeratorType, oldCharacter = [];
+            var notation, viewWidth, viewHeight = window.innerHeight, numeratorType, oldCharacter = [];
             var chartArray = [], timeOut;
             var anims = ['slide-out-top','slide-out-right','slide-out-bottom','slide-out-left','slide-in-top','slide-in-right','slide-in-bottom','slide-in-left'];
             var colours = {
@@ -2134,7 +2379,7 @@
             }
             var shortcuts = ['u','n','g','k','q','z'];
             
-            this.UpdateObjWolf = function () {
+        this.initObjWolf = function () {
             objWolf = {
                 dateCreated : Date.now(),
                 useCountTimer : null,
@@ -2142,8 +2387,9 @@
                 catThis : "",
                 chartThis : "",
                 chartThisId : "",
+                isMasked : false,
                 //array of charts with spacebar functions, and the function type
-                hasSBFunc : [['rJCCDots','zoom'], ['rBullseye','zoom'], ['rSeptumChart','interspace'], ['bFixDisp','rotate'], ['bWorth4Dot','zoom'], ['mWhiteDot','zoom']],
+                hasSBFunc : [['rJCCDots','zoom'], ['rBullseye','zoom'], ['rSeptumChart','interspace'], ['rDuoSeptumChart','interspace'], ['bFixDisp','rotate'], ['bWorth4Dot','zoom'], ['bDPhoriaArrows','rotate'], ['mWhiteDot','zoom']],
                 pointer : 0,
                 animIn : "",
                 animOut : "",
@@ -2187,13 +2433,10 @@
             
             }
             this.Clock = function () {
-                var today = new Date();
-                var h = today.getHours();
-                var m = today.getMinutes();
-                var s = today.getSeconds();
-                m = (m<10) ? "0"+m : m;
+                var today = new Date(), h = today.getHours(), m = today.getMinutes(), s = today.getSeconds();
+                h = (h<10) ? "0"+h : h; m = (m<10) ? "0"+m : m;
                 $('#clock-div').html(h + ":" + m);
-                var t = setTimeout(functionConfigWolfChart.Clock, 1000);
+                var t = setTimeout(functionConfigWolfChart.Clock, 5000);
             }
             
             this.DisplayArrows = function () {
@@ -2221,6 +2464,9 @@
                     bottom: '0px',
                 }).on('click', function () {functionConfigWolfChart.scrollChart(objWolf.catThis,objWolf.chartD(),'bottom')});
                 //populate the function-button-div with function buttons
+                $('.fullscreen-button-prototype').clone().appendTo('#btFullscreenFunc').attr({class:'f-button fullscreen-button'}).on('click', function() {
+                    functionConfigWolfChart.fullscreenChange(objWolf.catThis,objWolf.chartThis);
+                }).hide();
                 $('.zoom-button-prototype').clone().appendTo('#btSpacebarFunc').attr({class:'f-button zoom-button'}).hide();
                 $('.rotate-button-prototype').clone().appendTo('#btSpacebarFunc').attr({class:'f-button rotate-button'}).hide();
                 $('.interspace-button-prototype').clone().appendTo('#btSpacebarFunc').attr({class:'f-button interspace-button'}).hide();
@@ -2263,7 +2509,6 @@
                 
             }
             this.DisplayNavigations = function () {
-                var callBackFunction = this;
                 for (r=0;r<objWolf.catsLength;r++) {
                 var thing = objWolf[r];
                 //populate the nav-button-div with category links
@@ -2283,7 +2528,6 @@
                 }
             }
             this.sidebarControls = function (selCat, selChart) {
-                var callBackFunction = this;
                 var thisLink = $('#bt'+objWolf[selCat].cat);
                 var thisCol = objWolf[selCat].col;
                 $('#nav-button-div a').css('background-color','transparent');
@@ -2336,10 +2580,12 @@
                     $('.f-button').hide();
                     $('.bg-button').show();
                     $('.shuffle-button').show();
+                    $('.fullscreen-button').show();
                 } else {
                     $('.f-button').hide();
                     $('.bg-button').hide();
                     $('.shuffle-button').hide();
+                    $('.fullscreen-button').show();
                     // display a space bar function button
                     var thisChart = objWolf[selCat].arCharts[selChart], thisSVG = $('#' + thisChart.id).find('svg');
                     if (thisSVG.length > 0) {
@@ -2372,6 +2618,8 @@
                     }
                 } else if (anim == 'fav') {//nav buttons display most used chart in category
                     objWolf.chartThis = objWolf.getMostUsed(selCat);
+                } else if (anim == 'fscreen'){
+                    objWolf.chartThis = objWolf.getLastUsed(selCat);
                 } else {//arrow buttons display last used chart in category
                     objWolf.chartThis = objWolf.getLastUsed(selCat);
                 }
@@ -2382,7 +2630,6 @@
                 //select charts from the divs in page
                 //also here we can pull charts from
                 //external files.
-                var functionConfigWolfChart = this;
                 if(selCat == 0) {
                     $('#otherChart').hide();
                     $('#letterChart').show();
@@ -2449,6 +2696,8 @@
                 //update cat and chartThis
                 objWolf.chartThis = selChart;
                 objWolf.chartThisId = charts[selChart].id;
+                //store objWolf so that we can come back to the same chart after a reload
+                localStorage.setItem("ObjWolf",JSON.stringify(objWolf));
                 objWolf[selCat].lastUsed = selChart;
                 
                 //select animation script for any charts that are animated external to their svg
@@ -2460,6 +2709,17 @@
                             break;
                     }
                 }
+                //darken the sidebar in the case of the blank black chart only, id=M0
+                //the purpose of this chart is for room darkening, so it is always the first chart
+                //in the M category
+                $('#side-bar').css({
+                        'opacity':1,
+                    });
+                if(objWolf.chartThisId == "M0") {
+                    $('#side-bar').css({
+                        'opacity':0.1,
+                    });
+                }    
                 //record a use count for this chart after n seconds
                 var timer = objWolf.useCountTimer;
                 if(timer){clearTimeout(timer);}
@@ -2499,9 +2759,9 @@
                         case '9':
                             $('#sAlphabet').append('<option value="11">Hebrew_5Chars_01</option>');
                             break;
-                        /* case '10':
-                            $('#sAlphabet').append('<option value="13">Crowded HOTV 3</option><option value="12">Crowded HOTV 1</option>');
-                            break; */
+                        case '10':
+                            $('#sAlphabet').append('<option value="12">Crowded HOTV</option><option value="13">Crowded HOTV 2</option>');
+                            break;
                     
                     }
                 });
@@ -2516,16 +2776,22 @@
                 //only update fill of black fills, or Vanishing optotypes won't work
                 $('#list-character').find('svg.optotype-symbol').find('path').not('.white').css({fill: colorRGB});
                 $('#list-character').find('svg.optotype-symbol').find('polygon').not('.white').css({fill: colorRGB});
-                $('.guide-dot').css({opacity: dotA,});
             };
             this.SetBgColor = function (bgCol) {
-                var rgba = bgCol.replace(/[^\d.,]/g, '').split(',');
-                var halftone = colours.optotype.replace(/[\d\.]+\)$/g, '0.5');
-                if(alphabetType==7){//Vanishing optotype needs background same color and half the opacity of the optotype color
-                  $(document.body).css('background-color',halftone);
+                var halftone = "", regExp = /\(([^)]+)\)/g;  // get the values within () of optotype colour
+                var matches = regExp.exec(colours.optotype);
+                var splits = matches[1].split(',');
+                for (let i=0;i<3;i++) {
+                    splits[i] = parseInt(splits[i])+Math.round((255-splits[i])/2);
+                }
+                halftone = 'rgba('+splits[0]+','+splits[1]+','+splits[2]+',1)'
+                if(alphabetType==7){//Vanishing optotype needs background same hue and half the saturation of the optotype color
+                    $(document.body).css('background-color',halftone);
+                    $('.char-line').css('background-color',halftone);
                 }
                 else {
                     $(document.body).css('background-color',bgCol);
+                    $('.char-line').css('background-color',bgCol);
                 }
             };
             this.SetHeightCharacter = function (distance) {
@@ -2533,7 +2799,7 @@
                 var countArr = -1;
                 for (d = 0; d < chartArray.length; d++) {
                     countArr++;
-                    var letterSubtense = chartArray[d][0] * 5; //all letters 5 limbs high
+                    var letterSubtense = (localOptotype != 10) ? chartArray[d][0] * 5 : chartArray[d][0] * 9; //all letters 5 limbs high, crowded letters 9 limbs high
                     var degrees = letterSubtense / 60;
                     var radians = degrees * (Math.PI / 180);
                     var tanNumber = (Math.tan(radians));
@@ -2642,12 +2908,12 @@
                     case '11':
                         arrayCharacter = ['Hebrew01_2,Hebrew01_8,Hebrew01_0,Hebrew01_6,Hebrew01_4','Hebrew01_7,Hebrew01_1,Hebrew01_5,Hebrew01_9,Hebrew01_3','Hebrew01_8,Hebrew01_0,Hebrew01_2,Hebrew01_4,Hebrew01_6','Hebrew01_9,Hebrew01_5,Hebrew01_7,Hebrew01_3,Hebrew01_1','Hebrew01_6,Hebrew01_4,Hebrew01_8,Hebrew01_0,Hebrew01_2','Hebrew01_1,Hebrew01_3,Hebrew01_9,Hebrew01_5,Hebrew01_7','Hebrew01_0,Hebrew01_6,Hebrew01_4,Hebrew01_2,Hebrew01_8','Hebrew01_5,Hebrew01_7,Hebrew01_3,Hebrew01_1,Hebrew01_9','Hebrew01_4,Hebrew01_2,Hebrew01_8,Hebrew01_6,Hebrew01_0','Hebrew01_3,Hebrew01_9,Hebrew01_1,Hebrew01_7,Hebrew01_5','Hebrew01_2,Hebrew01_6,Hebrew01_0,Hebrew01_8,Hebrew01_4','Hebrew01_7,Hebrew01_5,Hebrew01_9,Hebrew01_1,Hebrew01_3','Hebrew01_8,Hebrew01_4,Hebrew01_2,Hebrew01_0,Hebrew01_6','Hebrew01_1,Hebrew01_5,Hebrew01_7,Hebrew01_3,Hebrew01_9'];
                         break;
-                    /* case '12':
+                    case '12':
                         arrayCharacter = ['CrowdedHOTV01_0','CrowdedHOTV01_2','CrowdedHOTV01_3','CrowdedHOTV01_1','CrowdedHOTV01_2','CrowdedHOTV01_0','CrowdedHOTV01_1','CrowdedHOTV01_3','CrowdedHOTV01_1','CrowdedHOTV01_0','CrowdedHOTV01_2','CrowdedHOTV01_3','CrowdedHOTV01_0','CrowdedHOTV01_2'];
                         break;
                     case '13':
-                        arrayCharacter = ['CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_2,CrowdedHOTV01_3','CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_1,CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_2,CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_0,CrowdedHOTV01_1,CrowdedHOTV01_3','CrowdedHOTV01_1,CrowdedHOTV01_2,CrowdedHOTV01_0','CrowdedHOTV01_3,CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_1,CrowdedHOTV01_2,CrowdedHOTV01_3','CrowdedHOTV01_0,CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_2,CrowdedHOTV01_1,CrowdedHOTV01_0','CrowdedHOTV01_3,CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_0,CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_2,CrowdedHOTV01_1,CrowdedHOTV01_3'];
-                        break; */
+                        arrayCharacter = ['CrowdedHOTV01_0,CrowdedHOTV01_2','CrowdedHOTV01_2,CrowdedHOTV01_3','CrowdedHOTV01_3,CrowdedHOTV01_1','CrowdedHOTV01_1,CrowdedHOTV01_0','CrowdedHOTV01_2,CrowdedHOTV01_3','CrowdedHOTV01_0,CrowdedHOTV01_1','CrowdedHOTV01_1,CrowdedHOTV01_2','CrowdedHOTV01_3,CrowdedHOTV01_0','CrowdedHOTV01_1,CrowdedHOTV01_2','CrowdedHOTV01_0,CrowdedHOTV01_3','CrowdedHOTV01_2,CrowdedHOTV01_1','CrowdedHOTV01_3,CrowdedHOTV01_0','CrowdedHOTV01_0,CrowdedHOTV01_3','CrowdedHOTV01_2,CrowdedHOTV01_1'];
+                        break;
                   }
                 //reverse the order of each line if config set to Mirrored
                 if(localsMirrored == 2) {
@@ -2659,16 +2925,13 @@
                     }
                     
                 }
-                //add indicator dots to lines 3 (6/6 or equiv) and 6 (6/12 or equiv)
-                arrayCharacter[3]="red_rect,"+arrayCharacter[3]+",red_rect";
-                arrayCharacter[6]="green_dot,"+arrayCharacter[6]+",green_dot";
                 var arrayHeight = -1, counter = 0;
                 for (var i = 0; i < arrayCharacter.length; i++) {
                     arrayHeight++;
                     var scoreText = chartArray[arrayHeight][1]; //get score text
-                    var heightText = (localOptotype == 10) ? chartArray[arrayHeight][2]*9/5 : chartArray[arrayHeight][2]; //get height for character
-                    var marginText = (localOptotype == 10) ? heightText  : heightText / 2; //get height for character
-                    var splitArr = arrayCharacter[i].split(',');
+                    var heightText = chartArray[arrayHeight][2]; //get height for character
+                    var marginText = heightText / 2; //get margin for character
+                    var splitArr = (arrayCharacter[i].length == 1) ? [arrayCharacter[i]] : arrayCharacter[i].split(',');//deal with 1 letter per line alphabets
                     for (var x = 0; x < splitArr.length; x++) {
                         var alphabet = splitArr[x];
                         //set style and append svg
@@ -2690,12 +2953,25 @@
                         $('#line-' + (i + 1)).find('svg').attr('width', attrWidth);
                     }                    
                     //set height for parent line
-                    $('#line-' + (i + 1)).css('height', heightText + 'mm');
-                    $('#line-' + (i + 1)).css('line-height', heightText + 'mm');
-                    $('#line-' + (i + 1)).css('margin', heightText/2 + 'mm');
+                    $('#line-' + (i + 1)).css({
+                        'height' : heightText + 'mm',
+                        'line-height' : heightText + 'mm',
+                        'margin' : heightText/2 + 'mm'
+                    });
                     var parentHeight = convertFunction.ConvertPixelToMM($('#line-' + (i + 1)).parent().height() / 2 - 12.5);
                     var scoreBoxCol = colours.optotype.replace(/[\d\.]+\)$/g, '1');
                     $('<div class="scoreBox" >' + scoreText + '</div>').insertAfter('#line-' + (i + 1)).css({color:scoreBoxCol});
+                    //add indicator lines for  6/6 and 6/12
+                    if(i == 2) {
+                        //$('*[data-line="'+(i+1)+'"] > .guideline').addClass('blueline');
+                    }
+                    if(i == 3) {
+                        $('*[data-line="'+(i+1)+'"] > .guideline').addClass('greenline');
+                    }
+                    if(i == 6) {
+                        $('*[data-line="'+(i+1)+'"] > .guideline').addClass('redline');
+                    }
+                    
                     //calculator viewport width - here we check if 5 letters plus 2 margins will fit on screen and if not,
                     //chop off end letters and try again. If even one letter won't fit, don't display the line at all
                     var svgBox = $('#line-' + (i + 1)).find('svg:first-child').width(), //get widht of line
@@ -2708,33 +2984,25 @@
                         fifthChartRemove = $('#line-' + (i + 1)).find('svg:nth-child(5)');
                     //allow for the scoreBox when fitting letters on lines
                     var lineWidth = viewWidth-60;//60 is the width of scoreBox set in style header
-                    if (lineWidth >= svgWidth * 7) {
-                        //console.log('show all');
-                        $('#line-' + (i + 1)).find('svg').show();
-                    }
-                    else if (lineWidth >= svgWidth * 5) {
+                    if (lineWidth >= svgWidth * 5) {
                         //console.log('5');
                         //remove dots
-                        $('#line-' + (i + 1)).find('svg.guide-dot').remove();
                         $('#line-' + (i + 1)).find('svg').show();
                     }
                     else if (lineWidth >= svgWidth * 4) {
                         //console.log('4');
                         //remove dots
-                        $('#line-' + (i + 1)).find('svg.guide-dot').remove();
                         $('#line-' + (i + 1)).find('svg').show();
                         thirdChartRemove.hide();                        
                     }
                     else if (lineWidth >= svgWidth * 3) {
                         //console.log('3');
-                        $('#line-' + (i + 1)).find('svg.guide-dot').remove();
                         $('#line-' + (i + 1)).find('svg').show();
                         secondChartRemove.hide();
                         thirdChartRemove.hide();
                     }
                      else if (lineWidth >= svgWidth * 2) {
                         //console.log('2');
-                        $('#line-' + (i + 1)).find('svg.guide-dot').remove();
                         $('#line-' + (i + 1)).find('svg').show();
                         secondChartRemove.hide();
                         thirdChartRemove.hide();
@@ -2742,7 +3010,6 @@
                     }
                     else if (lineWidth >= svgWidth) {
                         //console.log('1');
-                        $('#line-' + (i + 1)).find('svg.guide-dot').remove();
                         $('#line-' + (i + 1)).find('svg').show();
                         secondChartRemove.hide();
                         thirdChartRemove.hide();
@@ -2760,7 +3027,6 @@
             };
             
             this.GenerateSingleCharts = function () {
-                var callBackFunction = this;
                 //make all charts not class V 100% height
                 var otherChart = $('#otherChart');
                 otherChart.css({
@@ -2772,7 +3038,7 @@
                 var chartsSVG = charts.find('svg');
                 //all single charts except animations are based on minimum element subtense equivalent to a 6/12 letter
                 //get subtense of 2 arcmin calculated already for the letter charts, converted to pixels
-                var elSubtense = callBackFunction.ConvertMMToPixel(chartArray[6][2]/5);
+                var elSubtense = functionConfigWolfChart.ConvertMMToPixel(chartArray[6][2]/5);
                 for (var s=0;s<chartsSVG.length;s++) {
                     var svg = chartsSVG[s];
                     //svg is centred with css text-align on the chart
@@ -2807,18 +3073,91 @@
                     var elem = $(el).find('svg');
                     if (elem.length>0){
                         $(el).off();
-                        $(el).on('click',callBackFunction.spaceBarFunc);
+                        $(el).on('click',functionConfigWolfChart.spaceBarFunc);
                     }
                 });
             };
 
+            this.fullscreenChange = function (ct,cht) {
+                //reload the charts as we go in and out of fullscreen
+                if (!document.fullscreenElement) {
+                    swapSVGLayers($('.fullscreen-button'));
+                    openFullscreen();
+                    reConfigCharts(ct,cht);
+                }
+                else {
+                    swapSVGLayers($('.fullscreen-button'));
+                    closeFullscreen();
+                    reConfigCharts(ct,cht);
+                }
+                
+                function openFullscreen() {
+                    var docElm = document.documentElement;
+                    if (docElm.requestFullscreen) {
+                        docElm.requestFullscreen();
+                    }
+                    else if (docElm.msRequestFullscreen) {
+                        docElm = document.body; //overwrite the element (for IE)
+                        docElm.msRequestFullscreen();
+                    }
+                    else if (docElm.mozRequestFullScreen) {
+                        docElm.mozRequestFullScreen();
+                    }
+                    else if (docElm.webkitRequestFullScreen) {
+                        docElm.webkitRequestFullScreen();
+                    }
+                }
+                function closeFullscreen() {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    }
+                    else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                    else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    }
+                    else if (document.webkitCancelFullScreen) {
+                        document.webkitCancelFullScreen();
+                    }
+                }
+                function swapSVGLayers(el) {
+                    var layers = $(el).children('g');
+                    layers.each(function (idx, el) {
+                        $(el).toggle();
+                    });
+                }
+                function reConfigCharts(ct,cht) {
+                     //the new screen sizes take a few hundred milliseconds to update
+                     let counter = -1, oldHt = viewHeight,
+                     looper = setInterval (function () {
+                        counter ++;
+                        if(window.innerHeight < (oldHt-5) || window.innerHeight > (oldHt+5)) {
+                            viewHeight = window.innerHeight;
+                            console.log(viewHeight);
+                     clearInterval(looper);
+                            functionConfigWolfChart.GenerateSingleCharts();
+                            functionConfigWolfChart.removeLetterChartPages();
+                            $('#letterChart').css('height',viewHeight);
+                            functionConfigWolfChart.PageLetterChart();
+                            functionConfigWolfChart.navCat(ct,'fscreen');
+                        } else {
+                            if(counter >= 50) {
+                            clearInterval(looper);
+                            }
+                        }
+                        
+                     }, 25);
+                     
+                }
+            }
             this.spaceBarFunc = function (e) {
-                var callBackFunction = this;
                 var el = $(e.currentTarget).children('svg')[0];
                 var thisChart = objWolf[objWolf.catThis].arCharts[objWolf.chartThis];
                 switch (el.id) {
                     case 'rSeptumChart':
-                        spaceSeptumChart(el);
+                    case 'rDuoSeptumChart':
+                        spaceSeptumChart(el.id);
                         break;
                     case 'bFixDisp':
                         rotate90(el);
@@ -2828,6 +3167,7 @@
                     case 'rJCCDots':
                     case 'rBullseye':
                     case 'bWorth4Dot':
+                    case 'bDPhoriaArrows':
                     case 'mWhiteDot':
                         swapSVGLayers(el);
                         swapSVGLayers($('.zoom-button'));
@@ -2852,23 +3192,35 @@
                     }
                     $(el).css('transform',trans);
                 }
-                function spaceSeptumChart () {
+                function spaceSeptumChart (id) {
                     thisChart.isToggled = true;
+                    //bit messy next 8 lines due to the charts being designed differently
+                    var transXStart = [], maxTransX = 7;
+                    switch (id) {
+                        case 'rDuoSeptumChart':
+                            transXStart = [0,0];//this is not x,y - it's x of two elements
+                            maxTransX = 5;
+                            break;
+                        case 'rSeptumChart':
+                            transXStart = [15,-3];
+                            maxTransX = 7;
+                            break;
+                    }
                     var buttonLayers = $('.interspace-button').find('g');
                     $(buttonLayers[0]).hide();
                     $(buttonLayers[1]).show();
-                    var scLGroup = $('#scLGroup'), scRGroup = $('#scRGroup');
-                    var trans = [scRGroup.attr('transform'),scLGroup.attr('transform')], transX =[];
+                    var LGroup = $('#'+id+' .LGroup'), RGroup = $('#'+id+' .RGroup');
+                    var trans = [RGroup.attr('transform'),LGroup.attr('transform')], transX =[];
                     trans.forEach(function (el, idx) {
                         transX[idx] = getXTrans(el);
                     });
-                    if (transX[0] == 22) {
-                        transX=[15,-3];
+                    if (transX[0] == (transXStart[0]+maxTransX)) {
+                        transX=transXStart;
                         thisChart.isToggled = false;
                         swapSVGLayers($('.interspace-button'));
                     } 
-                    scRGroup.attr('transform','translate('+(transX[0]+1)+',0)');
-                    scLGroup.attr('transform','translate('+(transX[1]-1)+',0)');
+                    RGroup.attr('transform','translate('+(transX[0]+1)+',0)');
+                    LGroup.attr('transform','translate('+(transX[1]-1)+',0)');
                     
                     function getXTrans (str) {
                         var temp=str.substring(
@@ -2896,32 +3248,28 @@
                     var colCheck = $('.in-a-column, .disable');
                     //if not, shuffle, else do nothing
                     if(colCheck.length == 0) {
-                        var callBack = this;
-                        callBack.swapSVGLayers($('.shuffle-button'));
+                        var functionConfigWolfChart = this;
+                        functionConfigWolfChart.swapSVGLayers($('.shuffle-button'));
                         if(!objWolf.isShuffled) {
                             $('.char-line').each(function (index) {
                                 var parent = $(this);
-                                var arVisible = parent.find('svg:not([style*="display: none"])'),
-                                arDots = parent.find('svg.guide-dot');
+                                var arVisible = parent.find('svg:not([style*="display: none"])');
                                 //count how many letters are visible
                                 var lineLength = arVisible.length;
                                 //hide all the letters
                                 arAlphabet = parent.find('svg.optotype-symbol').hide(),    
                                 //shuffle them
-                                arAlphabet = callBack.YatesShuffle(arAlphabet);
+                                arAlphabet = functionConfigWolfChart.YatesShuffle(arAlphabet);
                                 //append shuffled letters to the number in the pre-shuffled line
                                 for (i = 0; i < lineLength; i++) {
                                     $(arAlphabet[i]).appendTo(parent).show();
                                     
                                 }
-                                if (arDots.length != 0) {
-                                    parent.prepend(arDots[0]).append(arDots[1]);
-                                }
                                 $('#sUnshuffled').attr('display','block');
                                 $('#sShuffled').attr('display','none');                                
                             });
                             } else {
-                                callBack.UnShuffleFunction(oldCharacter);
+                                functionConfigWolfChart.UnShuffleFunction(oldCharacter);
                                 $('#sUnshuffled').attr('display','none');
                                 $('#sShuffled').attr('display','block');
                             }
@@ -2935,23 +3283,22 @@
                     var id = oldCharacter[i][0],
                         svg = oldCharacter[i][1];
                         var dataLine = $('.chart.V').find('>div[data-line=' + id + ']').html(svg);
-                        if (objWolf.isDuo) {
-                            $('.guide-dot').hide();
-                        }
                     }
             };
 
             this.duoBGFunction = function () {
-                var callBack = this;
-                //check if letters are displayed in a column, or singled
-                var colCheck = $('.in-a-column, .disable');
-                //only duochrome if not a column
-                if(colCheck.length == 0) {
+                //only activate if not letter or column masked
+                if(!objWolf.isMasked) {
                     if(objWolf.catThis == 0) {
-                        $('#letterChart').toggleClass('duo');
-                        $('.guide-dot').toggle();
+                        $('#letterChart, .char-line').toggleClass('duo');
                         objWolf.isDuo = !objWolf.isDuo;
-                        callBack.swapSVGLayers($('.bg-button'));
+                        functionConfigWolfChart.swapSVGLayers($('.bg-button'));
+                        if(objWolf.isDuo) {
+                            $('.guideline').hide();
+                        } else {
+                            if(!objWolf.isMasked)
+                            $('.guideline').show();
+                        }
                     }
                 }
             };
@@ -2963,7 +3310,6 @@
             }
 
             this.letterMorph = function () {
-                var callBack = this;
                 var arPolygons = $('#list-character .optotype-symbol[id^=Snellen_] polygon'), maxLen = 0, counter = 0;
                 var interval = arPolygons.length * 1350;
                 var hue=0;
@@ -3002,7 +3348,7 @@
                     
                 }, 450);
                 function newLetterMorph() {
-                    arPolygons = YatesShuffle(arPolygons);
+                    arPolygons = functionConfigWolfChart.YatesShuffle(arPolygons);
                     var newTarget = $('#mLetterMorph').clone();
                     newTarget.find('#SVGLetter :not(:first-child)').remove();
                     makeAnimations(newTarget.find('#SVGLetter'));
@@ -3030,93 +3376,85 @@
                     //console.log(targetPolygon);
                 }
     
-
-                function YatesShuffle (array) {
-                                for (var i = array.length - 1; i > 0; i--) {
-                                    var j = Math.floor(Math.random() * i); // no +1 here!.attr('points')
-                                    var temp = array[i];
-                                    array[i] = array[j];
-                                    array[j] = temp;
-                                }   
-                                return array;
-                            }
-
-
             }
 
             this.ShortCutKey = function (pageUp, pageDown, pageLeft, pageRight, shuffle, duoBG) {
-                var callBack = this;
                 document.body.onkeyup = function (e) {
                     //disable shortcuts if setting bar is active
                     if(!$('#setting-bar').hasClass('active')) {
                         //exclude the ctrl key wherever a letter is the keycode, but not the arrows
                         if (pageUp != "") {
                             if (e.keyCode == pageUp && e.ctrlKey == false) {
-                                callBack.scrollChart(objWolf.catThis,objWolf.chartU(),'top');
+                                functionConfigWolfChart.scrollChart(objWolf.catThis,objWolf.chartU(),'top');
                             };
                         };
                         if (pageDown != "") {
                             if (e.keyCode == pageDown && e.ctrlKey == false) {
-                                callBack.scrollChart(objWolf.catThis,objWolf.chartD(),'bottom');
+                                functionConfigWolfChart.scrollChart(objWolf.catThis,objWolf.chartD(),'bottom');
                             };
                         };
                         if (pageLeft != "") {
                             if (e.keyCode == pageLeft && e.ctrlKey == false) {
-                                callBack.navCat(objWolf.catLeft(),'left');
+                                functionConfigWolfChart.navCat(objWolf.catLeft(),'left');
                             };
                         };
                         if (pageRight != "") {
                             if (e.keyCode == pageRight && e.ctrlKey == false) {
-                                callBack.navCat(objWolf.catRight(),'right');
+                                functionConfigWolfChart.navCat(objWolf.catRight(),'right');
                             };
                         };
                         if (e.keyCode == 38) {
                             e.preventDefault();
-                            callBack.scrollChart(objWolf.catThis,objWolf.chartU(),'top');
+                            functionConfigWolfChart.scrollChart(objWolf.catThis,objWolf.chartU(),'top');
                         };
                         if (e.keyCode == 40) {
                             e.preventDefault();
-                            callBack.scrollChart(objWolf.catThis,objWolf.chartD(),'bottom');
+                            functionConfigWolfChart.scrollChart(objWolf.catThis,objWolf.chartD(),'bottom');
                         };
                         if (e.keyCode == 37) {
                             e.preventDefault();
-                            callBack.navCat(objWolf.catLeft(),'left');
+                            functionConfigWolfChart.navCat(objWolf.catLeft(),'left');
                         };
                         if (e.keyCode == 39) {
                             e.preventDefault();
-                            callBack.navCat(objWolf.catRight(),'right');
+                            functionConfigWolfChart.navCat(objWolf.catRight(),'right');
                         };
                         if (e.keyCode == 86 && e.ctrlKey == false) {
                             e.preventDefault();
-                            callBack.navCat(0,'fav');
+                            functionConfigWolfChart.navCat(0,'fav');
                         };
                         if (e.keyCode == 82 && e.ctrlKey == false) {
                             e.preventDefault();
-                            callBack.navCat(1,'fav');
+                            functionConfigWolfChart.navCat(1,'fav');
                         };
                         if (e.keyCode == 66 && e.ctrlKey == false) {
                             e.preventDefault();
-                            callBack.navCat(2,'fav');
+                            functionConfigWolfChart.navCat(2,'fav');
                         };
                         if (e.keyCode == 77 && e.ctrlKey == false) {
                             e.preventDefault();
-                            callBack.navCat(3,'fav');
+                            functionConfigWolfChart.navCat(3,'fav');
                         };
                         if (e.key === ' ' || e.key === 'Spacebar') {
                             e.preventDefault();
                             $("#"+objWolf.chartThisId).trigger('click');
                         }
+                        // F key for full screen 
+                        if (e.keyCode == 70) {
+                            e.preventDefault();
+                            functionConfigWolfChart.fullscreenChange(objWolf.catThis,objWolf.chartThis);
+                        };
                         if (shuffle != "") {
                             if (e.keyCode == shuffle && e.ctrlKey == false) {
                                 e.preventDefault();
-                                callBack.shuffleLetters();    
+                                functionConfigWolfChart.shuffleLetters();    
                             }
                             
                         };
                         if (duoBG != "") {
                             if (e.keyCode == duoBG && e.ctrlKey == false) {
                                 e.preventDefault();
-                                callBack.duoBGFunction();
+                                functionConfigWolfChart.duoBGFunction();
                             };
                         };
                     }
@@ -3188,8 +3526,8 @@
                 var arr = $('.js-shortkey').map(function () {
                     return this.value; // $(this).val()
                 }).get();
-                //reserve the shortcut keys for chart categories
-                arr = [...arr,'v','r','b','m'];
+                //reserve the shortcut keys for chart categories and fullscreen
+                arr = [...arr,'v','r','b','m','f'];
                 function countInArray(array, what) {
                     return array.filter(item => item == what).length;
                 }
@@ -3267,7 +3605,7 @@
                     $('#letterChart > div').find('.char-line').html('');
                     $('#letterChart > div').find('.scoreBox').remove();
                     $('#updateSetting').removeClass('disabled-btn').addClass('disabled-btn');
-                    setConfigDefault.removeLetterChartPage();
+                    setConfigDefault.removeLetterChartPages();
                     $('.char-line').removeAttr('style');
                     configBar.init();
                 });
@@ -3343,42 +3681,72 @@
                 $('#duoBG').val(shortcuts[5]);
             };
             this.UpdateVersion = function (version) {
-                //console.log(version+", "+colours+", "+shortcuts);
+                //returns true if an upgrade is required, false if not
                 var majVer = Math.floor(version), minVer = (version-majVer)*10;
-                //create new storage items
-                localStorage.setItem("Ver",JSON.stringify(version));
-                //convert old storage items
-                var reserved = ['v','r','b','m'],oldShortcuts=[],banned="",errMess="";
-                oldShortcuts[0] = localStorage.getItem("PageUp");
-                oldShortcuts[1] = localStorage.getItem("PageDown");
-                oldShortcuts[4] = localStorage.getItem("Shuffle");
-                oldShortcuts[5] = localStorage.getItem("duoBG");
-                oldShortcuts.forEach(function (val,idx) {
-                    if(reserved.includes(val)) {
-                        shortcuts[idx]="";
-                        errMess = "Warning:\nOne or more of your keyboard shortcuts will no longer work, as it is now reserved for something else. Please assign new shortcut(s) at the bottom of the config menu";
+                //upgrade from 1.x to 2.x and above. Prior to v2.0 localStorage had no "Ver" value
+                if (version === null) {
+                    //create new storage items
+                    localStorage.setItem("Ver",JSON.stringify(version));
+                    //convert old storage items
+                    var reserved = ['v','r','b','m'],oldShortcuts=[],banned="",errMess="";
+                    oldShortcuts[0] = localStorage.getItem("PageUp");
+                    oldShortcuts[1] = localStorage.getItem("PageDown");
+                    oldShortcuts[4] = localStorage.getItem("Shuffle");
+                    oldShortcuts[5] = localStorage.getItem("duoBG");
+                    oldShortcuts.forEach(function (val,idx) {
+                        if(reserved.includes(val)) {
+                            shortcuts[idx]="";
+                            errMess = "Warning:\nOne or more of your keyboard shortcuts will no longer work, as it is now reserved for something else. Please assign new shortcut(s) at the bottom of the config menu";
+                        } else {
+                            shortcuts[idx] = val;
+                        }
+                    });
+                    colours.optotype = localStorage.getItem("TextColor");
+                    colours.backgrounds.optotype = localStorage.getItem("BgColor");
+                    localStorage.setItem("Colours",JSON.stringify(colours));
+                    localStorage.setItem("Shortcuts",JSON.stringify(shortcuts));
+                    //destroy no longer needed items
+                    localStorage.removeItem("PageUp");
+                    localStorage.removeItem("PageDown");
+                    localStorage.removeItem("Shuffle");
+                    localStorage.removeItem("Unshuffle");
+                    localStorage.removeItem("duoBG");
+                    localStorage.removeItem("TextColor");
+                    localStorage.removeItem("BgColor");
+                    //alert
+                    var alertMess = "You have updated to WolfChart "+majVer+". Please take a moment to review your settings."
+                    if(errMess!="") {
+                        alert (alertMess+"\n"+errMess);
                     } else {
-                        shortcuts[idx] = val;
+                        alert (alertMess);
                     }
-                });
-                colours.optotype = localStorage.getItem("TextColor");
-                colours.backgrounds.optotype = localStorage.getItem("BgColor");
-                localStorage.setItem("Colours",JSON.stringify(colours));
-                localStorage.setItem("Shortcuts",JSON.stringify(shortcuts));
-                //destroy no longer needed items
-                localStorage.removeItem("PageUp");
-                localStorage.removeItem("PageDown");
-                localStorage.removeItem("Shuffle");
-                localStorage.removeItem("Unshuffle");
-                localStorage.removeItem("duoBG");
-                localStorage.removeItem("TextColor");
-                localStorage.removeItem("BgColor");
-                //alert
-                var alertMess = "You have updated to WolfChart "+majVer+". Please take a moment to review your settings."
-                if(errMess!="") {
-                    alert (alertMess+"\n"+errMess);
-                } else {
-                    alert (alertMess);
+                    return true;
+                }//end of upgrade from version 1.x
+                else {
+                    if (majVer == 2) {
+                        var oldVer = JSON.parse(localStorage.getItem("Ver"));
+                        var oldMajVer = Math.floor(oldVer), oldMinVer = Math.round((oldVer-oldMajVer)*10);
+                        if (oldMinVer < 4) {
+                            //optotype background colour rgb not rgba
+                            var regExp = /\(([^)]+)\)/g;  // get the values within () of optotype backgroud colour
+                            var storedCols = JSON.parse(localStorage.getItem("Colours"));
+                            var matches = regExp.exec(storedCols.backgrounds.optotype);
+                            var splits = matches[1].split(',');
+                            var newBgCol = 'rgb('+splits[0]+','+splits[1]+','+splits[2]+')';
+                            storedCols.backgrounds.optotype = newBgCol;
+                            localStorage.setItem("Colours",JSON.stringify(storedCols));
+                            //$('#tBgColour').val(newBgCol).siblings('i').css('background-color',newBgCol);
+                            
+                            var alertMess2_4 = "You have updated to WolfChart "+version+". Please take a moment to review your settings."
+                            alert(alertMess2_4);
+                            return true;
+                        }
+                        else {return false;}
+                    }
+                    else {
+                    return false;
+                    }
+                    
                 }
                                         
             }
@@ -3391,78 +3759,58 @@
                 var dpi = document.getElementById("dpi").offsetHeight;
                 return (mm * dpi) / 25.4
             };
-            this.removeLetterChartPage = function () {
-                var $scrollDiv = $('#letterChart').find('.V');
-                if ($scrollDiv.length > 0) {
-                    $scrollDiv.each(function () {
-                        $(this).find('>div').detach().appendTo('#letterChart');
-                    });
-                };
+            this.removeLetterChartPages = function () {
+                let unloaded = $('.character-line');
+                for (let i=1;i<=unloaded.length;i++) {
+                    $('*[data-line="'+i+'"]').detach().appendTo('#letterChart');
+                }
                 $('.V').remove();
             };
             this.PageLetterChart = function () {
                 //#letterChart has been filled with lines of letters from smallest to largest but they are not in pages
-                //maintain this order
-                if(objWolf.chartThis){objWolf.chartThis = null};
-                var firstLine = parseInt($('#letterChart > div:nth-child(1)').attr('data-line')),
-                      secondLine = parseInt($('#letterChart > div:nth-child(2)').attr('data-line'));
-                      if (firstLine > secondLine) {
-                        $('#letterChart > div').each(function () {
-                            $(this).detach().prependTo($('#letterChart'))
-                        });
-                }
-                //most efficient to page the letter chart now, then rearrange for Option Sort
-                var quotalHeight = 0, pageCounter = 0;
-                $('#letterChart >div').each(function () {
-                    if ($(this).find('.char-line').height() > 0) {
-                        if ($(this).height() + quotalHeight <= viewHeight) {
-                            quotalHeight = quotalHeight + $(this).height();
+                //Page the character lines from smallest to largest so each page fits on screen
+                if(objWolf.chartThis){objWolf.chartThis = null};//not sure what this does, but may implement a chartThis in localStorage so that when you reload you are back on same page
+                var characterLines = $('.character-line'), cumHt = 0, pageNum = 0;//get the character-line DOM elements but then try to use mostly native js
+                var  arPages = [[]];//this 2-dim array will hold the page tree
+                for (let i=0; i<characterLines.length; i++) {
+                    let ht = characterLines[i].clientHeight;
+                    if (ht > 0 && ht <= viewHeight) {
+                        cumHt = cumHt + ht;
+                        if(cumHt <= viewHeight) {
+                            arPages[pageNum].push([characterLines[i]]);
                         }
                         else {
-                            quotalHeight = $(this).height();
-                            $('<div class="chart V" id="V'+pageCounter+'"></div>').css('display','none').appendTo('#letterChart');
-                            $(this).prevAll().each(function () {
-                                $(this).detach().prependTo($('#letterChart').find('.V:last'));
-                            });
-                            pageCounter ++;
+                            cumHt = ht;
+                            pageNum ++;
+                            arPages[pageNum]=[];
+                            arPages[pageNum].push([characterLines[i]]);
                         }
                     }
-                });
-                if ($('#letterChart >div').not(".V").length > 0) {
-                    $('<div class="chart V"></div>').attr('id',"V"+pageCounter).css('display','none').appendTo('#letterChart');
-                    $('#letterChart >div').not(".V").each(function () {
-                        if ($(this).find('.char-line svg').length > 0) {
-                            $(this).detach().prependTo($('#letterChart').find('.V:last'));
-                        }
-                        else {
-                            $(this).detach().appendTo('#letterChart');
-                        }
-                    })
+                    else {
+                        characterLines[i].remove();
+                    }
                 }
-                $('.V').each(function () {
-                    if ($(this).find('>div').hasClass('display-none')) {
-                        $(this).remove();
-                    }
-                });
                 //---Display Order-----
-                //Largest at top of each page. First page is handled when scrollChart() is called
+                //Largest at top of each page. First displayed page is handled when scrollChart() is called
                 if (displayOrder == "1" || displayOrder == "2") {
                     //just need to reverse order of lines on each page
-                    $('.V').each(function () {
-                        var chart = $(this), children = chart.children();
-                        chart.append(children.get().reverse());  
-                    });
-                } else {//Monoyer means smallest at top of each page, and page of smallest lines is highest numbered page
-                    $('#letterChart').each(function () {
-                        //just need to reverse order of pages
-                        var letterCharts = $(this), children = letterCharts.children();
-                        letterCharts.append(children.get().reverse());
-                    });
+                    for (let j=0; j<arPages.length; j++) {
+                        arPages[j].reverse();
+                        }
                 }
-
+                else {//Monoyer means smallest at top of each page, and page of smallest lines is highest numbered page
+                        arPages.reverse();
+                }
+                //create a div for each page and populate each page with character-lines
+                arPages.forEach(function(page,idx) {
+                    $('<div class="chart V" id="V'+idx+'"></div>').css('display','none').appendTo('#letterChart');
+                    page.forEach (function (el,idx) {
+                        $(el).detach().appendTo($('#letterChart').find('.V:last'));
+                    });
+                });
             }
+
             this.loadCharts = function () {
-                functionConfigWolfChart = this;
                 var allCharts = $('.chart'), arTemp = [], counter = 0;
                 //quick and dirty way to make unique categories
                 allCharts.each(function (idx, el) {
@@ -3482,11 +3830,9 @@
                 }
                 //add properties for each category
                 var themeColours = colours.themes;
-                //console.log(objWolf);
-                    
+                 
                 for (q = 0; q < objWolf.catsLength; q++) {
                     var thing = objWolf[q];
-                    //console.log(thing);
                     thing.col = "rgb(127,127,127)";
                     if (thing.cat == "V") {
                         thing.title = "VA";
@@ -3509,43 +3855,44 @@
                     var catCharts = $('.' + thing.cat);
                     catCharts.each(function (idx, el) {
                         thing.arCharts[idx] = {id:el.id,useCount:0,isToggled:false};
-                    })
+                    });
                     
                 }
             }
             this.characterClick = function () {
                 $(document).on('click', '.optotype-symbol', function () {
-                    var characterSVG = $('.char-line .optotype-symbol'), el = $(this),
-                    guideDotSVG = $('svg.guide-dot');
+                    var characterSVG = $('.char-line .optotype-symbol'), el = $(this);
                     if(el.hasClass('in-a-column')) {
                         //show all letters
                         characterSVG.attr('class','optotype-symbol');
                         if (!objWolf.isDuo) {
-                            guideDotSVG.show();
+                            $('.guideline').show();
+                            objWolf.isMasked = false;
                         }
                     }
                     else if (el.hasClass('active')) {
                         //show a column of letters containing this one
                         el.removeClass('active');
-                        guideDotSVG.hide();
+                        $('.guideline').hide();
                         var lines = $('.char-line').each(function (idx, elem) {
-                            var b = objWolf.pointer;
-                            $(elem).find('.optotype-symbol').each(function (idx, elem) {
-                                    if (idx == b) {
-                                        $(elem).addClass('in-a-column');
-                                        $(elem).removeClass('disable');
-                                        
-                                    }
-                                });
-
+                        var b = objWolf.pointer;
+                        $(elem).find('.optotype-symbol').each(function (idx, elem) {
+                                if (idx == b) {
+                                    $(elem).addClass('in-a-column');
+                                    $(elem).removeClass('disable');
+                                    
+                                }
                             });
+
+                        });
+                        objWolf.isMasked = true;
                     }
                     else {
                         //show only the letter clicked
                         el.addClass('active');
                         characterSVG.addClass('disable');
                         el.removeClass('disable');
-                        guideDotSVG.hide();
+                        $('.guideline').hide();
                         //find the position of the clicked letter along the line
                         var parent = this.parentNode, callBack = this, pos="";
                         $('#'+parent.id).find('.optotype-symbol').each(function (idx, elem) {
@@ -3553,12 +3900,12 @@
                                 objWolf.pointer = idx;
                             }
                         });
-                        
+                        objWolf.isMasked = true;
                     }
                 });
             };
             this.scoreBoxClick = function () {
-                $(document).on('click','.scoreBox, .guide-dot', function() {
+                $(document).on('click','.scoreBox', function() {
                     var clicked = $(this), lineSVG = "", characterLine = $('.character-line .char-line'),
                         characterSVG = $('.char-line .optotype-symbol');
                     if(clicked[0].getAttribute('class')=="scoreBox") {
@@ -3566,18 +3913,21 @@
                     } else {
                         lineSVG = clicked.parent();
                     }
-                    var activeElems = lineSVG.parent().find('.guide-dot, .scoreBox')
+                    var activeElems = lineSVG.parent().find('.scoreBox')
                     if(clicked.hasClass('active')) {
                         activeElems.removeClass('active');
                         characterLine.css('visibility','visible')
                         characterSVG.removeClass('disable active');
-
+                        $('.guideline').show();
+                        objWolf.isMasked = false;
                     } else {
-                    $('.character-line .scoreBox, .guide-dot').removeClass('active');
+                    $('.character-line .scoreBox').removeClass('active');
                         activeElems.addClass('active');
                         characterLine.css('visibility','hidden')
                         lineSVG.css('visibility','visible');
-                        characterSVG.removeClass('disable active')
+                        characterSVG.removeClass('disable active');
+                        $('.guideline').hide();
+                        objWolf.isMasked = true;
                     }
                 });
             };
@@ -3646,7 +3996,7 @@
                 }, false)
             }
             this.UpdateSetting = function () {
-                var callBackFunction = this, sideBarWidth = parseFloat($('#side-bar').css('width'));
+                sideBarWidth = parseFloat($('#side-bar').css('width'));
                 $('#updateSetting').on('click', function () {
                     //set var from user input
                     notation = $('#sNotation').val(),
@@ -3669,17 +4019,17 @@
                     lenghOfline = $('#iLengOfLine').val().trim(),
                     displayOrder = $('#display').val(),
                     //reset div
-                    $('#letterChart').html('<div data-line="1" class="character-line"><div class="char-line" id="line-1"></div></div><div data-line="2" class="character-line"><div class="char-line" id="line-2"></div></div>'
-                                            + '<div data-line="3" class="character-line"><div class="char-line" id="line-3"></div></div><div data-line="4" class="character-line"><div class="char-line" id="line-4"></div></div>'
-                                            + '<div data-line="5" class="character-line"><div class="char-line" id="line-5"></div></div><div data-line="6" class="character-line"><div class="char-line" id="line-6"></div></div>'
-                                            + '<div data-line="7" class="character-line"><div class="char-line" id="line-7"></div></div><div data-line="8" class="character-line"><div class="char-line" id="line-8"></div></div>'
-                                            + '<div data-line="9" class="character-line"><div class="char-line" id="line-9"></div></div><div data-line="10" class="character-line"><div class="char-line" id="line-10"></div></div>'
-                                            + '<div data-line="11" class="character-line"><div class="char-line" id="line-11"></div></div><div data-line="12" class="character-line"><div class="char-line" id="line-12"></div></div>'
-                                            + '<div data-line="13" class="character-line"><div class="char-line" id="line-13"></div></div><div data-line="14" class="character-line"><div class="char-line" id="line-14"></div></div>');
+                    $('#letterChart').html('<div data-line="1" class="character-line"><div class="guideline"></div><div class="char-line" id="line-1"></div></div><div data-line="2" class="character-line"><div class="guideline"></div><div class="char-line" id="line-2"></div></div>'
+                                            + '<div data-line="3" class="character-line"><div class="guideline"></div><div class="char-line" id="line-3"></div></div><div data-line="4" class="character-line"><div class="guideline"></div><div class="char-line" id="line-4"></div></div>'
+                                            + '<div data-line="5" class="character-line"><div class="guideline"></div><div class="char-line" id="line-5"></div></div><div data-line="6" class="character-line"><div class="guideline"></div><div class="char-line" id="line-6"></div></div>'
+                                            + '<div data-line="7" class="character-line"><div class="guideline"></div><div class="char-line" id="line-7"></div></div><div data-line="8" class="character-line"><div class="guideline"></div><div class="char-line" id="line-8"></div></div>'
+                                            + '<div data-line="9" class="character-line"><div class="guideline"></div><div class="char-line" id="line-9"></div></div><div data-line="10" class="character-line"><div class="guideline"></div><div class="char-line" id="line-10"></div></div>'
+                                            + '<div data-line="11" class="character-line"><div class="guideline"></div><div class="char-line" id="line-11"></div></div><div data-line="12" class="character-line"><div class="guideline"></div><div class="char-line" id="line-12"></div></div>'
+                                            + '<div data-line="13" class="character-line"><div class="guideline"></div><div class="char-line" id="line-13"></div></div><div data-line="14" class="character-line"><div class="guideline"></div><div class="char-line" id="line-14"></div></div>');
 
-                    callBackFunction.removeLetterChartPage();
+                    functionConfigWolfChart.removeLetterChartPages();
                     //validate required field
-                    var validate = callBackFunction.ValidateFunction();
+                    var validate = functionConfigWolfChart.ValidateFunction();
                     if (validate) {
                         $('#updateSetting').removeClass('disabled-btn').addClass('disabled-btn');
                         return;
@@ -3695,38 +4045,38 @@
                         //empty nav div
                         $('.nav-link').remove();
                         //create objWolf live operating object
-                        callBackFunction.UpdateObjWolf();
+                        functionConfigWolfChart.initObjWolf();
                         //set text color
-                        callBackFunction.SetColorCharacter(colours.optotype);
-                        callBackFunction.SetBgColor(colours.backgrounds.optotype);
-                        callBackFunction.CaculatorCharacterHeight(numeratorType);
+                        functionConfigWolfChart.SetColorCharacter(colours.optotype);
+                        functionConfigWolfChart.SetBgColor(colours.backgrounds.optotype);
+                        functionConfigWolfChart.CaculatorCharacterHeight(numeratorType);
                         //generate letter charts
-                        callBackFunction.GenerateCharacter(alphabetType, localOptotype);
+                        functionConfigWolfChart.GenerateCharacter(alphabetType, localOptotype);
                         //generate single charts
-                        callBackFunction.GenerateSingleCharts();
+                        functionConfigWolfChart.GenerateSingleCharts();
                         //set shortcut
-                        callBackFunction.ShortCutKey(shortcuts[0].toUpperCase().charCodeAt(0),shortcuts[1].toUpperCase().charCodeAt(0),shortcuts[2].toUpperCase().charCodeAt(0),shortcuts[3].toUpperCase().charCodeAt(0),shortcuts[4].toUpperCase().charCodeAt(0),shortcuts[5].toUpperCase().charCodeAt(0));
+                        functionConfigWolfChart.ShortCutKey(shortcuts[0].toUpperCase().charCodeAt(0),shortcuts[1].toUpperCase().charCodeAt(0),shortcuts[2].toUpperCase().charCodeAt(0),shortcuts[3].toUpperCase().charCodeAt(0),shortcuts[4].toUpperCase().charCodeAt(0),shortcuts[5].toUpperCase().charCodeAt(0));
                         //close setting bar
                         $('.setting-bar').removeClass('active');
                         $('.guide-section').removeClass('active');
                         $('.mask').removeClass('active');
                         var $Element, maxEleWidht = 0
                         $('#letterChart').css({'width':viewWidth,'height':viewHeight});
-                        //set direct for character
-                        callBackFunction.SetDirectCharacter(localsMirrored);
+                        //set direct or mirrored
+                        functionConfigWolfChart.SetDirectCharacter(localsMirrored);
                         //set smaller font for long scoreBox strings
-                        callBackFunction.SetScoreBoxFont();
+                        functionConfigWolfChart.SetScoreBoxFont();
                         //divide letter chart into pages
-                        callBackFunction.PageLetterChart();
+                        functionConfigWolfChart.PageLetterChart();
                         //load all charts into objWolf
-                        callBackFunction.loadCharts();
+                        functionConfigWolfChart.loadCharts();
                         //local storage
-                        callBackFunction.SetLocalStorage();
-                        //display a chart in the V category
-                        callBackFunction.navCat(0,null);
+                        functionConfigWolfChart.SetLocalStorage();
+                        //display the last used chart or a chart in the V category
+                        functionConfigWolfChart.navCat(0,null);
                         //display nav bar
-                        callBackFunction.DisplayNavigations();
-                        callBackFunction.Clock();
+                        functionConfigWolfChart.DisplayNavigations();
+                        functionConfigWolfChart.Clock();
                         //set old character array for the unshuffle function
                         $('.character-line').each(function () {
                             var lineArray = [];
@@ -3780,10 +4130,8 @@
                 this.DisplayArrows();
                 this.UpdateSetting();
                 if (localStorage.getItem("Optotype") != null) {
-                    //following if deals with upgrade from v1 to v2.
-                    //From ver 2.x, can use localStorage "Ver" string for this
-                    if (localStorage.getItem("Ver") === null) {
-                        this.UpdateVersion(ver);
+                    //check for latest version, perform major version upgrades
+                    if (this.UpdateVersion(ver)) {
                         this.GetConfigByValue();
                         $('.setting-button').trigger('click');
                         $('#updateSetting').removeClass('disabled-btn');

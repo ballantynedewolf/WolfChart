@@ -1,4 +1,4 @@
-# WolfChart v2.3
+# WolfChart v2.4  
 by Ballantyne de Wolf, Offspring Digital
 
 This is professional optometrist/optician/ophthalmologist tool for sight testing. It cannot be used safely by the general public.
@@ -8,7 +8,36 @@ Now that's out of the way, the objectives are:
   1. Clinically relevant, scientifically supported sight testing tools, in the widest possible range of clinical and research settings.
   2. Open source with GNU licence
   3. Can be used on a wide variety of screen hardware
-  4. User-generated and Customisable optotypes and alphabets to come
+  4. User-generated and customisable optotypes and alphabets to come
+
+To do
+  - Finish off fullscreen upgrade
+  - Finish off masked nav upgrade - masked nav actions break the shuffle function, sometimes a column has an extra letter if you've been doing masked navs
+  - Change direction on crowding - should be able to crowd anything, so make crowded a boolean setting that overlays a transparent crowding box on each symbol - need two crowding boxes - a 4x5 and a 5x5
+  - Add FXC and Sharp VA Super Bullseye in the R category
+  - Shuffle while duochrome is on is buggy after the second shuffle
+
+Ver2.41
+  - Additions
+    - Improved septum duochrome chart
+    - Improved bouncing ball animation
+    - Charts suggested by Caleb Van Cooten - mega bullseye, FXC
+
+
+Ver2.4
+  - Bug fixes
+    - PageLetterChart function rewritten, respects viewport ht, deals with crowded optototype, more efficient
+    - Upgraded UpdateVersion function to deal with minor versions
+    - switch to using window.innerHeight to enable fullscreen change
+    - 
+  - Additions
+    - Crowded optotype
+    - Associated phoria tests
+    - TIB duochrome
+    - Fullscreen function
+    - Improved guidelines
+
+
 
 Ver2.3
   - Bug fixes
