@@ -17,6 +17,15 @@ To do
   - Add FXC and Sharp VA Super Bullseye in the R category
   - Shuffle while duochrome is on is buggy after the second shuffle
 
+Ver2.42
+  - Additions
+    - Enhanced Worth 4 Dot chart
+    - FXC cross zoomable
+  - Bug Fixes
+    - css AND svg transform applied to scrollPic thumbs
+    - unique name for each scrollPic thumb
+
+
 Ver2.41
   - Additions
     - Improved septum duochrome chart
