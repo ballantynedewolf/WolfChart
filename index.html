@@ -554,7 +554,8 @@
             z-index: 0;
         }
         .chart {
-            height: 100vh;
+            height: 100%;
+            width: 100%;
             display: none;
         }
         
@@ -1411,14 +1412,14 @@
                 <rect id="rFusedXCyl_e1" x="0" y="0" width="0.5" height="14.5" fill="rgba(0,0,0,1)" stroke="none" />
             </defs>
             <g id="rFusedXCyl-layer0" style="display:none;">
-                <g id="rFusedXCylV0" transform="translate(8,0)">
+                <g id="rFusedXCylVGroup" transform="translate(8,0)">
                     <use xlink:href="#rFusedXCyl_e0" />
                     <use xlink:href="#rFusedXCyl_e0" transform="translate(3,0)" />
                     <use xlink:href="#rFusedXCyl_e0" transform="translate(6,0)" />
                     <use xlink:href="#rFusedXCyl_e0" transform="translate(9,0)" />
                     <use xlink:href="#rFusedXCyl_e0" transform="translate(12,0)" />
                 </g>
-                <g id="rFusedXCylH0" transform="translate(0,9)">
+                <g id="rFusedXCylHGroup" transform="translate(0,9)">
                     <use xlink:href="#rFusedXCyl_e0" transform="rotate(-90,0,0)" />
                     <use xlink:href="#rFusedXCyl_e0" transform="translate(0,3)  rotate(-90,0,0)" />
                     <use xlink:href="#rFusedXCyl_e0" transform="translate(0,6)  rotate(-90,0,0)" />
@@ -1428,14 +1429,14 @@
             
             </g>
             <g id="rFusedXCyl-layer1">
-                <g id="rFusedXCylV1" transform="translate(11.25,7.25)">
+                <g id="rFusedXCylVGroup" transform="translate(11.25,7.25)">
                     <use xlink:href="#rFusedXCyl_e1" />
                     <use xlink:href="#rFusedXCyl_e1" transform="translate(1.5,0)" />
                     <use xlink:href="#rFusedXCyl_e1" transform="translate(3,0)" />
                     <use xlink:href="#rFusedXCyl_e1" transform="translate(4.5,0)" />
                     <use xlink:href="#rFusedXCyl_e1" transform="translate(6,0)" />
                 </g>
-                <g id="rFusedXCylH1" transform="translate(7.25,11.75)">
+                <g id="rFusedXCylHGroup" transform="translate(7.25,11.75)">
                     <use xlink:href="#rFusedXCyl_e1" transform="rotate(-90,0,0)" />
                     <use xlink:href="#rFusedXCyl_e1" transform="translate(0,1.5)  rotate(-90,0,0)" />
                     <use xlink:href="#rFusedXCyl_e1" transform="translate(0,3)  rotate(-90,0,0)" />
@@ -1532,6 +1533,28 @@
         </svg>
     </div>   
     <div class="chart B" id="B1" style="background-color:hsl(0,0%,90%);">
+        <svg id="bEnhanced4Dot" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 35 35">
+            <defs>
+                <rect id="4DotDiamond" class="filterRed" x="0" y="0" width="5" height="5" fill="#d42c2c" stroke-width="0" transform="rotate(45,3,3)" ></rect>
+                <path id="4DotCross" class="filterGreen" d="M2 0H4V2H6V4H4V6H2V4H0V2H2V0z" fill="#2cd72c" stroke-width="0"></path>
+                <circle id="4DotWhiteDot" cx="3" cy="3" r="3" fill="rgba(255,255,255,1)" stroke-width="0"></circle>
+            </defs>
+            <g id="layer0" style="display:none">
+                <use xlink:href="#4DotDiamond" transform="translate(16,12) scale(0.5)" />
+                <use xlink:href="#4DotCross" transform="translate(11.5,16) scale(0.5)" />
+                <use xlink:href="#4DotCross" transform="translate(20.5,16) scale(0.5)" />
+                <use xlink:href="#4DotWhiteDot" transform="translate(16,20.5) scale(0.5)" />
+            </g>
+            <g id="layer1">
+                <use xlink:href="#4DotDiamond" transform="translate(14.5,6.75)" />
+                <use xlink:href="#4DotCross" transform="translate(6,14.5)" />
+                <use xlink:href="#4DotCross" transform="translate(23,14.5)" />
+                <use xlink:href="#4DotWhiteDot" transform="translate(14.5,23)" />
+            </g>
+        </svg>
+    </div>
+    <div class="chart B" id="B2" style="background-color:hsl(0,0%,90%);">
         <svg id="bWorth4Dot" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 35 35" width="200px">
             <defs></defs>
@@ -1549,7 +1572,7 @@
             </g>
         </svg>
     </div>
-    <div class="chart B" id="B2" style="background-color:hsl(0,0%,90%)">
+    <div class="chart B" id="B3" style="background-color:hsl(0,0%,90%)">
         <svg id="bDPhoriaH" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 2 40" >
             <defs></defs>
@@ -1559,7 +1582,7 @@
             </g>
         </svg>
     </div>
-    <div class="chart B" id="B3" style="background-color:hsl(0,0%,90%);">
+    <div class="chart B" id="B4" style="background-color:hsl(0,0%,90%);">
         <svg id="bDPhoriaV" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 60 2" >
             <defs></defs>
@@ -1569,7 +1592,7 @@
             </g>
         </svg>
     </div>
-    <div class="chart B" id="B4" style="background-color:hsl(0,0%,90%);">
+    <div class="chart B" id="B5" style="background-color:hsl(0,0%,90%);">
         <svg id="bDPhoriaBoxes" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 20 20" width="200px">
             <defs></defs>
@@ -1584,7 +1607,7 @@
             </g>
         </svg>
     </div>
-    <div class="chart B" id="B5" style="background-color:hsl(0,0%,90%);">
+    <div class="chart B" id="B6" style="background-color:hsl(0,0%,90%);">
         <svg id="bDPhoriaArrows" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 60 40" width="200px">
             <defs></defs>
@@ -1654,7 +1677,7 @@
                         begin="p1.begin+2s" />
                 </path>
                 <path id="r4" d="">
-                    <animate id="p2" attributeName="d"
+                    <animate id="p1" attributeName="d"
                         values="m160,20l0,0 0,0;m130,60l30,-17 30,17;m130,110l30,-17 30,17;m160,160l0,0 0,0" dur="5s"
                         repeatCount="indefinite" begin="p1.begin+3s" />
                     <animate attributeName="stroke-width" values="0;2;3;2;0" dur="5s" repeatCount="indefinite"
@@ -2234,7 +2257,7 @@
             return this.pushStack(this.get().reverse(), arguments);
         };
         //Version number
-        var ver = 2.41;
+        var ver = 2.42;
         document.title += " v"+ver;
         //main js
         function configBarSetting() {
@@ -2388,7 +2411,7 @@
                 chartThisId : "",
                 isMasked : false,
                 //array of charts with spacebar functions, and the function type
-                hasSBFunc : [['rJCCDots','zoom'], ['rBullseye','zoom'], ['rSeptumChart','interspace'], ['rDuoSeptumChart','interspace'], ['bFixDisp','rotate'], ['bWorth4Dot','zoom'], ['bDPhoriaArrows','rotate'], ['mWhiteDot','zoom']],
+                hasSBFunc : [['rJCCDots','zoom'], ['rBullseye','zoom'], ['rSeptumChart','interspace'], ['rDuoSeptumChart','interspace'], ['rFusedXCyl','zoom'], ['bFixDisp','rotate'], ['bWorth4Dot','zoom'], ['bEnhanced4Dot','zoom'], ['bDPhoriaArrows','rotate'], ['mWhiteDot','zoom']],
                 pointer : 0,
                 animIn : "",
                 animOut : "",
@@ -2553,24 +2576,30 @@
                     var upArrowPanel = $('#up-pic-arrow').find('.up-arrow-g0 path');
                     var upMiniChart = $('#' + chartUId);
                     upMiniChart.find('svg').clone().appendTo(upArrowInsLayer).attr({
+                        id: "up-thumb",
                         width: '80%',
                         x: '10%',
                         y: '-10%',
                         class:'scrollPic',
                         transform: '',
                         height: '80%',
+                    }).css({
+                        transform: ''
                     }).show();
                     upArrowPanel.attr('fill',upMiniChart.css('background-color'));
                     var dnArrowInsLayer = $('#dn-pic-arrow').find('.dn-arrow-g1');
                     var dnArrowPanel = $('#dn-pic-arrow').find('.dn-arrow-g0 path');
                     var dnMiniChart = $('#' + chartDId);
                     dnMiniChart.find('svg').clone().appendTo(dnArrowInsLayer).attr({
+                        id: "dn-thumb",
                         width: '80%',
                         x: '10%',
                         y: '30%',
                         class:'scrollPic',
                         transform: '',
                         height: '80%',
+                    }).css({
+                        transform: ''
                     }).show();
                     dnArrowPanel.attr('fill',dnMiniChart.css('background-color'));
                 }
@@ -3029,7 +3058,8 @@
                 //make all charts not class V 100% height
                 var otherChart = $('#otherChart');
                 otherChart.css({
-                    'height':viewHeight
+                    'height':viewHeight,
+                    'width':viewWidth,
                 });
                 //select svg of all the charts that aren't class V
                 var charts = $('.chart:not(.V)')
@@ -3132,21 +3162,20 @@
                         counter ++;
                         if(window.innerHeight < (oldHt-5) || window.innerHeight > (oldHt+5)) {
                             viewHeight = window.innerHeight;
-                            console.log(viewHeight+"hello");
-                            functionConfigWolfChart.UpdateSetting();
-                            /* functionConfigWolfChart.GenerateSingleCharts();
+                            console.log(viewHeight);
+                     clearInterval(looper);
+                            functionConfigWolfChart.GenerateSingleCharts();
                             functionConfigWolfChart.removeLetterChartPages();
                             $('#letterChart').css('height',viewHeight);
                             functionConfigWolfChart.PageLetterChart();
-                            functionConfigWolfChart.navCat(ct,'fscreen'); */
-                            clearInterval(looper);
+                            functionConfigWolfChart.navCat(ct,'fscreen');
                         } else {
                             if(counter >= 50) {
                             clearInterval(looper);
                             }
                         }
                         
-                     }, 100);
+                     }, 25);
                      
                 }
             }
@@ -3165,7 +3194,9 @@
                         break;
                     case 'rJCCDots':
                     case 'rBullseye':
+                    case 'rFusedXCyl':
                     case 'bWorth4Dot':
+                    case 'bEnhanced4Dot':
                     case 'bDPhoriaArrows':
                     case 'mWhiteDot':
                         swapSVGLayers(el);
