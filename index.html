@@ -558,7 +558,16 @@
             width: 100%;
             display: none;
         }
-        
+
+        /* Vertically center letter chart pages */
+        #letterChart .chart.V {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
         .clear-both {
             height: 0;
             clear: both;
@@ -2270,22 +2279,38 @@
                     setColIconsAndPresets("tBgColour");
                     $('body').append('<div class="modal-setting"></div>')
                 });
+                var lastHelpTarget = null;
                 $('.close').on('click', function (e) {
                     e.preventDefault();
                     $('.setting-bar').removeClass('active');
                     $('.guide-section').removeClass('active');
                     $('.mask').removeClass('active');
                     $('.modal-setting').remove();
+                    lastHelpTarget = null;
                 });
                 $('.questions-btn').on('click', function (e) {
                     e.preventDefault();
-                    $('.guide-section').addClass('active');
-                    $('.mask').addClass('active');
+                    var target = $(this).attr('href');
+                    var guideSection = $('.guide-section');
+                    var isOpen = guideSection.hasClass('active');
+
+                    if (isOpen && target === lastHelpTarget) {
+                        // Same button clicked again - close
+                        guideSection.removeClass('active');
+                        $('.mask').removeClass('active');
+                        lastHelpTarget = null;
+                    } else {
+                        // Different button or not open - open/navigate
+                        guideSection.addClass('active');
+                        $('.mask').addClass('active');
+                        lastHelpTarget = target;
+                    }
                 });
                 $('.close-guide').on('click', function (e) {
                     e.preventDefault();
                     $('.guide-section').removeClass('active');
                     $('.mask').removeClass('active');
+                    lastHelpTarget = null;
                 });
                 $('body').on('click', function (e) {
 
@@ -2295,6 +2320,7 @@
                     $('.guide-section').removeClass('active');
                     $('.mask').removeClass('active');
                     $('.modal-setting').remove();
+                    lastHelpTarget = null;
                 });
                 //allow colour preset buttons to update colour field and icon
                 $('.col-preset-opto').on('click', function (e) {
@@ -2410,6 +2436,8 @@
                 chartThis : "",
                 chartThisId : "",
                 isMasked : false,
+                isShuffled : false,
+                isDuo : false,
                 //array of charts with spacebar functions, and the function type
                 hasSBFunc : [['rJCCDots','zoom'], ['rBullseye','zoom'], ['rSeptumChart','interspace'], ['rDuoSeptumChart','interspace'], ['rFusedXCyl','zoom'], ['bFixDisp','rotate'], ['bWorth4Dot','zoom'], ['bEnhanced4Dot','zoom'], ['bDPhoriaArrows','rotate'], ['mWhiteDot','zoom']],
                 pointer : 0,
@@ -2458,7 +2486,7 @@
                 var today = new Date(), h = today.getHours(), m = today.getMinutes(), s = today.getSeconds();
                 h = (h<10) ? "0"+h : h; m = (m<10) ? "0"+m : m;
                 $('#clock-div').html(h + ":" + m);
-                var t = setTimeout(functionConfigWolfChart.Clock, 5000);
+                var t = setTimeout(functionConfigWolfChart.Clock, 1000);
             }
             
             this.DisplayArrows = function () {
@@ -3109,12 +3137,12 @@
             this.fullscreenChange = function (ct,cht) {
                 //reload the charts as we go in and out of fullscreen
                 if (!document.fullscreenElement) {
-                    swapSVGLayers($('.fullscreen-button'));
+                    functionConfigWolfChart.swapSVGLayers($('.fullscreen-button'));
                     openFullscreen();
                     reConfigCharts(ct,cht);
                 }
                 else {
-                    swapSVGLayers($('.fullscreen-button'));
+                    functionConfigWolfChart.swapSVGLayers($('.fullscreen-button'));
                     closeFullscreen();
                     reConfigCharts(ct,cht);
                 }
@@ -3148,12 +3176,6 @@
                     else if (document.webkitCancelFullScreen) {
                         document.webkitCancelFullScreen();
                     }
-                }
-                function swapSVGLayers(el) {
-                    var layers = $(el).children('g');
-                    layers.each(function (idx, el) {
-                        $(el).toggle();
-                    });
                 }
                 function reConfigCharts(ct,cht) {
                      //the new screen sizes take a few hundred milliseconds to update
@@ -3291,9 +3313,9 @@
                                 //shuffle them
                                 arAlphabet = functionConfigWolfChart.YatesShuffle(arAlphabet);
                                 //append shuffled letters to the number in the pre-shuffled line
-                                for (i = 0; i < lineLength; i++) {
+                                for (let i = 0; i < lineLength; i++) {
                                     $(arAlphabet[i]).appendTo(parent).show();
-                                    
+
                                 }
                                 $('#sUnshuffled').attr('display','block');
                                 $('#sShuffled').attr('display','none');                                
@@ -3309,7 +3331,7 @@
             }
              
             this.UnShuffleFunction = function (oldCharacter) {
-                for (i = 0; i < oldCharacter.length; i++) {
+                for (let i = 0; i < oldCharacter.length; i++) {
                     var id = oldCharacter[i][0],
                         svg = oldCharacter[i][1];
                         var dataLine = $('.chart.V').find('>div[data-line=' + id + ']').html(svg);
@@ -3964,8 +3986,23 @@
             this.hideIdleMouse = function () {
                 var idleMouseTimer;
                 var forceMouseHide = false;
-                $("body").css('cursor', 'none');
-                $("#letterChart, #otherChart").mousemove(function (ev) {
+                var chartAreas = $("#letterChart, #otherChart");
+
+                // Start hide timer when entering chart area
+                chartAreas.on('mouseenter', function () {
+                    if (!forceMouseHide) {
+                        idleMouseTimer = setTimeout(function () {
+                            $("body").css('cursor', 'none');
+                            forceMouseHide = true;
+                            setTimeout(function () {
+                                forceMouseHide = false;
+                            }, 200);
+                        }, 1000);
+                    }
+                });
+
+                // Reset timer on movement within chart area
+                chartAreas.on('mousemove', function (ev) {
                     if (!forceMouseHide) {
                         $("body").css('cursor', '');
                         clearTimeout(idleMouseTimer);
@@ -3975,8 +4012,14 @@
                             setTimeout(function () {
                                 forceMouseHide = false;
                             }, 200);
-                        }, 5000);
+                        }, 1000);
                     }
+                });
+
+                // Show cursor and cancel timer when leaving chart area
+                chartAreas.on('mouseleave', function () {
+                    clearTimeout(idleMouseTimer);
+                    $("body").css('cursor', '');
                 });
             };
 
