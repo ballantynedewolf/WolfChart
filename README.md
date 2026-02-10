@@ -11,11 +11,14 @@ Now that's out of the way, the objectives are:
   4. User-generated and customisable optotypes and alphabets to come
 
 To do
-  - Finish off fullscreen upgrade
-  - Finish off masked nav upgrade - masked nav actions break the shuffle function, sometimes a column has an extra letter if you've been doing masked navs
+  - Prentice chart
+  - Apply the same not-enough-room fallback as on Prentice to all R, B and M charts
+  - Finish off fullscreen upgrade - event listener logic, width miscalculation in fullscreen
+  - Finish off letter chart display options upgrade - the character lines aren't forming properly - 2.5
+  - Finish off masked nav upgrade - masked nav actions break the shuffle function, sometimes a column has an extra letter if you've been doing masked navs - 2.5
   - Change direction on crowding - should be able to crowd anything, so make crowded a boolean setting that overlays a transparent crowding box on each symbol - need two crowding boxes - a 4x5 and a 5x5
-  - Add FXC and Sharp VA Super Bullseye in the R category
-  - Shuffle while duochrome is on is buggy after the second shuffle
+  - Shuffle while duochrome is on is buggy
+  - Fix tablet browser rendering issues
 
 Ver2.42
   - Additions
