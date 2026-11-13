@@ -987,6 +987,7 @@
                 <a id="btSpacebarFunc"></a>
                 <a id="btShuffleFunc"></a>
                 <a id="btBgFunc"></a>
+                <a id="btMaskFunc"></a>
                 <a id="btInfoFunc" style="cursor:default;"></a>
             </div>
         </div>
@@ -1259,6 +1260,12 @@
                         <input type="text" class="form-control input-sm js-shortkey" id="duoBG" maxlength="1" value="z">
                     </div>
                 </div>
+                <div class="form-group" id="fgMaskKey">
+                    <label class="col-1" for="maskKey" >Cycle Mask</label>
+                    <div class="col-12">
+                        <input type="text" class="form-control input-sm js-shortkey" id="maskKey" maxlength="1" value="x">
+                    </div>
+                </div>
             </fieldset>
             <fieldset class="footer-fieldset">
                 <div class="action-button">
@@ -1412,6 +1419,9 @@
                                 </li>
                                 <li>
                                     <strong>Duochrome:</strong>: Toggles a red/green background on V charts.
+                                </li>
+                                <li>
+                                    <strong>Cycle Mask:</strong>: Same as the mask button on V charts. Cycles through masking the largest line, then one letter on it, then a column through that letter, then no mask. Use the arrow keys to move a mask.
                                 </li>
                             </ul>
                         </div>
@@ -2378,6 +2388,23 @@
                     <use xlink:href="#path-shuffle-arrow" transform="scale(-1,1) translate(-4,0)" fill="rgb(0,200,127)" />   
                 </g>
             </svg>
+            <svg class="mask-button-prototype" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,4" overflow="visible" width="200px">
+                <circle class='arrow-active' cx='2' cy='2' r='2.4' fill="transparent" stroke-width="0.3" stroke="rgb(102,102,102)"/>
+                <circle class="arrow-dot" cx="2" cy="2" r="2" fill="rgb(80,80,80)" stroke-width="0.1" stroke="rgb(152,152,152)"/>
+                <!-- one layer per mask state; updateMaskButton shows the one matching the current mask -->
+                <g class="mask-button-off">
+                    <rect x="0.5" y="1.7" width="3" height="0.6" rx="0.1" fill="rgb(152,152,152)" stroke="none"></rect>
+                </g>
+                <g class="mask-button-line" display="none">
+                    <rect x="0.5" y="1.7" width="3" height="0.6" rx="0.1" fill="rgb(255,255,255)" stroke="none"></rect>
+                </g>
+                <g class="mask-button-letter" display="none">
+                    <rect x="1.55" y="1.55" width="0.9" height="0.9" rx="0.1" fill="rgb(255,255,255)" stroke="none"></rect>
+                </g>
+                <g class="mask-button-column" display="none">
+                    <rect x="1.7" y="0.5" width="0.6" height="3" rx="0.1" fill="rgb(255,255,255)" stroke="none"></rect>
+                </g>
+            </svg>
             <svg class="zoom-button-prototype" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,4" overflow="visible" width="200px">
                 <circle class='arrow-active' cx='2' cy='2' r='2.4' fill="transparent" stroke-width="0.3" stroke="rgb(102,102,102)"/>
                 <circle class="arrow-dot" cx="2" cy="2" r="2" fill="rgb(102,102,102)" stroke-width="0.1" stroke="rgb(152,152,152)"/>
@@ -2696,7 +2723,7 @@ function ConfigWolfChart() {
             M: 'rgb(214, 116, 10)',
         },
     }
-    var shortcuts = ['u', 'n', 'g', 'k', 'q', 'z'];
+    var shortcuts = ['u', 'n', 'g', 'k', 'q', 'z', 'x'];
 
     this.initObjWolf = function() {
         objWolf = {
@@ -2850,6 +2877,12 @@ function ConfigWolfChart() {
         }).on('click', function() {
             functionConfigWolfChart.duoBG()
         }).hide();
+        $('.mask-button-prototype').clone().appendTo('#btMaskFunc').attr({
+            class: 'f-button mask-button'
+        }).on('click', function() {
+            functionConfigWolfChart.cycleMask();
+        }).hide();
+        functionConfigWolfChart.updateButtonTitles();
         //Hover function for buttons
         $('.arrow-active').hide();
         //mediaMatch here to set hover only for desktopdu
@@ -2896,7 +2929,7 @@ function ConfigWolfChart() {
         for (r = 0; r < objWolf.catsLength; r++) {
             var thing = objWolf[r];
             //populate the nav-button-div with category links
-            $('#nav-button-div').append("<a class='nav-link' id='bt" + thing.cat + "' title='" + thing.title + "'></a>");
+            $('#nav-button-div').append("<a class='nav-link' id='bt" + thing.cat + "' title='" + thing.title + " (" + thing.cat + ")'></a>");
             $('#bt' + thing.cat).on('click', {
                 id: r
             }, function(event) {
@@ -2921,6 +2954,13 @@ function ConfigWolfChart() {
 
         }
     }
+    //tooltips for the space bar function buttons
+    var spaceBarTitles = {
+        zoom: 'Zoom in/out',
+        rotate: 'Rotate 90°',
+        interspace: 'Increase separation',
+        letter: 'Eso/Exo'
+    };
     this.sidebarControls = function(selCat, selChart) {
         var thisLink = $('#bt' + objWolf[selCat].cat);
         var thisCol = objWolf[selCat].col;
@@ -2997,16 +3037,22 @@ function ConfigWolfChart() {
             }).show();
             dnArrowPanel.attr('fill', dnMiniChart.css('background-color'));
         }
+        //show the current mask state on the mask button
+        functionConfigWolfChart.updateMaskButton();
         //select ánd configure the buttons for this category
         if (objWolf.catThis == 0) {
             $('.f-button').hide();
+            $('#btSpacebarFunc').removeAttr('title');
             $('.bg-button').show();
             $('.shuffle-button').show();
+            $('.mask-button').show();
             $('.fullscreen-button').show();
         } else {
             $('.f-button').hide();
+            $('#btSpacebarFunc').removeAttr('title');
             $('.bg-button').hide();
             $('.shuffle-button').hide();
+            $('.mask-button').hide();
             $('.fullscreen-button').show();
             // display a space bar function button
             var thisChart = objWolf[selCat].arCharts[selChart],
@@ -3015,6 +3061,7 @@ function ConfigWolfChart() {
                 objWolf.hasSBFunc.forEach(function(el, idx) {
                     if (thisSVG[0].id == el[0]) {
                         var sbfb = $('.' + el[1] + '-button');
+                        $('#btSpacebarFunc').attr('title', spaceBarTitles[el[1]] + ' (Space)');
                         var buttonLayers = sbfb.find('g');
                         sbfb.show();
                         //set function button state
@@ -3765,7 +3812,24 @@ function ConfigWolfChart() {
         });
     }
 
-    this.ShortCutKey = function(pageUp, pageDown, pageLeft, pageRight, shuffle, duoBG) {
+    this.updateButtonTitles = function() {
+        //tooltips for the sidebar buttons, showing their keyboard shortcuts (custom ones from Settings)
+        function keys(fixed, custom) {
+            var k = [fixed, custom ? custom.toUpperCase() : ''].filter(Boolean);
+            return k.length ? ' (' + k.join(' or ') + ')' : '';
+        }
+        $('.setting-button').attr('title', 'Settings');
+        $('#btFullscreenFunc').attr('title', 'Fullscreen on/off' + keys('F'));
+        $('#btUp').attr('title', 'Chart up, or move mask up' + keys('↑', shortcuts[0]));
+        $('#btDn').attr('title', 'Chart down, or move mask down' + keys('↓', shortcuts[1]));
+        $('#btLeft').attr('title', 'Previous category, or move mask left' + keys('←', shortcuts[2]));
+        $('#btRight').attr('title', 'Next category, or move mask right' + keys('→', shortcuts[3]));
+        $('#btShuffleFunc').attr('title', 'Shuffle letters on/off' + keys('', shortcuts[4]));
+        $('#btBgFunc').attr('title', 'Duochrome on/off' + keys('', shortcuts[5]));
+        $('#btMaskFunc').attr('title', 'Mask: line, letter, column, off' + keys('', shortcuts[6]));
+    }
+    this.ShortCutKey = function(pageUp, pageDown, pageLeft, pageRight, shuffle, duoBG, maskKey) {
+        functionConfigWolfChart.updateButtonTitles();
         document.body.onkeyup = function(e) {
             //disable shortcuts if setting bar is active
             if (!$('#setting-bar').hasClass('active')) {
@@ -3842,6 +3906,12 @@ function ConfigWolfChart() {
                     if (e.keyCode == duoBG && e.ctrlKey == false) {
                         e.preventDefault();
                         functionConfigWolfChart.duoBG();
+                    };
+                };
+                if (maskKey != "") {
+                    if (e.keyCode == maskKey && e.ctrlKey == false) {
+                        e.preventDefault();
+                        functionConfigWolfChart.cycleMask();
                     };
                 };
             }
@@ -3989,6 +4059,7 @@ function ConfigWolfChart() {
                 shortcuts[3] = $('#pageRight').val().trim(),
                 shortcuts[4] = $('#shuffle').val().trim(),
                 shortcuts[5] = $('#duoBG').val().trim(),
+                shortcuts[6] = $('#maskKey').val().trim(),
                 lenghOfline = $('#iLengOfLine').val().trim(),
                 displayOrder = $('#display').val(),
                 setConfigDefault.SetLocalStorage();
@@ -4045,6 +4116,7 @@ function ConfigWolfChart() {
         $('#pageRight').val(gShortcuts[3]);
         $('#shuffle').val(gShortcuts[4]);
         $('#duoBG').val(gShortcuts[5]);
+        $('#maskKey').val(gShortcuts[6] !== undefined ? gShortcuts[6] : 'x'); //added in 2.50
     };
     this.SetConfigDefault = function() {
         //set value for input
@@ -4079,13 +4151,14 @@ function ConfigWolfChart() {
         $('#sliderGreen').val(colours.fGreenHue).css('background', 'hsl(' + colours.fGreenHue + ',80%,60%)');
         $('#iDistance').val('');
         $('#iLengOfLine').val('');
-        shortcuts = ['u', 'n', 'g', 'k', 'q', 'z'];
+        shortcuts = ['u', 'n', 'g', 'k', 'q', 'z', 'x'];
         $('#pageUp').val(shortcuts[0]);
         $('#pageDown').val(shortcuts[1]);
         $('#pageLeft').val(shortcuts[2]);
         $('#pageRight').val(shortcuts[3]);
         $('#shuffle').val(shortcuts[4]);
         $('#duoBG').val(shortcuts[5]);
+        $('#maskKey').val(shortcuts[6]);
     };
     this.UpdateVersion = function(version) {
         //returns true if an upgrade is required, false if not
@@ -4154,6 +4227,7 @@ function ConfigWolfChart() {
                                                 <li>New options for letter chart format, scrolling and shuffling</li>
                                                 <li>von Graefe chart for larger displays</li>
                                                 <li>5 luminance-matched duochrome options</li>
+                                                <li>Mask button and shortcut key: mask a line, letter or column, and move the mask with the arrow keys</li>
                                                 <li>VA up to 6/120 (logMAR 1.3, 20/400, Decimal 0.05, VAS 30)</li>
                                                 <li>VAS Notation</li>
                                                 </ul><br />
@@ -4376,6 +4450,7 @@ function ConfigWolfChart() {
             $('.guideline').show();
         }
         objWolf.isMasked = false;
+        functionConfigWolfChart.updateMaskButton();
     }
     this.maskLetter = function(letter) {
         //show only this letter
@@ -4386,6 +4461,7 @@ function ConfigWolfChart() {
         $('.guideline').hide();
         objWolf.pointer = functionConfigWolfChart.visibleLetters(letter.parent()).index(letter);
         objWolf.isMasked = letter.attr('id');
+        functionConfigWolfChart.updateMaskButton();
     }
     this.maskColumn = function(pos, anchorLineId) {
         //show the letter at position pos on every line
@@ -4403,6 +4479,7 @@ function ConfigWolfChart() {
             anchor = page.find('.in-a-column').first();
         }
         objWolf.isMasked = anchor.attr('id');
+        functionConfigWolfChart.updateMaskButton();
     }
     this.maskLine = function(line) {
         //show only this line
@@ -4413,6 +4490,48 @@ function ConfigWolfChart() {
         line.parent().find('.scoreBox').addClass('active');
         $('.guideline').hide();
         objWolf.isMasked = line.attr('id');
+        functionConfigWolfChart.updateMaskButton();
+    }
+    this.cycleMask = function() {
+        //mask button: no mask -> line -> letter (on that line) -> column (through that letter) -> no mask
+        if (objWolf.catThis != 0) return;
+        var masked = functionConfigWolfChart.getMasked(),
+            page = $('#' + objWolf.chartThisId);
+        switch (masked.length ? functionConfigWolfChart.maskType(masked) : false) {
+            case 'line':
+                var first = functionConfigWolfChart.visibleLetters(masked).first();
+                if (first.length) {
+                    functionConfigWolfChart.maskLetter(first);
+                }
+                break;
+            case 'letter':
+                functionConfigWolfChart.maskColumn(objWolf.pointer, masked.parent().attr('id'));
+                break;
+            case 'column':
+                functionConfigWolfChart.unmask();
+                break;
+            default:
+                //start with the largest line on the page
+                var largest = $(),
+                    maxHt = -1;
+                page.find('.char-line').each(function(idx, line) {
+                    var ht = parseFloat($(line).parent().attr('data-clientheight'));
+                    if (ht > maxHt) {
+                        maxHt = ht;
+                        largest = $(line);
+                    }
+                });
+                if (largest.length) {
+                    functionConfigWolfChart.maskLine(largest);
+                }
+        }
+    }
+    this.updateMaskButton = function() {
+        //show the mask button layer matching the current mask: off, line, letter or column
+        var masked = functionConfigWolfChart.getMasked(),
+            state = masked.length ? functionConfigWolfChart.maskType(masked) : 'off';
+        $('.mask-button').children('g').attr('display', 'none');
+        $('.mask-button').children('.mask-button-' + state).attr('display', 'inline');
     }
     this.navMask = function(dir) {
         //move the mask to the neighbouring letter, column or line on the current page.
@@ -4596,7 +4715,8 @@ function ConfigWolfChart() {
                 shortcuts[2] = $('#pageLeft').val().trim(),
                 shortcuts[3] = $('#pageRight').val().trim(),
                 shortcuts[4] = $('#shuffle').val().trim(),
-                shortcuts[5] = $('#duoBG').val().trim();
+                shortcuts[5] = $('#duoBG').val().trim(),
+                shortcuts[6] = $('#maskKey').val().trim();
             lenghOfline = $('#iLengOfLine').val().trim(),
                 displayOrder = $('#display').val(),
                 //reset div
@@ -4640,7 +4760,7 @@ function ConfigWolfChart() {
                 //generate single charts
                 functionConfigWolfChart.GenerateSingleCharts();
                 //set shortcut
-                functionConfigWolfChart.ShortCutKey(shortcuts[0].toUpperCase().charCodeAt(0), shortcuts[1].toUpperCase().charCodeAt(0), shortcuts[2].toUpperCase().charCodeAt(0), shortcuts[3].toUpperCase().charCodeAt(0), shortcuts[4].toUpperCase().charCodeAt(0), shortcuts[5].toUpperCase().charCodeAt(0));
+                functionConfigWolfChart.ShortCutKey(shortcuts[0].toUpperCase().charCodeAt(0), shortcuts[1].toUpperCase().charCodeAt(0), shortcuts[2].toUpperCase().charCodeAt(0), shortcuts[3].toUpperCase().charCodeAt(0), shortcuts[4].toUpperCase().charCodeAt(0), shortcuts[5].toUpperCase().charCodeAt(0), (shortcuts[6] || "").toUpperCase().charCodeAt(0));
                 //close setting bar
                 $('.setting-bar').removeClass('active');
                 $('.guide-section').removeClass('active');
