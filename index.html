@@ -596,16 +596,41 @@
             background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgb(179, 18, 201) 45%, rgb(179, 18, 201) 55%, rgba(255,255,255,0) 55%, rgba(255,255,255,0) 100%);
         }
         
+        /* duochrome pair: set from the #sDuochrome option's data-red / data-partner.
+           --red/--partner are used on the chart, --preview-* on the swatch button */
+        :root {
+            --red: rgb(255, 0, 0);
+            --partner: rgb(0, 145, 97);
+            --preview-red: var(--red);
+            --preview-partner: var(--partner);
+        }
         .duo {
             background-size: 100%;
-            background: linear-gradient(90deg, rgba(0,180,180,1) 0%, rgba(0,180,180,1) 50%, rgba(220,0,0,1) 50%, rgba(220,0,0,1) 100%);
-            /* background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(0,200,127,1) 50%, rgba(0,200,127,1) 100%); */
+            background: linear-gradient(90deg, var(--partner) 50%, var(--red) 50%);
         }
         .duo-rev {
             background-size: 100%;
-            background: linear-gradient(90deg, rgba(220,0,0,1) 0%, rgba(220,0,0,1) 50%, rgba(0,180,180,1) 50%, rgba(0,180,180,1) 100%);
-            /* background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(0,200,127,1) 50%, rgba(0,200,127,1) 100%); */
+            background: linear-gradient(90deg, var(--red) 50%, var(--partner) 50%);
         }
+        /* small split swatch button: left = red, right = partner */
+        .swatch-btn {
+            width: 110px;
+            height: 38px;
+            padding: 0;
+            vertical-align: middle;
+            border: 1.5px solid #DBDBDB;
+            border-radius: 5px;
+            background: linear-gradient(90deg, var(--preview-red) 50%, var(--preview-partner) 50%);
+            cursor: pointer;
+            text-align: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 2px rgba(0,0,0,0.8);
+        }
+        .swatch-btn:hover { border-color: #666666; }
+        .swatch-btn:focus-visible { outline: 1.5px solid #666666; outline-offset: 2px; }
 
         
         #letterChart .char-line {
@@ -649,7 +674,7 @@
             top: 50%;
             left: 25%;
             text-align: center;
-            ms-transform: translateY(-50%);
+            /* ms-transform: translateY(-50%); */
             transform: translateY(-50%);
             font-size: 16pt;
             font-weight: bold;
@@ -1162,6 +1187,21 @@
 
                     </div>
                 </div>
+                <hr class="fg-divider">
+                <div class="form-group" id="fgDuochrome">
+                    <label class="col-2" for="sDuochrome" ><button class="swatch-btn" id="btDuochrome" type="button" title="Duochrome: show selected pair">Duochrome</button>
+                    </label>
+                    <div class="col-8 select-box">
+                        <select class="form-control" id="sDuochrome">
+                            <option value="1" data-red="rgb(255, 0, 0)" data-partner="rgb(0, 148, 27)">rgb(255,0,0)/rgb(0,148,27) &middot; L* 53.2</option>
+                            <option value="2" data-red="rgb(205, 0, 0)" data-partner="rgb(0, 118, 10)">rgb(205,0,0)/rgb(0,118,10) &middot; L* 42.7</option>
+                            <option value="3" data-red="rgb(255, 0, 0)" data-partner="rgb(0, 145, 97)" selected="selected">rgb(255,0,0)/rgb(0,145,97) &middot; L* 53.2</option>
+                            <option value="4" data-red="rgb(205, 0, 0)" data-partner="rgb(0, 116, 77)">rgb(205,0,0)/rgb(0,116,77) &middot; L* 42.7</option>
+                            <option value="5" data-red="rgb(255, 0, 0)" data-partner="rgb(0, 142, 142)">rgb(255,0,0)/rgb(0,142,142) &middot; L* 53.2</option>
+                            <option value="6" data-red="rgb(205, 0, 0)" data-partner="rgb(0, 113, 113)">rgb(205,0,0)/rgb(0,113,113) &middot; L* 42.7</option>
+                        </select>
+                    </div>
+                </div>
                 
             </fieldset>
             <fieldset>
@@ -1213,7 +1253,7 @@
                         <input type="text" class="form-control input-sm js-shortkey" id="shuffle" maxlength="1" value="q">
                     </div>
                 </div>
-                <div class="form-group" id="fgDuochrome">
+                <div class="form-group" id="fgDuoBG">
                     <label class="col-1" for="duoBG" >Toggle Duochrome</label>
                     <div class="col-12">
                         <input type="text" class="form-control input-sm js-shortkey" id="duoBG" maxlength="1" value="z">
@@ -1682,7 +1722,7 @@
         </svg>
     </div>   
     <div class="chart B" id="B7">
-        <svg id="bPrentice2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,48,16" height="88.73mm" class="" style="">
+        <svg id="bPrentice2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,48,16" height="88.73mm" class="">
             <defs>
                 <path id="arrowhead" d="M0.4 0L2.4 1.5L0.4 3L0 2.8L1.2 1.5L0 0.2z" fill="rgba(0,0,0,1)" stroke="none" />
                 <path id="graticule" d="M0 0.5 H 0.1 V 1 H 0 V 0.5 M 0 3.5 H 0.1 V 4 H 0 V 3.5" fill="rgba(0,0,0,1)" stroke="none" />
@@ -2302,8 +2342,8 @@
             <svg class="bg-button-prototype" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,4,4" overflow="visible" width="200px">
                 <defs>
                     <linearGradient id="bg-grad0" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="50%" style="stop-color:rgb(0,180,180);stop-opacity:1" />
-                        <stop offset="50%" style="stop-color:rgb(220,0,0);stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:var(--partner);stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:var(--red);stop-opacity:1" />
                     </linearGradient>
                     
                 </defs>
@@ -2454,6 +2494,21 @@ if (typeof window !== 'undefined') {
 //Version number
 var ver = 2.50;
 document.title += " v" + ver;
+//duochrome pair: the selected #sDuochrome option carries its colours in data-red / data-partner.
+//preview shows the pair on the swatch button; show applies it to the .duo / .duo-rev backgrounds
+function duochromePreview() {
+    var o = $('#sDuochrome option:selected');
+    if (!o.length) return;
+    document.documentElement.style.setProperty('--preview-red', o.attr('data-red'));
+    document.documentElement.style.setProperty('--preview-partner', o.attr('data-partner'));
+}
+function duochromeShow() {
+    var o = $('#sDuochrome option:selected');
+    if (!o.length) return;
+    document.documentElement.style.setProperty('--red', o.attr('data-red'));
+    document.documentElement.style.setProperty('--partner', o.attr('data-partner'));
+    duochromePreview();
+}
 //main js
 function configBarSetting() {
     this.sidebar = function() {
@@ -2505,6 +2560,12 @@ function configBarSetting() {
             $(this).addClass('disabled-btn');
             $('#tBgColour').val(e.target.value);
             $('#tBgColour ~ i').css('background', e.target.value);
+        });
+        //duochrome: choosing a pair previews it on the swatch button, pressing the button applies it
+        $('#sDuochrome').off('change.duo').on('change.duo', duochromePreview);
+        $('#btDuochrome').off('click.duo').on('click.duo', function(e) {
+            e.preventDefault();
+            duochromeShow();
         });
         //set the icon colours, enable/disable preset buttons
         function setColIconsAndPresets(id) {
@@ -2646,6 +2707,7 @@ function ConfigWolfChart() {
             chartThis: "",
             chartThisId: "",
             isMasked: false,
+            isDuo: false,
             //array of charts with spacebar functions, and the function type
             hasSBFunc: [
                 ['rJCCDots', 'zoom'], ['rBullseye', 'zoom'], ['rMegaBullseye','zoom'], ['rFusedXCyl', 'zoom'], ['bWorth4Dot', 'zoom'], ['bEnhanced4Dot', 'zoom'], ['mWhiteDot', 'zoom'],
@@ -2719,24 +2781,24 @@ function ConfigWolfChart() {
         $('.arrow-button-prototype').clone().appendTo('#btRight').attr({
             class: 'arrow-button'
         }).on('click', function() {
-            functionConfigWolfChart.navCat(objWolf.catRight(), 'right')
+            functionConfigWolfChart.navArrow('right')
         });
         $('.arrow-button-prototype').clone().appendTo('#btLeft').css('transform', 'rotate(180deg)').attr({
             class: 'arrow-button'
         }).on('click', function() {
-            functionConfigWolfChart.navCat(objWolf.catLeft(), 'left')
+            functionConfigWolfChart.navArrow('left')
         });
         $('.arrow-button-prototype').clone().appendTo('#btUp').css('transform', 'rotate(-90deg)').attr({
             class: 'arrow-button',
             id: 'up-arrow'
         }).on('click', function() {
-            functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartU(), 'top')
+            functionConfigWolfChart.navArrow('up')
         });
         $('.arrow-button-prototype').clone().appendTo('#btDn').css('transform', 'rotate(90deg)').attr({
             class: 'arrow-button',
             id: 'dn-arrow'
         }).on('click', function() {
-            functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartD(), 'bottom')
+            functionConfigWolfChart.navArrow('down')
         });
         //$('.nav-button-prototype').clone().appendTo('#thisBadge').attr({class:''});
         $('.up-arrow-prototype').clone().appendTo('#btUp').attr({
@@ -2747,7 +2809,7 @@ function ConfigWolfChart() {
             left: '0px',
             top: '0px',
         }).on('click', function() {
-            functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartU(), 'top')
+            functionConfigWolfChart.navArrow('up')
         });
         $('.dn-arrow-prototype').clone().appendTo('#btDn').attr({
             class: 'pic-arrow',
@@ -2757,7 +2819,7 @@ function ConfigWolfChart() {
             left: '0px',
             bottom: '0px',
         }).on('click', function() {
-            functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartD(), 'bottom')
+            functionConfigWolfChart.navArrow('down')
         });
         //populate the function-button-div with function buttons
         $('.fullscreen-button-prototype').clone().appendTo('#btFullscreenFunc').attr({
@@ -2765,6 +2827,7 @@ function ConfigWolfChart() {
         }).on('click', function() {
             functionConfigWolfChart.fullscreenChange();
         }).hide();
+        functionConfigWolfChart.initFullscreenHandling();
         $('.zoom-button-prototype').clone().appendTo('#btSpacebarFunc').attr({
             class: 'f-button zoom-button'
         }).hide();
@@ -2981,39 +3044,45 @@ function ConfigWolfChart() {
 
     }
     this.fullscreenChange = function() {
-        let f = fullscreenAPI,
-            w = document.documentElement;
-        //change button state
-        (f.fullscreenElement) ? functionConfigWolfChart.swapSVGLayers($('.fullscreen-button')): functionConfigWolfChart.swapSVGLayers($('.fullscreen-button'));
-        //listen for fullscreen change with a handler that can wait - usually takes about 300ms
-        window.addEventListener('fullscreenchange', fsHandler, false);
-        //fullscreen change
-        (f.fullscreenElement) ? f.exitFullscreen(w): f.requestFullscreen(w);
-        function fsHandler(){
-        //check for a substantial change in window height every so many ms until it happens, then reload charts
-        let counter = -1,
-            oldHt = window.innerHeight,
-            looper = setInterval(function() {
-                counter++;
-                if (window.innerHeight < (oldHt - 25) || window.innerHeight > (oldHt + 25)) {
-                    let sidebarWidth = parseFloat($('#side-bar').css('width'));
-                    viewHeight = window.innerHeight, viewWidth = window.innerWidth-sideBarWidth;
-                    $('.chart,#letterChart,#otherChart').css({
-                        'height': viewHeight,
-                        'width': viewWidth,
-                    });
-                    functionConfigWolfChart.removeLetterChartPages();
-                    functionConfigWolfChart.pageLetterChart(localsScroll);
-                    functionConfigWolfChart.GenerateSingleCharts();
-                    functionConfigWolfChart.navCat(objWolf.catThis, 'fscreen');
-                    clearInterval(looper);
-                } else {
-                    if (counter >= 50) {
-                        clearInterval(looper);
-                    }
+        let f = fullscreenAPI;
+        //just request the change; the button state and chart relayout are handled
+        //by the listeners in initFullscreenHandling, so Esc/F11 exits work too
+        (f.fullscreenElement) ? f.exitFullscreen() : f.requestFullscreen(document.documentElement);
+    }
+    this.relayoutCharts = function() {
+        viewHeight = window.innerHeight;
+        sideBarWidth = parseFloat($('#side-bar').css('width'));
+        viewWidth = window.innerWidth - sideBarWidth;
+        $('.chart,#letterChart,#otherChart').css({
+            'height': viewHeight,
+            'width': viewWidth,
+        });
+        functionConfigWolfChart.removeLetterChartPages();
+        functionConfigWolfChart.pageLetterChart(localsScroll);
+        functionConfigWolfChart.GenerateSingleCharts();
+        functionConfigWolfChart.navCat(objWolf.catThis, 'fscreen');
+    }
+    //register once. The 'resize' event fires when the viewport actually changes size,
+    //so there is no need to poll for it after 'fullscreenchange'
+    this.initFullscreenHandling = function() {
+        let resizeTimer,
+            lastWidth = window.innerWidth,
+            lastHeight = window.innerHeight;
+        //keep the button icon in sync with the real fullscreen state
+        fullscreenAPI.addEventListener('fullscreenchange', function() {
+            functionConfigWolfChart.swapSVGLayers($('.fullscreen-button'));
+        });
+        //rebuild charts once the size has settled (debounced), and only if it changed substantially
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (Math.abs(window.innerHeight - lastHeight) > 25 || Math.abs(window.innerWidth - lastWidth) > 25) {
+                    lastWidth = window.innerWidth;
+                    lastHeight = window.innerHeight;
+                    functionConfigWolfChart.relayoutCharts();
                 }
-            }, 300);
-            }
+            }, 150);
+        });
     }
     this.navCat = function(selCat, anim) {
         objWolf.catThis = selCat;
@@ -3047,6 +3116,10 @@ function ConfigWolfChart() {
             $('#otherChart').show();
         }
         var charts = $('.' + objWolf[selCat].cat);
+        //clear any letter chart mask when the page changes. Fullscreen re-pages the letter chart, so clear it then too
+        if (objWolf.isMasked && (anim == 'fscreen' || charts[selChart].id != objWolf.chartThisId)) {
+            functionConfigWolfChart.unmask();
+        }
         //Slide charts out and in, then configure the sidebar controls
         if (anim != null) {
             var outGoingChart = $('#' + objWolf.chartThisId);
@@ -3623,10 +3696,10 @@ function ConfigWolfChart() {
 
     this.shuffleLetters = function() {
         if (objWolf.catThis == 0) {
-            //check if letters are displayed in a column or singled
+            //check if letters are masked or duochrom is on
             var colCheck = $('.in-a-column, .disable');
             //if not, shuffle, else do nothing
-            if (colCheck.length == 0) {
+            if (colCheck.length == 0 && !objWolf.isDuo) {
                 var functionConfigWolfChart = this;
                 functionConfigWolfChart.swapSVGLayers($('.shuffle-button'));
                 if (!objWolf.isShuffled) {
@@ -3699,39 +3772,39 @@ function ConfigWolfChart() {
                 //exclude the ctrl key wherever a letter is the keycode, but not the arrows
                 if (pageUp != "") {
                     if (e.keyCode == pageUp && e.ctrlKey == false) {
-                        functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartU(), 'top');
+                        functionConfigWolfChart.navArrow('up');
                     };
                 };
                 if (pageDown != "") {
                     if (e.keyCode == pageDown && e.ctrlKey == false) {
-                        functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartD(), 'bottom');
+                        functionConfigWolfChart.navArrow('down');
                     };
                 };
                 if (pageLeft != "") {
                     if (e.keyCode == pageLeft && e.ctrlKey == false) {
-                        functionConfigWolfChart.navCat(objWolf.catLeft(), 'left');
+                        functionConfigWolfChart.navArrow('left');
                     };
                 };
                 if (pageRight != "") {
                     if (e.keyCode == pageRight && e.ctrlKey == false) {
-                        functionConfigWolfChart.navCat(objWolf.catRight(), 'right');
+                        functionConfigWolfChart.navArrow('right');
                     };
                 };
                 if (e.keyCode == 38) {
                     e.preventDefault();
-                    functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartU(), 'top');
+                    functionConfigWolfChart.navArrow('up');
                 };
                 if (e.keyCode == 40) {
                     e.preventDefault();
-                    functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartD(), 'bottom');
+                    functionConfigWolfChart.navArrow('down');
                 };
                 if (e.keyCode == 37) {
                     e.preventDefault();
-                    functionConfigWolfChart.navCat(objWolf.catLeft(), 'left');
+                    functionConfigWolfChart.navArrow('left');
                 };
                 if (e.keyCode == 39) {
                     e.preventDefault();
-                    functionConfigWolfChart.navCat(objWolf.catRight(), 'right');
+                    functionConfigWolfChart.navArrow('right');
                 };
                 if (e.keyCode == 86 && e.ctrlKey == false) {
                     e.preventDefault();
@@ -3871,6 +3944,7 @@ function ConfigWolfChart() {
         localStorage.setItem("Lines", localsLines);
         localStorage.setItem("ScrollStyle", localsScroll);
         localStorage.setItem("ShuffleStyle", localsShuffleStyle);
+        localStorage.setItem("Duochrome", localsDuochrome);
         localStorage.setItem("Colours", JSON.stringify(colours));
         localStorage.setItem("ObjWolf", JSON.stringify(objWolf));
         localStorage.setItem("Shortcuts", JSON.stringify(shortcuts));
@@ -3905,6 +3979,7 @@ function ConfigWolfChart() {
                 localsLines = $('#sLines').val(),
                 localsScroll = $('#sScroll').val(),
                 localsShuffleStyle = $('#sShuffleStyle').val(),
+                localsDuochrome = $('#sDuochrome').val(),
                 localDistance = $('#iDistance').val().trim(),
                 numeratorType = $('#sNumerator').val(),
                 alphabetType = $('#sAlphabet').val(),
@@ -3940,6 +4015,7 @@ function ConfigWolfChart() {
         gLines = localStorage.getItem("Lines"),
             gScroll = localStorage.getItem("ScrollStyle"),
             gShuffleStyle = localStorage.getItem("ShuffleStyle"),
+            gDuochrome = localStorage.getItem("Duochrome"),
             gColours = JSON.parse(localStorage.getItem("Colours")),
             objWolf = JSON.parse(localStorage.getItem("ObjWolf")),
             gShortcuts = JSON.parse(localStorage.getItem("Shortcuts"));
@@ -3955,6 +4031,10 @@ function ConfigWolfChart() {
         $('#sLines').val(gLines);
         $('#sScroll').val(gScroll);
         $('#sShuffleStyle').val(gShuffleStyle);
+        //Duochrome was added in 2.50; fall back to the default pair if not yet stored
+        $('#sDuochrome').val(gDuochrome || '3');
+        if ($('#sDuochrome').val() === null) $('#sDuochrome').val('3');
+        duochromePreview();
         $('#tOptoColour').val(gColours.optotype);
         $('#tBgColour').val(gColours.backgrounds.optotype);
         $('#sliderRed').val(gColours.fRedHue);
@@ -3977,6 +4057,8 @@ function ConfigWolfChart() {
         $('#Lines').val('0');
         $('#sScroll').val('0');
         $('#sShuffleStyle').val('1');
+        $('#sDuochrome').val('3');
+        duochromeShow();
         colours = {
             optotype: 'rgba(0,0,0,1)',
             backgrounds: {
@@ -4258,78 +4340,171 @@ function ConfigWolfChart() {
 
         }
     }
+    //---Masking-------------------------------------------------------------------------
+    //objWolf.isMasked is false when nothing is masked, otherwise the id of the masked object:
+    //  letter: the id of the letter's svg (it has class 'active')
+    //  column: the id of a letter in the column on the current page (it has class 'in-a-column').
+    //          objWolf.pointer holds the column's position along the line
+    //  line:   the id of the char-line, e.g. 'line-7'
+    //With Scroll Style 1 a line is cloned onto more than one page, so its ids are not unique.
+    //Masked objects are therefore always looked up within the current page.
+    this.visibleLetters = function(line) {
+        //the letters shown on a line, excluding the hidden spare letters used for shuffling
+        return $(line).find('.optotype-symbol').filter(function() {
+            return this.style.display != 'none';
+        });
+    }
+    this.getMasked = function() {
+        //the masked object on the current page (empty if none)
+        if (!objWolf.isMasked) return $();
+        return $('#' + objWolf.chartThisId).find('#' + objWolf.isMasked);
+    }
+    this.maskType = function(el) {
+        if (!objWolf.isMasked) return false;
+        if (objWolf.isMasked.indexOf('line-') == 0) return 'line';
+        return $(el).hasClass('in-a-column') ? 'column' : 'letter';
+    }
+    this.resetMask = function() {
+        $('.char-line .optotype-symbol').attr('class', 'optotype-symbol');
+        $('.character-line .scoreBox').removeClass('active');
+        $('.character-line .char-line').css('visibility', 'visible');
+    }
+    this.unmask = function() {
+        functionConfigWolfChart.resetMask();
+        if (!objWolf.isDuo) {
+            $('.guideline').show();
+        }
+        objWolf.isMasked = false;
+    }
+    this.maskLetter = function(letter) {
+        //show only this letter
+        letter = $(letter);
+        functionConfigWolfChart.resetMask();
+        $('.char-line .optotype-symbol').addClass('disable');
+        letter.removeClass('disable').addClass('active');
+        $('.guideline').hide();
+        objWolf.pointer = functionConfigWolfChart.visibleLetters(letter.parent()).index(letter);
+        objWolf.isMasked = letter.attr('id');
+    }
+    this.maskColumn = function(pos, anchorLineId) {
+        //show the letter at position pos on every line
+        functionConfigWolfChart.resetMask();
+        $('.char-line .optotype-symbol').addClass('disable');
+        $('.char-line').each(function(idx, line) {
+            functionConfigWolfChart.visibleLetters(line).eq(pos).removeClass('disable').addClass('in-a-column');
+        });
+        $('.guideline').hide();
+        objWolf.pointer = pos;
+        //identify the column by one of its letters on the current page, preferably on the anchor line
+        var page = $('#' + objWolf.chartThisId),
+            anchor = functionConfigWolfChart.visibleLetters(page.find('#' + anchorLineId)).eq(pos);
+        if (!anchor.length) {
+            anchor = page.find('.in-a-column').first();
+        }
+        objWolf.isMasked = anchor.attr('id');
+    }
+    this.maskLine = function(line) {
+        //show only this line
+        line = $(line);
+        functionConfigWolfChart.resetMask();
+        $('.character-line .char-line').css('visibility', 'hidden');
+        line.css('visibility', 'visible');
+        line.parent().find('.scoreBox').addClass('active');
+        $('.guideline').hide();
+        objWolf.isMasked = line.attr('id');
+    }
+    this.navMask = function(dir) {
+        //move the mask to the neighbouring letter, column or line on the current page.
+        //Stops at the edges. Columns only move left/right, lines only move up/down.
+        var masked = functionConfigWolfChart.getMasked(),
+            lines = $('#' + objWolf.chartThisId).find('.char-line'), //top to bottom
+            step = (dir == 'up' || dir == 'left') ? -1 : 1,
+            horizontal = (dir == 'left' || dir == 'right'),
+            row, pos, lineIdx;
+        switch (functionConfigWolfChart.maskType(masked)) {
+            case 'letter':
+                if (horizontal) {
+                    row = functionConfigWolfChart.visibleLetters(masked.parent());
+                    pos = row.index(masked) + step;
+                    if (pos >= 0 && pos < row.length) {
+                        functionConfigWolfChart.maskLetter(row.eq(pos));
+                    }
+                } else {
+                    lineIdx = lines.index(masked.parent()) + step;
+                    if (lineIdx >= 0 && lineIdx < lines.length) {
+                        row = functionConfigWolfChart.visibleLetters(lines.eq(lineIdx));
+                        if (row.length) { //same position, or the last letter if that line is shorter
+                            functionConfigWolfChart.maskLetter(row.eq(Math.min(objWolf.pointer, row.length - 1)));
+                        }
+                    }
+                }
+                break;
+            case 'column':
+                if (horizontal) {
+                    pos = objWolf.pointer + step;
+                    //only move if some line on this page has a letter at the new position
+                    var exists = pos >= 0 && lines.filter(function() {
+                        return functionConfigWolfChart.visibleLetters(this).length > pos;
+                    }).length > 0;
+                    if (exists) {
+                        functionConfigWolfChart.maskColumn(pos, masked.parent().attr('id'));
+                    }
+                }
+                break;
+            case 'line':
+                if (!horizontal) {
+                    lineIdx = lines.index(masked) + step;
+                    if (lineIdx >= 0 && lineIdx < lines.length) {
+                        functionConfigWolfChart.maskLine(lines.eq(lineIdx));
+                    }
+                }
+                break;
+        }
+    }
+    this.navArrow = function(dir) {
+        //all arrow navigation (arrow keys, shortcut keys, sidebar arrows) comes through here.
+        //While the letter chart is masked the arrows move the mask, otherwise they change chart/category
+        if (objWolf.catThis == 0 && functionConfigWolfChart.getMasked().length) {
+            functionConfigWolfChart.navMask(dir);
+            return;
+        }
+        switch (dir) {
+            case 'up':
+                functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartU(), 'top');
+                break;
+            case 'down':
+                functionConfigWolfChart.scrollChart(objWolf.catThis, objWolf.chartD(), 'bottom');
+                break;
+            case 'left':
+                functionConfigWolfChart.navCat(objWolf.catLeft(), 'left');
+                break;
+            case 'right':
+                functionConfigWolfChart.navCat(objWolf.catRight(), 'right');
+                break;
+        }
+    }
     this.characterClick = function() {
-        $(document).on('click', '.optotype-symbol', function() {
-            var characterSVG = $('.char-line .optotype-symbol'),
-                el = $(this);
+        $(document).on('click', '.char-line .optotype-symbol', function() {
+            var el = $(this);
             if (el.hasClass('in-a-column')) {
                 //show all letters
-                characterSVG.attr('class', 'optotype-symbol');
-                if (!objWolf.isDuo) {
-                    $('.guideline').show();
-                    objWolf.isMasked = false;
-                }
+                functionConfigWolfChart.unmask();
             } else if (el.hasClass('active')) {
                 //show a column of letters containing this one
-                el.removeClass('active');
-                $('.guideline').hide();
-                var lines = $('.char-line').each(function(idx, elem) {
-                    var b = objWolf.pointer;
-                    $(elem).find('.optotype-symbol').each(function(idx, elem) {
-                        if (idx == b) {
-                            $(elem).addClass('in-a-column');
-                            $(elem).removeClass('disable');
-
-                        }
-                    });
-
-                });
-                objWolf.isMasked = true;
+                functionConfigWolfChart.maskColumn(objWolf.pointer, el.parent().attr('id'));
             } else {
                 //show only the letter clicked
-                el.addClass('active');
-                characterSVG.addClass('disable');
-                el.removeClass('disable');
-                $('.guideline').hide();
-                //find the position of the clicked letter along the line
-                var parent = this.parentNode,
-                    callBack = this,
-                    pos = "";
-                $('#' + parent.id).find('.optotype-symbol').each(function(idx, elem) {
-                    if (elem.id == callBack.id) {
-                        objWolf.pointer = idx;
-                    }
-                });
-                objWolf.isMasked = true;
+                functionConfigWolfChart.maskLetter(el);
             }
         });
     };
     this.scoreBoxClick = function() {
         $(document).on('click', '.scoreBox', function() {
-            var clicked = $(this),
-                lineSVG = "",
-                characterLine = $('.character-line .char-line'),
-                characterSVG = $('.char-line .optotype-symbol');
-            if (clicked[0].getAttribute('class') == "scoreBox") {
-                lineSVG = $(this).prev();
-            } else {
-                lineSVG = clicked.parent();
-            }
-            var activeElems = lineSVG.parent().find('.scoreBox')
+            var clicked = $(this);
             if (clicked.hasClass('active')) {
-                activeElems.removeClass('active');
-                characterLine.css('visibility', 'visible')
-                characterSVG.removeClass('disable active');
-                $('.guideline').show();
-                objWolf.isMasked = false;
+                functionConfigWolfChart.unmask();
             } else {
-                $('.character-line .scoreBox').removeClass('active');
-                activeElems.addClass('active');
-                characterLine.css('visibility', 'hidden')
-                lineSVG.css('visibility', 'visible');
-                characterSVG.removeClass('disable active');
-                $('.guideline').hide();
-                objWolf.isMasked = true;
+                functionConfigWolfChart.maskLine(clicked.siblings('.char-line'));
             }
         });
     };
@@ -4407,6 +4582,7 @@ function ConfigWolfChart() {
                 localsLines = $('#sLines').val(),
                 localsScroll = $('#sScroll').val(),
                 localsShuffleStyle = $('#sShuffleStyle').val(),
+                localsDuochrome = $('#sDuochrome').val(),
                 viewWidth = window.innerWidth - sideBarWidth,
                 numeratorType = $('#sNumerator').val(),
                 colours.optotype = $('#tOptoColour').val().trim(),
@@ -4472,7 +4648,9 @@ function ConfigWolfChart() {
                     'width': viewWidth,
                     'height': viewHeight
                 });
-                $('#letterChart, .char-line').removeClass('duo');
+                $('#letterChart, .char-line').removeClass('duo duo-rev');
+                //apply the saved duochrome pair
+                duochromeShow();
                 //set direct or mirrored
                 functionConfigWolfChart.SetDirectCharacter(localsMirrored);
                 //set smaller font for long scoreBox strings
