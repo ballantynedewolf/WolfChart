@@ -2709,7 +2709,8 @@ function ConfigWolfChart() {
     var functionConfigWolfChart = this;
     var objWolf = {};
     var notation, viewWidth, viewHeight = window.innerHeight,
-        numeratorType, oldCharacter = [], chartArray = [], timeOut;
+        numeratorType, oldCharacter = [], chartArray = [], timeOut,
+        masterLetterLines = $(); //pristine, unpaged copy of all the letter chart lines, used to rebuild the chart on relayout
     var colours = {
         optotype: "",
         backgrounds: {
@@ -3105,8 +3106,33 @@ function ConfigWolfChart() {
             'height': viewHeight,
             'width': viewWidth,
         });
-        functionConfigWolfChart.removeLetterChartPages();
+        //Rebuild the letter chart from the pristine lines rather than re-paging the current ones: paging drops lines
+        //too tall for the old view, and the number of letters shown on each line depends on the view width.
+        //This also discards any shuffle or mask, so reset their state
+        if (objWolf.isMasked) {
+            functionConfigWolfChart.unmask();
+        }
+        if (objWolf.isShuffled) {
+            objWolf.isShuffled = false;
+            functionConfigWolfChart.swapSVGLayers($('.shuffle-button'));
+        }
+        $('#letterChart').empty().append(masterLetterLines.clone());
+        if (objWolf.isDuo) { //duo state is held on #letterChart and each char-line; the new char-lines need it too
+            $('#letterChart .char-line').addClass(localsMirrored == 2 ? 'duo-rev' : 'duo');
+        }
+        functionConfigWolfChart.fitLettersToWidth();
         functionConfigWolfChart.pageLetterChart(localsScroll);
+        functionConfigWolfChart.saveUnshuffleState();
+        //the number of letter chart pages has probably changed, so rebuild the VA category's chart list
+        for (var c = 0; c < objWolf.catsLength; c++) {
+            var cat = objWolf[c];
+            if (cat.cat != 'V') continue;
+            cat.arCharts = $('.chart.V').map(function(idx, el) {
+                return { id: el.id, useCount: 0, isToggled: false };
+            }).get();
+            cat.lastUsed = Math.min(cat.lastUsed, cat.arCharts.length - 1);
+            cat.mostUsed = Math.min(cat.mostUsed, cat.arCharts.length - 1);
+        }
         functionConfigWolfChart.GenerateSingleCharts();
         functionConfigWolfChart.navCat(objWolf.catThis, 'fscreen');
     }
@@ -3503,11 +3529,16 @@ function ConfigWolfChart() {
             var scoreText = chartArray[arrayHeight][1]; //get score text
             var heightValue = configFunction.ConvertMMToPixel(chartArray[arrayHeight][2]); //get height for character
             heightValue = Math.round(heightValue * 1000) / 1000;
+            var maxSymbolWidth = 0; //widest symbol on the line, including the hidden spares used in shuffling
             for (var x = 0; x < alphabet[i].length; x++) {
                 //clone svg, set style and append to char-line
-                $('#list-character #' + optotype + '_' + alphabet[i][x]).clone().css({
+                var template = $('#list-character #' + optotype + '_' + alphabet[i][x]),
+                    vb = template[0].viewBox.baseVal,
+                    symbolWidth = heightValue * vb.width / vb.height; //rendered width, from the viewBox aspect ratio
+                maxSymbolWidth = Math.max(maxSymbolWidth, symbolWidth);
+                template.clone().css({
                     height: heightValue + 'px',
-                    margin: '0px ' + (heightValue / 2) + 'px', //50% horiz  margin
+                    margin: '0px ' + (symbolWidth / 2) + 'px', //horizontal margin is 50% of symbol width each side
                 }).attr({
                     id: optotype + '_' + alphabet[i][x] + '_' + counter,
                 }).appendTo('#line-' + (i + 1)).hide();
@@ -3535,18 +3566,37 @@ function ConfigWolfChart() {
             if (i == 6) {
                 $('*[data-line="' + (i + 1) + '"] > .guideline').addClass('redline');
             }
-            //find the widest symbol on the line
-            //all symbols should be the same but just in case...
-            var arWidths = $('#line-' + (i + 1)).find('svg.optotype-symbol').width();
-            var attrWidth = Math.max(arWidths);
-            var lineWidth = viewWidth - 120; //scoreBox is set 57 width plus 3 left in css, but to keep char-line centred pretend there's a scoreBox on both sides
-            var maxSymbols = Math.floor(lineWidth / (attrWidth * 2)); // symbol plus 50% margin left and right
-            $('#line-' + (i + 1)).find('svg.optotype-symbol').each(function(idx, e) {
-                if (idx < Math.min(lineLength, maxSymbols)) { //show what will fit up to max of 5
-                    $(this).show();
-                }
-            });
+            //store the widest symbol (computed above from the viewBoxes rather than measured, because the symbols are
+            //hidden at this point) so the line can be refitted if the view size changes.
+            //Most alphabets are uniform but some (eg Chinese, Hebrew) are not
+            $('#line-' + (i + 1)).attr('data-max-symbol-width', maxSymbolWidth);
         }
+        configFunction.fitLettersToWidth();
+    };
+
+    this.fitLettersToWidth = function() {
+        //show as many symbols on each line as will fit in viewWidth, up to lineLength; hide the rest (they are spares for shuffling)
+        var lineWidth = viewWidth - 120; //scoreBox is set 57 width plus 3 left in css, but to keep char-line centred pretend there's a scoreBox on both sides
+        $('#letterChart .char-line').each(function(idx, line) {
+            var maxSymbolWidth = parseFloat($(line).attr('data-max-symbol-width')),
+                maxSymbols = Math.floor(lineWidth / (maxSymbolWidth * 2)); // symbol plus 50% margin left and right
+            $(line).find('svg.optotype-symbol').each(function(idx, e) {
+                $(e).toggle(idx < Math.min(lineLength, maxSymbols)); //show what will fit up to max of 5
+            });
+        });
+    };
+
+    this.saveMasterLetterLines = function() {
+        //call when #letterChart holds the complete, unpaged, unshuffled lines
+        masterLetterLines = $('#letterChart > .character-line').clone();
+    };
+
+    this.saveUnshuffleState = function() {
+        //snapshot each paged line for the unshuffle function
+        oldCharacter = [];
+        $('.character-line').each(function() {
+            oldCharacter.push([$(this).attr('data-line'), $(this).html()]);
+        });
     };
 
     this.GenerateSingleCharts = function() {
@@ -4777,6 +4827,8 @@ function ConfigWolfChart() {
                 functionConfigWolfChart.SetDirectCharacter(localsMirrored);
                 //set smaller font for long scoreBox strings
                 functionConfigWolfChart.SetScoreBoxFont();
+                //keep a copy of the unpaged lines so the chart can be rebuilt if the view size changes
+                functionConfigWolfChart.saveMasterLetterLines();
                 //divide letter chart into pages
                 functionConfigWolfChart.pageLetterChart(localsScroll);
                 //load all charts into objWolf
@@ -4789,11 +4841,7 @@ function ConfigWolfChart() {
                 functionConfigWolfChart.DisplayNavigations();
                 functionConfigWolfChart.Clock();
                 //set old character array for the unshuffle function
-                $('.character-line').each(function() {
-                    var lineArray = [];
-                    lineArray.push($(this).attr('data-line'), $(this).html());
-                    oldCharacter.push(lineArray);
-                });
+                functionConfigWolfChart.saveUnshuffleState();
                 $('.modal-setting').remove();
             }
         });
