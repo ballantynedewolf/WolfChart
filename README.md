@@ -1,4 +1,4 @@
-# WolfChart v2.4  
+# WolfChart v2.50 
 by Ballantyne de Wolf, Offspring Digital
 
 This is professional optometrist/optician/ophthalmologist tool for sight testing. It cannot be used safely by the general public.
@@ -8,18 +8,24 @@ Now that's out of the way, the objectives are:
   1. Clinically relevant, scientifically supported sight testing tools, in the widest possible range of clinical and research settings.
   2. Open source with GNU licence
   3. Can be used on a wide variety of screen hardware
-  4. User-generated and customisable optotypes and alphabets to come
 
 To do
-  - Prentice chart
-  - Apply the same not-enough-room fallback as on Prentice to all R, B and M charts
-  - Finish off fullscreen upgrade - event listener logic, width miscalculation in fullscreen
-  - Finish off letter chart display options upgrade - the character lines aren't forming properly - 2.5
-  - Finish off masked nav upgrade - masked nav actions break the shuffle function, sometimes a column has an extra letter if you've been doing masked navs - 2.5
-  - Change direction on crowding - should be able to crowd anything, so make crowded a boolean setting that overlays a transparent crowding box on each symbol - need two crowding boxes - a 4x5 and a 5x5
-  - Shuffle while duochrome is on is buggy
-  - Fix tablet browser rendering issues
+  - new ideas on crowding - should we be able to crowd anything? Make crowded a boolean setting that overlays a transparent crowding box on each symbol? - need two crowding boxes - a 4x5 and a 5x5. Alternatively could implement a shortcut switch between optotypes, one of which could be a crowded optotype. This would perhaps cover more use cases?
+  
 
+Ver2.50
+  - Additions
+    - von Graefe Prentice Chart
+    - Masking options
+    - Masks can be moved around with nav buttons
+    - Scrolling and shuffling options
+    - VAS notation
+    - choice of 6 duochromes
+  - Bug fixes
+    - old svg syntax causing problems on tablets fixed
+    - fullscreen working properly
+    - letter width bug fixed
+    - shuffle-duochrome fixed
 Ver2.42
   - Additions
     - Enhanced Worth 4 Dot chart
